@@ -1,0 +1,5 @@
+columns:
+    question:
+        label: Sual
+        type: text
+        searchable: true

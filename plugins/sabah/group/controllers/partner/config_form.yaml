@@ -1,0 +1,10 @@
+name: Partner
+form: $/sabah/group/models/partner/fields.yaml
+modelClass: Sabah\Group\Models\Partner
+defaultRedirect: sabah/group/partner
+create:
+    redirect: 'sabah/group/partner/update/:id'
+    redirectClose: sabah/group/partner
+update:
+    redirect: sabah/group/partner
+    redirectClose: sabah/group/partner

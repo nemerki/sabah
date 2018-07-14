@@ -1,0 +1,46 @@
+fields:
+    name:
+        label: Adı
+        span: auto
+        type: text
+    surname:
+        label: Soyadı
+        span: auto
+        type: text
+    company:
+        label: Şirket
+        span: auto
+        type: text
+    career:
+        label: Peşəsi
+        span: auto
+        type: text
+    facebook:
+        label: Facebook
+        span: auto
+        type: text
+    googleplus:
+        label: 'Goole Plus'
+        span: auto
+        type: text
+    linkedin:
+        label: Linkedin
+        span: auto
+        type: text
+    twitter:
+        label: Twitter
+        span: auto
+        type: text
+    image:
+        label: Şekli
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    instagram:
+        label: İnstagram
+        span: auto
+        type: text

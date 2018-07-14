@@ -1,0 +1,9 @@
+columns:
+    name:
+        label: Adı
+        type: text
+        searchable: true
+    image:
+        label: Şekil
+        type: partial
+        path: ~/plugins/sabah/group/models/gallery/_image_column.htm

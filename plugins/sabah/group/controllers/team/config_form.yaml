@@ -1,0 +1,10 @@
+name: Team
+form: $/sabah/group/models/team/fields.yaml
+modelClass: Sabah\Group\Models\Team
+defaultRedirect: sabah/group/team
+create:
+    redirect: 'sabah/group/team/update/:id'
+    redirectClose: sabah/group/team
+update:
+    redirect: sabah/group/team
+    redirectClose: sabah/group/team

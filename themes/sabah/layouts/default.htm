@@ -1,0 +1,73 @@
+==
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sabah - {{ this.page.title }}</title>
+    <meta name="description" content="{{ this.page.meta_description }}">
+    <meta name="title" content="{{ this.page.meta_title }}">
+    <meta name="author" content="Nova">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Sabah">
+    <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}">
+    <link href="{{ 'assets/css/bootstrap.css'|theme }}" rel="stylesheet">
+    <link href="{{ 'assets/css/bootstrap-theme.css'|theme }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="{{ 'assets/css/owl.carousel.min.css'|theme }}" rel="stylesheet">
+    <link href="{{ 'assets/css/owl.theme.default.min.css'|theme }}" rel="stylesheet">
+    <link href="{{ 'assets/css/style.css'|theme }}" rel="stylesheet">
+    <link href="{{ 'assets/css/back.css'|theme }}" rel="stylesheet">
+    {% styles %}
+</head>
+<body>
+<div class="modal-overlay"></div>
+<!-- Header -->
+
+{% partial 'header' %}
+
+<!-- Mobile menu -->
+
+{% partial 'mobile-menu' %}
+
+<!-- Content -->
+
+{% page %}
+
+
+<!-- Subscribe -->
+
+{% partial 'subscribe' %}
+
+<!-- Footer -->
+
+{% partial 'footer' %}
+
+
+<!-- Scripts -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+<script src="{{ 'assets/js/plugins/bootstrap.min.js'|theme }}"></script>
+<script src="{{ 'assets/js/plugins/owlcarousel/owl.carousel.min.js'|theme }}"></script>
+<script src="{{ 'assets/js/plugins/lightgallery.min.js'|theme }}"></script>
+<script src="{{ 'assets/js/plugins/lg-thumbnail.min.js'|theme }}"></script>
+<script src="{{ 'assets/js/plugins/lg-fullscreen.min.js'|theme }}"></script>
+<script src="{{ 'assets/js/plugins/bootstrap-datetimepicker.min.js'|theme }}"></script>
+<script src="{{ 'assets/js/plugins/jquery.pinBox.min.js'|theme }}"></script>
+<script src="{{ 'assets/js/script.js'|theme }}"></script>
+
+{% framework extras %}
+{% scripts %}
+
+</body>
+</html>

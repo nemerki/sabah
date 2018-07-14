@@ -1,0 +1,12 @@
+list: $/sabah/group/models/faq/columns.yaml
+modelClass: Sabah\Group\Models\Faq
+title: Faq
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'sabah/group/faq/update/:id'

@@ -1,0 +1,15 @@
+columns:
+    name:
+        label: 'Ad Soyad'
+        type: text
+        searchable: false
+        sortable: false
+        select: 'concat(name,'' '',surname)'
+    company:
+        label: Şirket
+        type: text
+        searchable: false
+    career:
+        label: Peşəsi
+        type: text
+        searchable: false

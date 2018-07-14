@@ -1,0 +1,28 @@
+plugin:
+    name: 'sabah.group::lang.plugin.name'
+    description: 'sabah.group::lang.plugin.description'
+    author: Sabah
+    icon: oc-icon-adjust
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Sabah
+        url: sabah/group/faq
+        icon: icon-users
+        sideMenu:
+            side-menu-item:
+                label: 'Verilen Suallar'
+                url: sabah/group/faq
+                icon: icon-question
+            side-menu-item2:
+                label: Komandamız
+                url: sabah/group/team
+                icon: icon-slideshare
+            side-menu-item3:
+                label: Terefdaşlar
+                url: sabah/group/partner
+                icon: icon-asterisk
+            side-menu-item4:
+                label: Qalereya
+                url: sabah/group/gallery
+                icon: icon-image

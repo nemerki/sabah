@@ -1,0 +1,10 @@
+name: Faq
+form: $/sabah/group/models/faq/fields.yaml
+modelClass: Sabah\Group\Models\Faq
+defaultRedirect: sabah/group/faq
+create:
+    redirect: 'sabah/group/faq/update/:id'
+    redirectClose: sabah/group/faq
+update:
+    redirect: sabah/group/faq
+    redirectClose: sabah/group/faq

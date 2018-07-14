@@ -1,0 +1,4 @@
+title: Faq
+modelClass: Sabah\Group\Models\Faq
+toolbar:
+    buttons: reorder_toolbar

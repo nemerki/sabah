@@ -1,0 +1,18 @@
+fields:
+    name:
+        label: Adı
+        span: auto
+        type: text
+    link:
+        label: Link
+        span: auto
+        type: text
+    logo:
+        label: Logosu
+        span: auto
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        type: fileupload

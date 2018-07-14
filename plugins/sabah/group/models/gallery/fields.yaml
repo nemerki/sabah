@@ -1,0 +1,14 @@
+fields:
+    name:
+        label: Adı
+        span: auto
+        type: text
+    image:
+        label: Şekil
+        span: auto
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        type: fileupload

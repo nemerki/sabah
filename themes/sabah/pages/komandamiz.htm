@@ -1,0 +1,142 @@
+title = "Komandamız"
+url = "/komandamiz"
+layout = "default"
+is_hidden = 0
+
+[builderList]
+modelClass = "Sabah\Group\Models\Team"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "name"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+
+[staticMenu sabahQurup]
+code = "sabah-qruplari"
+==
+<div id="teacher-news-faq" class="main-content">
+    <!-- BANNER-->
+    <div id="header-panel">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel-title">
+                        <h1>KOMANDAMIZ</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BANNER-->
+
+    <div id="teacher-news-faq-collapse">
+        <div id="pinBoxContainer" class="container">
+            <div class="row">
+                <div class=" col-sm-12 col-md-8 col-lg-8">
+                    <div class="pad-40">
+                        <div class="head-title">
+                            <div class="content-main">{% content "komandamiz" %}</div>
+                        </div>
+
+                        <div class="team-area">
+                            <div class="row">
+
+                                {% for team in records %}
+                                    <div class="col-md-3 col-sm-4">
+                                        <div class="team-inner-box">
+                                            <div style="background-image:url({{ team.image.path }})"
+                                                 class="team-member-image"></div>
+                                            <div class="team-member-about">
+                                                <h1 class="team-member-name">{{ team.name }} {{ team.surname }}</h1>
+                                                <p class="team-member-jobs">{{ team.company }}</p>
+                                                <p class="content-texts">{{ team.career }}</p>
+
+                                                <div class="member-social-profile">
+                                                    <ul>
+                                                        {% if team.facebook %}
+                                                            <a class="facebook" href="{{ team.facebook }}">
+                                                                <li>
+                                                                    <i class="fa fa-facebook-official"
+                                                                       aria-hidden="true"></i>
+                                                                </li>
+                                                            </a>
+                                                        {% endif %}
+
+                                                        {% if team.googleplus %}
+                                                            <a class="googleplus" href="{{ team.googleplus }}">
+                                                                <li>
+                                                                    <i class="fa fa-google-plus-official"
+                                                                       aria-hidden="true"></i>
+                                                                </li>
+                                                            </a>
+                                                        {% endif %}
+
+                                                        {% if team.linkedin %}
+                                                            <a class="linkedin" href="{{ team.linkedin }}">
+                                                                <li>
+                                                                    <i class="fa fa-linkedin"
+                                                                       aria-hidden="true"></i>
+                                                                </li>
+                                                            </a>
+                                                        {% endif %}
+
+                                                        {% if team.twitter %}
+                                                            <a class="twitter" href="{{ team.twitter }}">
+                                                                <li>
+                                                                    <i class="fa fa-twitter"
+                                                                       aria-hidden="true"></i>
+                                                                </li>
+                                                            </a>
+                                                        {% endif %}
+
+                                                        {% if team.instagram %}
+                                                            <a class="instagram" href="{{ team.instagram }}">
+                                                                <li>
+                                                                    <i class="fa fa-instagram"
+                                                                       aria-hidden="true"></i>
+                                                                </li>
+                                                            </a>
+                                                        {% endif %}
+
+
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class=" col-sm-12 col-md-4 col-lg-4">
+                    <div id="sidebar" class="sidebar pinBox">
+                        <div class="sidebar-title">
+                            <h1 class="title-bold">SABAH Qrupları</h1>
+                            <div class="border"></div>
+                        </div>
+                        <div class="sidebar-list-item b-0">
+                            <ul>
+
+                                {% if sabahQurup.menuItems %}
+                                    {% partial "sabahQurup" items=sabahQurup.menuItems %}
+
+                                {% endif %}
+
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

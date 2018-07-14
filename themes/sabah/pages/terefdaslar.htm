@@ -1,0 +1,95 @@
+title = "Terefdaşlar"
+url = "/terefdaslar"
+layout = "default"
+is_hidden = 0
+
+[builderList]
+modelClass = "Sabah\Group\Models\Partner"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "name"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+
+[staticMenu sabahQurup]
+code = "sabah-qruplari"
+==
+<div id="teacher-news-faq" class="main-content">
+    <!-- HEADER PANEL-->
+    <div id="header-panel">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel-title">
+                        <h1>TƏRƏFDAŞLAR</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER PANEL-->
+
+    <div id="teacher-news-faq-collapse">
+        <div id="pinBoxContainer" class="container">
+            <div class="row">
+                <div class=" col-sm-12 col-md-8 col-lg-8">
+                    <div class="teacher-news-collapse">
+                        <div class="project-content">
+                            <div class="head-title">
+                                <div class="content-main">{% content "terefdaslar" %}</div>
+                            </div>
+                        </div>
+                        <div class="partners-logo-area">
+                            <div class="row">
+                                {% for record in records %}
+                                    <div class="col-md-3 col-sm-4">
+                                        {% if record.link %}
+                                        <a href="{{ record.link }}">
+                                            {% endif %}
+
+                                            <div class="inner-partners">
+                                                <img class="img-responsive" src="{{ record.logo.thumb(auto,60) }}"
+                                                     alt="">
+                                            </div>
+                                            {% if record.link %}
+                                        </a>
+                                        {% endif %}
+                                    </div>
+                                {% else %}
+                                    Terafdaş Yoxdur
+                                {% endfor %}
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                <div class=" col-sm-12 col-md-4 col-lg-4">
+                    <div id="sidebar" class="sidebar pinBox">
+                        <div class="sidebar-title">
+                            <h1 class="title-bold">SABAH Qrupları</h1>
+                            <div class="border"></div>
+                        </div>
+                        <div class="sidebar-list-item b-0">
+                            <ul>
+                                {% if sabahQurup.menuItems %}
+                                    {% partial "sabahQurup" items=sabahQurup.menuItems %}
+
+                                {% endif %}
+
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

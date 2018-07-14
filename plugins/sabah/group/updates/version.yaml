@@ -1,0 +1,17 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table sabah_group_faqs'
+    - builder_table_create_sabah_group_faqs.php
+1.0.3:
+    - 'Created table sabah_group_teams'
+    - builder_table_create_sabah_group_teams.php
+1.0.4:
+    - 'Created table sabah_group_partners'
+    - builder_table_create_sabah_group_partners.php
+1.0.5:
+    - 'Created table sabah_group_galleries'
+    - builder_table_create_sabah_group_galleries.php
+1.0.6:
+    - 'Updated table sabah_group_galleries'
+    - builder_table_update_sabah_group_galleries.php

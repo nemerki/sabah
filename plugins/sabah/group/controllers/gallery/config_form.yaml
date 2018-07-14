@@ -1,0 +1,10 @@
+name: Gallery
+form: $/sabah/group/models/gallery/fields.yaml
+modelClass: Sabah\Group\Models\Gallery
+defaultRedirect: sabah/group/gallery
+create:
+    redirect: 'sabah/group/gallery/update/:id'
+    redirectClose: sabah/group/gallery
+update:
+    redirect: sabah/group/gallery
+    redirectClose: sabah/group/gallery
