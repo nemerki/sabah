@@ -11,7 +11,7 @@ displayColumn = "name"
 noRecordsMessage = "No records found"
 detailsPage = "-"
 detailsUrlParameter = "id"
-recordsPerPage = 10
+recordsPerPage = 1
 pageNumber = "{{ :page }}"
 
 [staticMenu sabahQurup]
@@ -61,38 +61,9 @@ code = "sabah-qruplari"
 
                     </div>
                 </div>
-                {% if records.lastPage > 1 %}
-                    <div class="col-md-12 col-sm-12 col-xs-12 pagination">
 
-                        <ul>
-                            <li class="pagination-page">Səhifə:</li>
+                {% partial "pagination" %}
 
-                            {% for page in 1..records.lastPage %}
-                                <li class="pagination-number {{ records.currentPage == page ? 'active' : null }}">
-                                    <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
-                                </li>
-                            {% endfor %}
-
-
-                            {% if records.currentPage > 1 %}
-                                <a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage-1) }) }}">
-                                    <li class="pag-prev">
-                                        <i class="fa fa-chevron-left" aria-hidden="true"></i>
-                                    </li>
-                                </a>
-                            {% endif %}
-
-                            {% if records.lastPage > records.currentPage %}
-                                <a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage+1) }) }}">
-                                    <li class="pag-next">
-                                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                                    </li>
-                                </a>
-                            {% endif %}
-                        </ul>
-
-                    </div>
-                {% endif %}
             </div>
 
             <div class=" col-sm-12 col-md-4 col-lg-4 col-xs-12">
