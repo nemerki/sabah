@@ -1,0 +1,253 @@
+title = "Xəbərlər"
+url = "/xeberler/:page?"
+layout = "default"
+is_hidden = 0
+
+[news top]
+detailsPage = "-"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+sortColumn = "created_at"
+sortDirection = "asc"
+take = 4
+
+[news all]
+detailsPage = "-"
+detailsUrlParameter = "id"
+recordsPerPage = 5
+pageNumber = "{{ :page }}"
+sortColumn = "created_at"
+sortDirection = "asc"
+skip = 4
+==
+<?php
+function onStart(){
+}
+?>
+==
+<div id="teacher-news-faq" class="main-content">
+    <!-- HEADER PANEL-->
+    <div id="header-panel">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel-title">
+                        <h1>XƏBƏRLƏR</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER PANEL-->
+
+    <div id="teacher-news-faq-collapse">
+        <div class="container">
+            <div class="row">
+                <div class=" col-sm-12 col-md-8 col-lg-8">
+                    <div class="teacher-news-collapse">
+                        <div class="sidebar-title-green">
+                            <h1 class="title-bold">Son xəbərlər</h1>
+                        </div>
+
+                        <div class="detals-news-inner">
+                            <div class="row">
+
+                                {% for news in top.records %}
+                                    <div class="col-md-6 col-sm-6">
+                                        <div class="news-box-inner">
+                                            <a href="#">
+                                                <div style="background-image:url({{ news.image.path }})"
+                                                     class="news-picture">
+                                                    <span class="new-category">TƏLƏBƏLƏR</span>
+                                                </div>
+                                            </a>
+
+                                            <div class="news-box-title news-title">
+                                                <a href="#">
+                                                    <h2>{{ news.title }}</h2>
+                                                </a>
+                                            </div>
+
+                                            <p class="box-inner-date news-datetime">{{ news.created_at.format('d M Y') }}</p>
+
+                                        </div>
+
+
+                                    </div>
+                                {% endfor %}
+
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="sidebar-title-green">
+                        <h1 class="title-bold">Digər xəbərlər</h1>
+                    </div>
+
+                    <div class="news-arena">
+                        {% for news in all.records %}
+                            <div class="row">
+                                <div class="news-block-inner">
+                                    <div class="col-md-3 col-sm-3">
+                                        <a href="#">
+                                            <div style="background-image:url(./img/content-img/news1.png)"
+                                                 class="news-img">
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                    <div class="news-title col-sm-9 col-md-9">
+                                        <p class="description-news">
+                                            <a href="#">
+                                                Azərbaycan Dövlət Mədəniyyət və İncəsənət Universitetinin SABAH
+                                                tələbələri Lənkəran şəhərində qastrol səfərində olmuşlar
+                                            </a>
+
+                                        </p>
+                                        <h6 class="news-category">
+                                            UNİVERSİTETLƏR
+                                        </h6>
+                                        <span class="news-datetime ">
+                                            30 Aprel 2017
+                                        </span>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        {% endfor %}
+
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12 pagination">
+                            <ul>
+                                <li class="pagination-page">Səhifə:</li>
+                                <li class="pagination-number">
+                                    <a href="#">1</a>
+                                </li>
+                                <li class="pagination-number">
+                                    <a href="#">2</a>
+                                </li>
+                                <li class="pagination-number">
+                                    <a href="#">3</a>
+                                </li>
+                                <li class="pagination-number">
+                                    <a href="#">4</a>
+                                </li>
+                                <li class="pagination-point">...</li>
+                                <li class="pagination-number">
+                                    <a href="#">26</a>
+                                </li>
+                                <a href="#">
+                                    <li class="pag-prev">
+                                        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                                    </li>
+                                </a>
+                                <a href="#">
+                                    <li class="pag-next">
+                                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                                    </li>
+                                </a>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class=" col-sm-12 col-md-4 col-lg-4">
+                    <div id="sidebar">
+                        <div class="sidebar-title">
+                            <h1 class="title-bold">Kateqoriyalar</h1>
+                            <div class="border"></div>
+                        </div>
+                        <div class="sidebar-list-item b-0">
+                            <ul>
+
+                                <li>
+                                    <a href="#"> BÜTÜN XƏBƏRLƏR</a>
+                                </li>
+
+
+                                <li>
+                                    <a href="#">TƏLƏBƏLƏR</a>
+                                </li>
+
+
+                                <li>
+                                    <a href="#">MÜƏLLİMLƏR</a>
+                                </li>
+
+
+                                <li>
+                                    <a href="#">UNİVERSİTETLƏR</a>
+                                </li>
+
+                                <li>
+                                    <a href="#"> TƏCRÜBƏ PROQRAMLARI</a>
+                                </li>
+
+                                <li>
+                                    <a href="#">XARİCDƏ TƏHSİL PROQRAMLARI</a>
+                                </li>
+
+                                <li>
+                                    <a href="#">MÜBADİLƏ PROQRAMLARI</a>
+                                </li>
+
+                                <li>
+                                    <a href="#">İŞ VƏ KARYERA</a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+
+                    </div>
+
+                    <div id="sidebar">
+                        <div class="sidebar-title-green">
+                            <h1 class="title-bold">Vacib Elanlar</h1>
+                            <div class="border"></div>
+                        </div>
+                        <div class="news-list-item">
+                            <ul class="list-none p-0">
+
+                                <li>
+                                    <a href="#"> 2017/2018-ci tədris ili üçün SABAH Qruplarına tələbə qəbulu /
+                                        Transkriptlərin qəbulu.</a>
+                                </li>
+
+
+                                <li>
+                                    <a href="#">2017/2018-ci tədris ili üçün SABAH Qruplarına tələbə qəbulu / Müsahibə
+                                        cədvəli.</a>
+                                </li>
+
+
+                                <li>
+                                    <a href="#">SABAH Qruplarında tədrisi aparmaq məqsədi ilə professor-müəllim heyəti
+                                        üçün elan.</a>
+                                </li>
+
+
+                                <li>
+                                    <a href="#">SABAH tələbələri üçün Karyera İnkişafı Sərgisi keçiriləcək.
+                                    </a>
+                                </li>
+
+
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

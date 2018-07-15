@@ -1,0 +1,48 @@
+fields:
+    title:
+        label: Adı
+        span: auto
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        preset:
+            field: title
+            type: slug
+        type: text
+    category:
+        label: Kategoriya
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        type: relation
+    is_home:
+        label: 'Əsas səyfədə'
+        options:
+            - Göstərmə
+            - Göstər
+        span: auto
+        type: dropdown
+    image:
+        label: 'Xəbər şəkli'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    gallery:
+        label: Qalereya
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    content:
+        label: Content
+        size: ''
+        span: full
+        type: richeditor

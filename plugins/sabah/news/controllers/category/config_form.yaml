@@ -1,0 +1,10 @@
+name: Category
+form: $/sabah/news/models/category/fields.yaml
+modelClass: Sabah\News\Models\Category
+defaultRedirect: sabah/news/category
+create:
+    redirect: 'sabah/news/category/update/:id'
+    redirectClose: sabah/news/category
+update:
+    redirect: sabah/news/category
+    redirectClose: sabah/news/category

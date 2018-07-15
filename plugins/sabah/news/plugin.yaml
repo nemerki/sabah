@@ -1,0 +1,16 @@
+plugin:
+    name: 'sabah.news::lang.plugin.name'
+    description: 'sabah.news::lang.plugin.description'
+    author: Sabah
+    icon: oc-icon-newspaper-o
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Xəbərlər
+        url: sabah/news/news
+        icon: icon-newspaper-o
+        sideMenu:
+            side-menu-item:
+                label: Kategoriya
+                url: sabah/news/category
+                icon: icon-sitemap

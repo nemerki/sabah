@@ -1,0 +1,15 @@
+columns:
+    title:
+        label: Adı
+        type: text
+        searchable: true
+    category:
+        label: Kateqoriyası
+        type: text
+        select: name
+        relation: category
+    created_at:
+        label: 'Elave olunma Tarixi'
+        type: text
+        searchable: true
+        sortable: true

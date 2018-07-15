@@ -1,9 +1,9 @@
-<?php namespace Sabah\Group\Controllers;
+<?php namespace Sabah\News\Controllers;
 
 use Backend\Classes\Controller;
 use BackendMenu;
 
-class Team extends Controller
+class News extends Controller
 {
     public $implement = ['Backend\Behaviors\ListController', 'Backend\Behaviors\FormController'];
 
@@ -13,6 +13,6 @@ class Team extends Controller
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Sabah.Group', 'main-menu-item', 'side-menu-item2');
+        BackendMenu::setContext('Sabah.News', 'main-menu-item');
     }
 }

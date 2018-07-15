@@ -1,0 +1,8 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table sabah_news_news'
+    - builder_table_create_sabah_news_news.php
+1.0.3:
+    - 'Created table sabah_news_categories'
+    - builder_table_create_sabah_news_categories.php

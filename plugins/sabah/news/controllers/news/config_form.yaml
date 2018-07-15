@@ -1,0 +1,10 @@
+name: News
+form: $/sabah/news/models/news/fields.yaml
+modelClass: Sabah\News\Models\News
+defaultRedirect: sabah/news/news
+create:
+    redirect: 'sabah/news/news/update/:id'
+    redirectClose: sabah/news/news
+update:
+    redirect: sabah/news/news
+    redirectClose: sabah/news/news
