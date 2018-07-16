@@ -3,14 +3,6 @@ url = "/xeberler/:page?"
 layout = "default"
 is_hidden = 0
 
-[news top]
-detailsPage = "-"
-detailsUrlParameter = "id"
-pageNumber = "{{ :page }}"
-sortColumn = "created_at"
-sortDirection = "asc"
-take = 4
-
 [news all]
 detailsPage = "-"
 detailsUrlParameter = "id"
@@ -19,6 +11,14 @@ pageNumber = "{{ :page }}"
 sortColumn = "created_at"
 sortDirection = "asc"
 skip = 4
+
+[news top]
+detailsPage = "-"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+sortColumn = "created_at"
+sortDirection = "asc"
+take = 4
 ==
 <?php
 function onStart(){
@@ -89,42 +89,11 @@ function onStart(){
                     </div>
 
                     <div class="news-arena">
-                        {% for news in all.records %}
-                            <div class="row">
-                                <div class="news-block-inner">
-                                    <div class="col-md-3 col-sm-3">
-                                        <a href="#">
-                                            <div style="background-image:url(./img/content-img/news1.png)"
-                                                 class="news-img">
-                                            </div>
-                                        </a>
-                                    </div>
-
-                                    <div class="news-title col-sm-9 col-md-9">
-                                        <p class="description-news">
-                                            <a href="#">
-                                                Azərbaycan Dövlət Mədəniyyət və İncəsənət Universitetinin SABAH
-                                                tələbələri Lənkəran şəhərində qastrol səfərində olmuşlar
-                                            </a>
-
-                                        </p>
-                                        <h6 class="news-category">
-                                            UNİVERSİTETLƏR
-                                        </h6>
-                                        <span class="news-datetime ">
-                                            30 Aprel 2017
-                                        </span>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                        {% endfor %}
-
-
+                        {% partial "news" partialsRecords=all.records %}
                     </div>
-
-                    {% partial "pagination" %}
+                    <div class="row pa">
+                        {% partial "pagination" partialsRecords=all.records %}
+                    </div>
                 </div>
 
                 <div class=" col-sm-12 col-md-4 col-lg-4">
@@ -219,3 +188,29 @@ function onStart(){
         </div>
     </div>
 </div>
+{% put scripts %}
+    <script type="text/javascript">
+
+        $(function () {
+
+            $(document).on('click', '.ajaxPagination', function (e) {
+                e.preventDefault();
+                var array = $(this).attr('href').split('/');
+                var page = array[array.length - 1];
+                console.log(page);
+
+                $.request('onPaginate', {
+
+                    update: {news: '.news-arena', pagination: '.pa'},
+                    data: {perPage: page},
+
+
+
+                });
+            });
+
+
+        })
+
+    </script>
+{% endput %}

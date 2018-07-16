@@ -1,26 +1,26 @@
-{% if records.lastPage > 1 %}
+{% if partialsRecords.lastPage > 1 %}
     <div class="col-md-12 col-sm-12 col-xs-12 pagination">
 
         <ul>
             <li class="pagination-page">Səhifə:</li>
 
-            {% for page in 1..records.lastPage %}
-                <li class="pagination-number {{ records.currentPage == page ? 'active' : null }}">
-                    <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+            {% for page in 1..partialsRecords.lastPage %}
+                <li class="pagination-number {{ partialsRecords.currentPage == page ? 'active' : null }}">
+                    <a class="ajaxPagination" href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
                 </li>
             {% endfor %}
 
 
-            {% if records.currentPage > 1 %}
-                <a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage-1) }) }}">
+            {% if partialsRecords.currentPage > 1 %}
+                <a class="ajaxPagination" href="{{ this.page.baseFileName|page({ (pageParam): (partialsRecords.currentPage-1) }) }}">
                     <li class="pag-prev">
                         <i class="fa fa-chevron-left" aria-hidden="true"></i>
                     </li>
                 </a>
             {% endif %}
 
-            {% if records.lastPage > records.currentPage %}
-                <a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage+1) }) }}">
+            {% if partialsRecords.lastPage > partialsRecords.currentPage %}
+                <a class="ajaxPagination" href="{{ this.page.baseFileName|page({ (pageParam): (partialsRecords.currentPage+1) }) }}">
                     <li class="pag-next">
                         <i class="fa fa-chevron-right" aria-hidden="true"></i>
                     </li>

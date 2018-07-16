@@ -88,3 +88,18 @@ code = "sabah-qruplari"
         </div>
     </div>
 </section>
+
+
+{% put scripts %}
+    <script type="text/javascript">
+
+        $(document).on('click', '.pagination-number a', function (e) {
+            e.preventDefault();
+            var array = $(this).attr('href').split('/');
+            var page = array[array.length - 1];
+            console.log(page);
+        });
+
+
+    </script>
+{% endput %}

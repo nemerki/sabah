@@ -206,6 +206,7 @@ class News extends ComponentBase
         }
     }
 
+
     protected function listRecords()
     {
 
@@ -218,6 +219,30 @@ class News extends ComponentBase
         $records = $this->paginate($model);
 
         return $records;
+    }
+
+    public function onPaginate()
+    {
+
+
+        $this->prepareVars();
+
+        $model = new  \Sabah\News\Models\News();
+
+        $model = $this->sort($model);
+        $model = $this->take($model);
+        $model = $this->skip($model);
+
+        $recordsPerPage = trim($this->property('recordsPerPage'));
+
+        $perPage=post('perPage');
+        $pageNumber = $perPage;
+
+
+       $a=$model->paginate($recordsPerPage, $pageNumber);
+
+
+        $this->records = $this->page['partialsRecords'] = $a;
     }
 
     protected function paginate($model)
