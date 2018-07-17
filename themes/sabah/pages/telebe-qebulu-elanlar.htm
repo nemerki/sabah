@@ -1,0 +1,145 @@
+title = "Tələbə qəbulu elanlar"
+url = "/telebe-qebulu/elanlar/:page?"
+layout = "default"
+is_hidden = 0
+
+[studentAdmissionAds]
+detailsPage = "telebe-qebulu-elan-detal"
+detailsKeyColumn = "slug"
+detailsUrlParameter = "slug"
+recordsPerPage = 10
+pageNumber = "{{ :page }}"
+sortColumn = "created_at"
+sortDirection = "desc"
+==
+<div id="teacher-news-faq" class="main-content">
+        <!-- BANNER-->
+        <div id="banner-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <div style="background-image:linear-gradient(0deg,rgba(0, 131, 192,0.7),rgba(0, 131, 192,0.7)),
+                    url('{{ 'assets/img/content-img/layer-12.png'|theme }}')" class="background-green">
+                        <div class="banner-title text-center">
+                            <div class="s-star"></div>
+                            <h1>ELANLAR</h1>
+                            <p class="breadcumb">TƏLƏBƏ QƏBULU</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BANNER-->
+
+        <div id="teacher-news-faq-collapse">
+            <div id="pinBoxContainer" class="container">
+                <div class="row">
+                    <div class=" col-sm-12 col-md-8 col-lg-8">
+                        <div class="elanlar-list">
+                            <ul class="telebeElanlari">
+                                {% partial "elanlar/telebeElanlari" partialsRecords=records %}
+
+                            </ul>
+
+                        </div>
+
+                        <div class="row pa">
+                            {% partial "pagination" partialsRecords=records %}
+                        </div>
+
+                    </div>
+
+                    <div class=" col-sm-12 col-md-4 col-lg-4">
+                        <div id="sidebar" class="sidebar pinBox">
+                            <div class="sidebar-title">
+                                <h1 class="title-bold">Tələbə qəbulu</h1>
+                                <div class="border"></div>
+                            </div>
+                            <div class="sidebar-list-item">
+                                <ul>
+
+                                    <li>
+                                        <a href="#">SEÇİM ŞƏRTLƏRİ</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">qaydalar
+
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">ixtisaslar</a>
+                                    </li>
+
+
+                                    <li>
+                                        <a href="#">ELANLAR</a>
+                                    </li>
+
+
+                                    <li>
+                                        <a href="#">XƏBƏRLƏR</a>
+                                    </li>
+
+
+                                    <li>
+                                        <a href="#">MÜTƏMADİ VERİLƏN SUALLAR</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+                            <div class="request-button">
+                                <button type="submit" class="">MÜRACİƏT ET </button>
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+{% put scripts %}
+    <script type="text/javascript">
+
+        $(function () {
+
+            $(document).on('click', '.ajaxPagination', function (e) {
+                e.preventDefault();
+                var array = $(this).attr('href').split('/');
+                var page = array[array.length - 1];
+
+                swal({
+                    title: 'Yüklənir...',
+                    html:
+                    '<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>' +
+                    ' <span class="sr-only">Loading...</span>',
+                    showCloseButton: false,
+                    showCancelButton: false,
+                    showConfirmButton: false,
+                    allowOutsideClick: false
+                });
+
+                $.request('onPaginate', {
+
+                    update: {"elanlar/telebeElanlari": '.telebeElanlari', pagination: '.pa'},
+                    data: {perPage: page},
+                    complete: function() {
+                        swal.close();
+                    }
+
+
+
+                });
+            });
+
+
+        })
+
+    </script>
+{% endput %}
