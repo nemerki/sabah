@@ -1,10 +1,10 @@
-title = "Tələbə xəbərləri"
-url = "/telebe/xeberler/:page?"
+title = "Müəllim qəbulu elanlar"
+url = "/muellim-qebulu/elanlar/:page?"
 layout = "default"
 is_hidden = 0
 
-[studentNews]
-detailsPage = "xeber"
+[teacherAdmissionAds]
+detailsPage = "muellim-qebulu-elan-detal"
 detailsKeyColumn = "slug"
 detailsUrlParameter = "slug"
 recordsPerPage = 10
@@ -17,12 +17,12 @@ sortDirection = "desc"
         <div id="banner-area">
             <div class="container-fluid">
                 <div class="row">
-                    <div style="background-image:linear-gradient(0deg,rgba(0, 155, 77, 0.7),rgba(0, 155, 77, 0.7)),
-                                 url('{{ 'assets/img/content-img/teacher-news-background.png'|theme }}')" class="background-green">
+                    <div style="background-image:linear-gradient(0deg,rgba(0, 131, 192,0.7),rgba(0, 131, 192,0.7)),
+                                     url('{{ 'assets/img/content-img/layer-12.png'|theme }}')" class="background-green">
                         <div class="banner-title text-center">
                             <div class="s-star"></div>
-                            <h1>XƏBƏRLƏR</h1>
-                            <p class="breadcumb">SABAH TƏLƏBƏLƏRİ</p>
+                            <h1>ELANLAR</h1>
+                            <p class="breadcumb">Müəllim qəbulu</p>
                         </div>
                     </div>
                 </div>
@@ -34,26 +34,31 @@ sortDirection = "desc"
         <div id="teacher-news-faq-collapse">
             <div id="pinBoxContainer" class="container">
                 <div class="row">
-                    <div class=" col-sm-12 col-md-8 col-lg-8 col-xs-12">
-                        <div class="news-arena">
-                            {% partial "xeberler/telebelerXeber" partialsRecords=records %}
+                    <div class=" col-sm-12 col-md-8 col-lg-8">
+                        <div class="elanlar-list">
+                            <ul class="telebeElanlari">
+                                {% partial "elanlar/telebeElanlari" partialsRecords=records %}
+
+                            </ul>
+
                         </div>
+
                         <div class="row pa">
                             {% partial "pagination" partialsRecords=records %}
                         </div>
-                    </div>
 
-                    <div class=" col-sm-12 col-md-4 col-lg-4 col-xs-12">
+                    </div>
+                    <div class=" col-sm-12 col-md-4 col-lg-4">
                         <div id="sidebar" class="sidebar pinBox">
-                            <div class="sidebar-title-green">
-                                <h1 class="title-bold">SABAH Tələbələri</h1>
+                            <div class="sidebar-title">
+                                <h1 class="title-bold">Müəllim qəbulu</h1>
                                 <div class="border"></div>
                             </div>
-                            <div class="sidebar-list-item-green b-0">
+                            <div class="sidebar-list-item">
                                 <ul>
 
                                     <li>
-                                        <a href="#">XƏBƏRLƏR</a>
+                                        <a href="#">SEÇİM ŞƏRTLƏRİ</a>
                                     </li>
 
 
@@ -63,39 +68,30 @@ sortDirection = "desc"
 
 
                                     <li>
-                                        <a href="#">TƏCRÜBƏ PROQRAMLARI</a>
+                                        <a href="#">XƏBƏRLƏR</a>
                                     </li>
 
 
                                     <li>
-                                        <a href="#">XARİCDƏ TƏHSİL VƏ MÜBADİLƏ PROQRAMLARI
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="#">İXTİSASLAR</a>
-                                    </li>
-
-                                    <li>
-                                        <a href="#">UNİVERSİTETLƏR</a>
-                                    </li>
-
-                                    <li>
-                                        <a href="#">ƏLAQƏ</a>
+                                        <a href="#">MÜTƏMADİ VERİLƏN SUALLAR</a>
                                     </li>
 
                                 </ul>
                             </div>
 
+                            <div class="request-button">
+                                <button type="submit" class="">MÜRACİƏT ET </button>
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                            </div>
 
 
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
+
 
 
 {% put scripts %}
@@ -121,7 +117,7 @@ sortDirection = "desc"
 
                 $.request('onPaginate', {
 
-                    update: {"xeberler/telebelerXeber": '.news-arena', pagination: '.pa'},
+                    update: {"elanlar/telebeElanlari": '.telebeElanlari', pagination: '.pa'},
                     data: {perPage: page},
                     complete: function() {
                         swal.close();

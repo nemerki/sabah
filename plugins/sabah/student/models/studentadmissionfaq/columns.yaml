@@ -1,0 +1,9 @@
+columns:
+    question:
+        label: Sual
+        type: text
+        searchable: true
+    answer:
+        label: Cavab
+        type: text
+        searchable: true

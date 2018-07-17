@@ -22,3 +22,7 @@ navigation:
                 label: 'Xaricde Təhsil'
                 url: sabah/student/abroadstudy
                 icon: icon-stumbleupon
+            side-menu-item4:
+                label: 'Tələbə qəbulu faq'
+                url: sabah/student/studentadmissionfaq
+                icon: icon-question-circle

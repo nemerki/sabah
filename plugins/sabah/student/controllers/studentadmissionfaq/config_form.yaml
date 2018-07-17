@@ -1,0 +1,10 @@
+name: StudentAdmissionFaq
+form: $/sabah/student/models/studentadmissionfaq/fields.yaml
+modelClass: Sabah\Student\Models\StudentAdmissionFaq
+defaultRedirect: sabah/student/studentadmissionfaq
+create:
+    redirect: 'sabah/student/studentadmissionfaq/update/:id'
+    redirectClose: sabah/student/studentadmissionfaq
+update:
+    redirect: sabah/student/studentadmissionfaq
+    redirectClose: sabah/student/studentadmissionfaq

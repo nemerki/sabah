@@ -10,7 +10,15 @@
             </div>
             <div class="col-md-11 col-sm-11 col-xs-10 elan-area">
                 <p class="elan-description">
-                    <a href="#">{{ record.title }}</a>
+                    {% spaceless %}
+                        {% if detailsPage %}
+                            <a href="{{ detailsPage|page({ (detailsUrlParameter): record.slug }) }}">
+                        {% endif %}
+                        {{ record.title }}
+                        {% if detailsPage %}
+                            </a>
+                        {% endif %}
+                    {% endspaceless %}
                     {% if  record.organized %}
                 <p class="elan-future-date news-datetime">Keçirilmə tarixi:
                     <span>{{ record.organized|date(' d M Y') }}</span>

@@ -42,11 +42,11 @@ code = "sabah-qruplari"
 
                             {% for faq in records %}
                                 <div class="panel panel-default">
-                                    <div class="panel-heading" role="tab" id="headingTwo">
+                                    <div class="panel-heading" role="tab" id="heading{{ loop.index }}">
                                         <h4 class="panel-title">
                                             <a class="collapsed" role="button" data-toggle="collapse"
-                                               data-parent="#accordion" href="#collapseTwo" aria-expanded="false"
-                                               aria-controls="collapseTwo">
+                                               data-parent="#accordion" href="#collapse{{ loop.index }}" aria-expanded="false"
+                                               aria-controls="collapse{{ loop.index }}">
                                                 <div class="title-collaps">
                                                     <span class="collapse-number"> {{ loop.index }}.</span>
                                                     <p>{{ faq.question }}</p>
@@ -54,8 +54,8 @@ code = "sabah-qruplari"
                                             </a>
                                         </h4>
                                     </div>
-                                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
-                                         aria-labelledby="headingTwo">
+                                    <div id="collapse{{ loop.index }}" class="panel-collapse collapse" role="tabpanel"
+                                         aria-labelledby="heading{{ loop.index }}">
                                         <div class="panel-body partners-text">{{ faq.answer }}
                                         </div>
                                     </div>

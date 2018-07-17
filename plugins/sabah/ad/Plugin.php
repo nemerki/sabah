@@ -12,6 +12,7 @@ class Plugin extends PluginBase
             'Sabah\Ad\Components\OtherAds' => 'otherAds',
             'Sabah\Ad\Components\StudentAds' => 'studentAds',
             'Sabah\Ad\Components\StudentAdmissionAds' => 'studentAdmissionAds',
+            'Sabah\Ad\Components\TeacherAdmissionAds' => 'teacherAdmissionAds',
 
         ];
     }

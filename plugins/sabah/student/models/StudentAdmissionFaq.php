@@ -1,14 +1,14 @@
-<?php namespace Sabah\News\Models;
+<?php namespace Sabah\Student\Models;
 
 use Model;
 
 /**
  * Model
  */
-class Category extends Model
+class StudentAdmissionFaq extends Model
 {
     use \October\Rain\Database\Traits\Validation;
-
+    
     use \October\Rain\Database\Traits\SoftDelete;
 
     protected $dates = ['deleted_at'];
@@ -22,9 +22,5 @@ class Category extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'sabah_news_categories';
-
-    public $hasMany = [
-        'news' => ['Sabah\News\Models\News']
-    ];
+    public $table = 'sabah_student_student_admission_faqs';
 }

@@ -1,16 +1,14 @@
-title = "Tələbə elanları"
-url = "/telebe/elanlar/:page?"
+title = "Tələbə elan detal"
+url = "/telebe/elan/:slug"
 layout = "default"
 is_hidden = 0
 
-[studentAds]
-detailsPage = "telebe-elan-detal"
-detailsKeyColumn = "slug"
-detailsUrlParameter = "slug"
-recordsPerPage = 10
-pageNumber = "{{ :page }}"
-sortColumn = "created_at"
-sortDirection = "desc"
+[builderDetails]
+modelClass = "Sabah\Ad\Models\Ad"
+identifierValue = "{{ :slug }}"
+modelKeyColumn = "slug"
+displayColumn = "slug"
+notFoundMessage = "Record not found"
 ==
 <div id="teacher-news-faq" class="main-content">
         <!-- BANNER-->
@@ -18,7 +16,7 @@ sortDirection = "desc"
             <div class="container-fluid">
                 <div class="row">
                     <div style="background-image:linear-gradient(0deg,rgba(0, 155, 77, 0.7),rgba(0, 155, 77, 0.7)),
-                                 url('{{ 'assets/img/content-img/teacher-news-background.png'|theme }}')" class="background-green">
+                                 url('{{ 'assets/img/content-img/teacher-news-background.png' |theme}}')" class="background-green">
                         <div class="banner-title text-center">
                             <div class="s-star"></div>
                             <h1>ELANLAR</h1>
@@ -35,22 +33,61 @@ sortDirection = "desc"
             <div id="pinBoxContainer" class="container">
                 <div class="row">
                     <div class=" col-sm-12 col-md-8 col-lg-8">
-                        <div class="elanlar-list">
-                            <ul class="telebeElanlari">
-                                {% partial "elanlar/telebeElanlari" partialsRecords=records %}
 
-                            </ul>
+                        <div class="news-detal">
+                            <div class="news-detal-title">
+                                <h1>{{ record.title }}</h1>
+
+                                <span class="news-datetime ">
+                                    {{ record.created_at.format('d M Y') }}
+                                </span>
+                                {% if record.organized %}
+                                    <p class="future-news">Keçirilmə tarixi:
+                                        <span>{{ record.organized|date('d M Y') }}</span>
+                                    </p>
+                                {% endif %}
+
+                            </div>
+
+
+
+                            <div class="news-contents">
+                                <div class="content-main">{{ record.content|raw }}</div>
+
+                            </div>
+
+
 
                         </div>
 
-                        <div class="row pa">
-                            {% partial "pagination" partialsRecords=records %}
+                        <div class="social-link-area">
+
+                            <ul class="social-icon">
+                                <li>Paylaş:</li>
+                                <li class="facebook">
+                                    <a href="#">
+                                        <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li class="twitter">
+                                    <a href="#">
+                                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li class="google-plus">
+                                    <a href="#">
+                                        <i class="fa fa-google-plus-official" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                            </ul>
+
+
                         </div>
 
                     </div>
 
-                    <div class=" col-sm-12 col-md-4 col-lg-4 col-xs-12">
-                        <div id="sidebar" class="sidebar pinBox">
+                    <div class=" col-sm-12 col-md-4 col-lg-4">
+                        <div id="sidebar" class="sidebar pinBox" >
                             <div class="sidebar-title-green">
                                 <h1 class="title-bold">SABAH Tələbələri</h1>
                                 <div class="border"></div>
@@ -100,47 +137,4 @@ sortDirection = "desc"
                 </div>
             </div>
         </div>
-
-
-
-
-
-    {% put scripts %}
-        <script type="text/javascript">
-
-            $(function () {
-
-                $(document).on('click', '.ajaxPagination', function (e) {
-                    e.preventDefault();
-                    var array = $(this).attr('href').split('/');
-                    var page = array[array.length - 1];
-
-                    swal({
-                        title: 'Yüklənir...',
-                        html:
-                        '<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>' +
-                        ' <span class="sr-only">Loading...</span>',
-                        showCloseButton: false,
-                        showCancelButton: false,
-                        showConfirmButton: false,
-                        allowOutsideClick: false
-                    });
-
-                    $.request('onPaginate', {
-
-                        update: {"elanlar/telebeElanlari": '.telebeElanlari', pagination: '.pa'},
-                        data: {perPage: page},
-                        complete: function() {
-                            swal.close();
-                        }
-
-
-
-                    });
-                });
-
-
-            })
-
-        </script>
-    {% endput %}
+    </div>
