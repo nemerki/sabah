@@ -10,6 +10,7 @@ class Plugin extends PluginBase
             'Sabah\Ad\Components\AdList' => 'adList',
             'Sabah\Ad\Components\ImportantAds' => 'importantAds',
             'Sabah\Ad\Components\OtherAds' => 'otherAds',
+            'Sabah\Ad\Components\StudentAds' => 'studentAds',
 
         ];
     }

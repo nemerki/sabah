@@ -1,0 +1,24 @@
+{% for record in partialsRecords %}
+    <li>
+        <div class="row">
+            <div class="col-md-1 col-sm-1 col-xs-2">
+                <div class="elan-date">
+                    <p class="date-number">{{ record.created_at.format('d') }}</p>
+                    <p class="month-name">{{ record.created_at.format('M') }}</p>
+                    <p class="month-name">{{ record.created_at.format('Y') }}</p>
+                </div>
+            </div>
+            <div class="col-md-11 col-sm-11 col-xs-10 elan-area">
+                <p class="elan-description">
+                    <a href="#">{{ record.title }}</a>
+                    {% if  record.organized %}
+                <p class="elan-future-date news-datetime">Keçirilmə tarixi:
+                    <span>{{ record.organized|date(' d M Y') }}</span>
+                </p>
+                    {% endif %}
+
+                </p>
+            </div>
+        </div>
+    </li>
+{% endfor %}

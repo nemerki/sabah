@@ -1,0 +1,34 @@
+{% for record in partialsRecords %}
+    <div class="spia-table">
+        <div class="sidebar-title-green">
+            <h1 class="title-bold">{{ record.name }}</h1>
+        </div>
+
+        <table>
+            <thead>
+            <tr>
+                <th>S/S</th>
+                <th>İXTİSASIN ADI</th>
+                <th>ŞİFR</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for record in record.ixtisas  %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>
+                        {{ record.ixtisas_name }}
+                    </td>
+                    <td>
+                        {{ record.ixtisas_code }}
+                    </td>
+
+                </tr>
+            {% endfor %}
+
+
+            </tbody>
+        </table>
+    </div>
+{% endfor %}

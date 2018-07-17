@@ -56,6 +56,7 @@ class Plugin extends PluginBase
             'Nemerki\News\Components\NewsComponent' => 'news',
             'Nemerki\News\Components\NewsCategoryListComponent' => 'categoryList',
             'Nemerki\News\Components\StudentNews' => 'studentNews',
+            'Nemerki\News\Components\UniversityNews' => 'universityNews',
         ];
     }
 

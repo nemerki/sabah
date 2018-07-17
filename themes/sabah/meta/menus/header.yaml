@@ -2,8 +2,13 @@ name: Header
 items:
     -
         title: 'SABAH QRUPLARI'
+        nesting: ''
         type: header
+        url: ''
         code: ''
+        reference: ''
+        cmsPage: ''
+        replace: ''
         viewBag:
             isHidden: '0'
             cssClass: sub-item
@@ -76,8 +81,13 @@ items:
                     isExternal: '0'
     -
         title: 'SABAH TƏLƏBƏLƏRI'
+        nesting: ''
         type: header
+        url: ''
         code: ''
+        reference: ''
+        cmsPage: ''
+        replace: ''
         viewBag:
             isHidden: '0'
             cssClass: sub-item
@@ -85,18 +95,35 @@ items:
         items:
             -
                 title: XƏBƏRLƏR
+                nesting: ''
                 type: cms-page
+                url: ''
                 code: ''
                 reference: telebe-xeberler
+                cmsPage: ''
+                replace: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: ELANLAR
+                type: cms-page
+                code: ''
+                reference: telebe-elanlari
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
             -
                 title: UNİVERSİTETLƏR
+                nesting: ''
                 type: cms-page
+                url: ''
                 code: ''
                 reference: universitetler
+                cmsPage: ''
+                replace: ''
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
