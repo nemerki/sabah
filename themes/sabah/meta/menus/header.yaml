@@ -134,26 +134,35 @@ items:
                     isExternal: '0'
             -
                 title: İXTİSASLAR
+                nesting: ''
                 type: cms-page
+                url: ''
                 code: ''
                 reference: telebe-ixtisaslar
+                cmsPage: ''
+                replace: ''
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
     -
         title: QƏBUL
-        nesting: ''
         type: header
-        url: ''
         code: ''
-        reference: ''
-        cmsPage: ''
-        replace: ''
         viewBag:
             isHidden: '0'
-            cssClass: ''
+            cssClass: sub-item
             isExternal: '0'
+        items:
+            -
+                title: 'TƏLƏBƏ QƏBULU'
+                type: cms-page
+                code: ''
+                reference: telebe-qebulu-secim-sertleri
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
     -
         title: Xəbərlər
         nesting: ''
