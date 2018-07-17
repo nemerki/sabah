@@ -108,9 +108,13 @@ items:
                     isExternal: '0'
             -
                 title: ELANLAR
+                nesting: ''
                 type: cms-page
+                url: ''
                 code: ''
                 reference: telebe-elanlari
+                cmsPage: ''
+                replace: ''
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
@@ -124,6 +128,15 @@ items:
                 reference: universitetler
                 cmsPage: ''
                 replace: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: İXTİSASLAR
+                type: cms-page
+                code: ''
+                reference: telebe-ixtisaslar
                 viewBag:
                     isHidden: '0'
                     cssClass: ''

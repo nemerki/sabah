@@ -1,0 +1,57 @@
+fields:
+    company_name:
+        label: 'Şirkət Adı'
+        span: auto
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        preset:
+            field: company_name
+            type: slug
+        type: text
+    payment_method:
+        label: 'Ödəniş Növü'
+        options:
+            - Ödənişsiz
+            - Ödənişli
+        span: auto
+        type: dropdown
+    expiry_date:
+        label: 'Son Tarix'
+        mode: datetime
+        span: auto
+        type: datepicker
+    description_top:
+        label: 'Üst Açıqlama'
+        size: ''
+        span: auto
+        type: textarea
+    description_bottom:
+        label: 'Alt Açıqlama'
+        size: ''
+        span: auto
+        type: textarea
+    job_description:
+        label: 'İşin təsviri'
+        size: ''
+        span: auto
+        type: richeditor
+    requirements:
+        label: 'Namizədə tələblər'
+        size: ''
+        span: auto
+        type: richeditor
+    position:
+        label: Vəzifə
+        span: auto
+        type: text
+    logo:
+        label: 'Şirkət Logosu'
+        span: auto
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        type: fileupload

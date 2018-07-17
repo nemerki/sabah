@@ -6,3 +6,12 @@
 1.0.3:
     - 'Updated table sabah_student_universities'
     - builder_table_update_sabah_student_universities.php
+1.0.4:
+    - 'Created table sabah_student_practice_programs'
+    - builder_table_create_sabah_student_practice_programs.php
+1.0.5:
+    - 'Updated table sabah_student_practice_programs'
+    - builder_table_update_sabah_student_practice_programs.php
+1.0.6:
+    - 'Updated table sabah_student_practice_programs'
+    - builder_table_update_sabah_student_practice_programs_2.php

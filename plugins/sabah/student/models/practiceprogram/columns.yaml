@@ -1,0 +1,6 @@
+columns:
+    company_name:
+        label: 'Şirkət Adı'
+        type: text
+        searchable: true
+        sortable: true

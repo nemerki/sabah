@@ -14,3 +14,7 @@ navigation:
                 label: Üniversitetler
                 url: sabah/student/university
                 icon: icon-bank
+            side-menu-item2:
+                label: 'Təcrübə Proqramları'
+                url: sabah/student/practiceprogram
+                icon: icon-star-o

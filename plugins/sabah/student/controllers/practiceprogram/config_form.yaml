@@ -1,0 +1,10 @@
+name: PracticeProgram
+form: $/sabah/student/models/practiceprogram/fields.yaml
+modelClass: Sabah\Student\Models\PracticeProgram
+defaultRedirect: sabah/student/practiceprogram
+create:
+    redirect: 'sabah/student/practiceprogram/update/:id'
+    redirectClose: sabah/student/practiceprogram
+update:
+    redirect: sabah/student/practiceprogram
+    redirectClose: sabah/student/practiceprogram
