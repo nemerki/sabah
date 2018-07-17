@@ -1,0 +1,113 @@
+title = "Üniversitetlər"
+url = "/telebe/universitetler"
+layout = "default"
+is_hidden = 0
+
+[builderList]
+modelClass = "Sabah\Student\Models\University"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "name"
+noRecordsMessage = "No records found"
+detailsPage = "universitet-xeberler"
+detailsKeyColumn = "slug"
+detailsUrlParameter = "slug"
+pageNumber = "{{ :page }}"
+==
+<section id="teacher-news-faq" class="main-content">
+    <div id="banner-area">
+        <div class="container-fluid">
+            <div class="row">
+                <div style="background-image:linear-gradient(0deg,rgba(0, 155, 77, 0.7),rgba(0, 155, 77, 0.7)),
+                                         url('./img/content-img/ixtisaslar-back.png')" class="background-green">
+                    <div class="banner-title text-center">
+                        <div class="s-star"></div>
+                        <h1>Universitetlər</h1>
+                        <p class="breadcumb">SABAH TƏLƏBƏLƏRİ</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="university" class="margin-0">
+    <div id="pinBoxContainer" class="container">
+        <div class="row">
+
+            <div class="col-md-8">
+                <div class="uni-grid">
+                    <div class="row">
+                        {% for record in records %}
+                            <div class="col-md-3 col-sm-4">
+                                <div class="item text-center">
+                                    <div class="img-box"
+                                         style="background-image: url({{ record.logo.thumb(140,80) }})"></div>
+                                    <p>{{ record.name }}</p>
+                                    {% spaceless %}
+                                        {% if detailsPage %}
+                                            <a href="{{ detailsPage|page({ (detailsUrlParameter): record.slug }) }}">
+                                        {% endif %}
+                                        <span>Etrafli</span>
+                                        {% if detailsPage %}
+                                            </a>
+                                        {% endif %}
+                                    {% endspaceless %}
+                                </div>
+                            </div>
+                        {% endfor %}
+
+
+                    </div>
+                </div>
+
+            </div>
+            <div class=" col-sm-12 col-md-4 col-lg-4">
+                <div id="sidebar" class="sidebar pinBox">
+                    <div class="sidebar-title-green">
+                        <h1 class="title-bold">SABAH Tələbələri</h1>
+                        <div class="border"></div>
+                    </div>
+                    <div class="sidebar-list-item-green b-0">
+                        <ul>
+
+                            <li>
+                                <a href="#">XƏBƏRLƏR</a>
+                            </li>
+
+
+                            <li>
+                                <a href="#">ELANLAR</a>
+                            </li>
+
+
+                            <li>
+                                <a href="#">TƏCRÜBƏ PROQRAMLARI</a>
+                            </li>
+
+
+                            <li>
+                                <a href="#">XARİCDƏ TƏHSİL VƏ MÜBADİLƏ PROQRAMLARI
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">İXTİSASLAR</a>
+                            </li>
+
+                            <li>
+                                <a href="#">UNİVERSİTETLƏR</a>
+                            </li>
+
+                            <li>
+                                <a href="#">ƏLAQƏ</a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,11 @@
+columns:
+    name:
+        label: Adı
+        type: text
+        searchable: true
+        sortable: true
+    student:
+        label: 'Tələbə Sayi'
+        type: text
+        searchable: true
+        sortable: true

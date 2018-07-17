@@ -1,0 +1,16 @@
+plugin:
+    name: 'sabah.student::lang.plugin.name'
+    description: 'sabah.student::lang.plugin.description'
+    author: Sabah
+    icon: oc-icon-users
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Tələbə
+        url: sabah/student/university
+        icon: icon-users
+        sideMenu:
+            side-menu-item:
+                label: Üniversitetler
+                url: sabah/student/university
+                icon: icon-bank

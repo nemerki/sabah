@@ -1,0 +1,11 @@
+{% for image in partialsRecords %}
+    <a href="{{ image.image.path }}">
+        <div class="overlay">
+            <i class="fa fa-clone" aria-hidden="true"></i>
+        </div>
+        <img class="img-responsive" src="{{ image.image.thumb(380,200,{'mode':'crop'}) }}"/>
+
+    </a>
+{% else %}
+    Şekil Tapılmadı
+{% endfor %}

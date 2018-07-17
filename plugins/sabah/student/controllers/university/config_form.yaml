@@ -1,0 +1,10 @@
+name: University
+form: $/sabah/student/models/university/fields.yaml
+modelClass: Sabah\Student\Models\University
+defaultRedirect: sabah/student/university
+create:
+    redirect: 'sabah/student/university/update/:id'
+    redirectClose: sabah/student/university
+update:
+    redirect: sabah/student/university
+    redirectClose: sabah/student/university

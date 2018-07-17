@@ -1,0 +1,42 @@
+fields:
+    title:
+        label: 'Elan Başlığı'
+        span: auto
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        preset:
+            field: title
+            type: slug
+        type: text
+    category:
+        label: Kategoriya
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        type: relation
+    is_home:
+        label: 'Əsas Səyfədə'
+        options:
+            - Göstərmə
+            - Göstər
+        span: auto
+        type: dropdown
+    organized:
+        label: 'Keçirilmə Tarixi'
+        mode: datetime
+        span: auto
+        type: datepicker
+    is_important:
+        label: Növü
+        span: auto
+        options:
+            - 'Normal Elan'
+            - 'Vacib Elan'
+        type: dropdown
+    content:
+        label: Content
+        span: full
+        size: ''
+        type: richeditor

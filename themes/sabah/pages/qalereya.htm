@@ -3,6 +3,9 @@ url = "/qalereya/:page?"
 layout = "default"
 is_hidden = 0
 
+[staticMenu sabahQurup]
+code = "sabah-qruplari"
+
 [builderList]
 modelClass = "Sabah\Group\Models\Gallery"
 scope = "-"
@@ -13,9 +16,6 @@ detailsPage = "-"
 detailsUrlParameter = "id"
 recordsPerPage = 1
 pageNumber = "{{ :page }}"
-
-[staticMenu sabahQurup]
-code = "sabah-qruplari"
 ==
 <div id="header-panel">
     <div class="container">
@@ -47,22 +47,17 @@ code = "sabah-qruplari"
             <div class="col-md-8 col-sm-12 col-lg-8">
                 <div class="gall-grid">
                     <div id="aniimated-thumbnials">
-                        {% for image in records %}
-                            <a href="{{ image.image.path }}">
-                                <div class="overlay">
-                                    <i class="fa fa-clone" aria-hidden="true"></i>
-                                </div>
-                                <img class="img-responsive" src="{{ image.image.thumb(380,200,{'mode':'crop'}) }}"/>
+                        <div class="news-arena partialGallery">
+                            {% partial "gallery" partialsRecords=records %}
+                        </div>
 
-                            </a>
-                        {% else %}
-                            Şekil Tapılmadı
-                        {% endfor %}
 
                     </div>
                 </div>
 
-                {% partial "pagination" %}
+                <div class="row pa">
+                    {% partial "pagination" partialsRecords=records %}
+                </div>
 
             </div>
 
@@ -89,17 +84,42 @@ code = "sabah-qruplari"
     </div>
 </section>
 
-
 {% put scripts %}
     <script type="text/javascript">
 
-        $(document).on('click', '.pagination-number a', function (e) {
-            e.preventDefault();
-            var array = $(this).attr('href').split('/');
-            var page = array[array.length - 1];
-            console.log(page);
-        });
+        $(function () {
 
+            $(document).on('click', '.ajaxPagination', function (e) {
+                e.preventDefault();
+                var array = $(this).attr('href').split('/');
+                var page = array[array.length - 1];
+
+                swal({
+                    title: 'Yüklənir...',
+                    html:
+                    '<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>' +
+                    ' <span class="sr-only">Loading...</span>',
+                    showCloseButton: false,
+                    showCancelButton: false,
+                    showConfirmButton: false,
+                    allowOutsideClick: false
+                });
+
+                $.request('onPaginate', {
+
+                    update: {gallery: '.partialGallery', pagination: '.pa'},
+                    data: {perPage: page},
+                    complete: function() {
+                        swal.close();
+                    }
+
+
+
+                });
+            });
+
+
+        })
 
     </script>
 {% endput %}

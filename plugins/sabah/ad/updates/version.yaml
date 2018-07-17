@@ -1,0 +1,14 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table sabah_ad_ads'
+    - builder_table_create_sabah_ad_ads.php
+1.0.3:
+    - 'Created table sabah_ad_categories'
+    - builder_table_create_sabah_ad_categories.php
+1.0.4:
+    - 'Updated table sabah_ad_ads'
+    - builder_table_update_sabah_ad_ads.php
+1.0.5:
+    - 'Updated table sabah_ad_ads'
+    - builder_table_update_sabah_ad_ads_2.php

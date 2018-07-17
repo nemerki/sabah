@@ -1,0 +1,16 @@
+plugin:
+    name: 'sabah.ad::lang.plugin.name'
+    description: 'sabah.ad::lang.plugin.description'
+    author: Sabah
+    icon: oc-icon-thumb-tack
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Elan
+        url: sabah/ad/ad
+        icon: icon-thumb-tack
+        sideMenu:
+            side-menu-item:
+                label: Kategoriya
+                url: sabah/ad/category
+                icon: icon-sitemap

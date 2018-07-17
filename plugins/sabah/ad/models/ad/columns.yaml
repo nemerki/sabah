@@ -1,0 +1,17 @@
+columns:
+    title:
+        label: Başlığı
+        type: text
+        searchable: true
+    category:
+        label: Kategoriyası
+        type: text
+        searchable: true
+        sortable: true
+        select: name
+        relation: category
+    organized:
+        label: 'Keçırılme Tarixi'
+        type: datetime
+        searchable: true
+        sortable: true

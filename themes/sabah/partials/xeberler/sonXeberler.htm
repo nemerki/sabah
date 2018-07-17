@@ -1,0 +1,35 @@
+{% for record in partialsRecords %}
+    <div class="col-md-6 col-sm-6">
+        <div class="news-box-inner">
+            {% spaceless %}
+                {% if detailsPage %}
+                    <a href="{{ detailsPage|page({ (detailsUrlParameter): record.slug }) }}">
+                {% endif %}
+                <div style="background-image:url({{ record.image.path }})"
+                     class="news-picture">
+                    <span class="new-category">TƏLƏBƏLƏR</span>
+                </div>
+                {% if detailsPage %}
+                    </a>
+                {% endif %}
+            {% endspaceless %}
+
+            <div class="news-box-title news-title">
+                {% spaceless %}
+                    {% if detailsPage %}
+                        <a href="{{ detailsPage|page({ (detailsUrlParameter): record.slug }) }}">
+                    {% endif %}
+                    <h2>{{ record.title }}</h2>
+                    {% if detailsPage %}
+                        </a>
+                    {% endif %}
+                {% endspaceless %}
+            </div>
+
+            <p class="box-inner-date news-datetime">{{ record.created_at.format('d M Y') }}</p>
+
+        </div>
+
+
+    </div>
+{% endfor %}

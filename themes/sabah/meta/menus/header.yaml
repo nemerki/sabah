@@ -1,0 +1,155 @@
+name: Header
+items:
+    -
+        title: 'SABAH QRUPLARI'
+        type: header
+        code: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: sub-item
+            isExternal: '0'
+        items:
+            -
+                title: 'LAYİHƏNİN MƏQSƏDİ'
+                nesting: ''
+                type: cms-page
+                url: ''
+                code: ''
+                reference: layihenin-meqsedi
+                cmsPage: ''
+                replace: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: TƏRƏFDAŞLAR
+                nesting: ''
+                type: cms-page
+                url: ''
+                code: ''
+                reference: terefdaslar
+                cmsPage: ''
+                replace: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: KOMANDAMIZ
+                nesting: ''
+                type: cms-page
+                url: ''
+                code: ''
+                reference: komandamiz
+                cmsPage: ''
+                replace: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: Qalereya
+                nesting: ''
+                type: cms-page
+                url: ''
+                code: ''
+                reference: qalereya
+                cmsPage: ''
+                replace: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: 'MÜTƏMADİ VERİLƏN SUALLAR'
+                nesting: ''
+                type: cms-page
+                url: ''
+                code: ''
+                reference: mutemadi-verilen-suallar
+                cmsPage: ''
+                replace: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+    -
+        title: 'SABAH TƏLƏBƏLƏRI'
+        type: header
+        code: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: sub-item
+            isExternal: '0'
+        items:
+            -
+                title: XƏBƏRLƏR
+                type: cms-page
+                code: ''
+                reference: telebe-xeberler
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: UNİVERSİTETLƏR
+                type: cms-page
+                code: ''
+                reference: universitetler
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+    -
+        title: QƏBUL
+        nesting: ''
+        type: header
+        url: ''
+        code: ''
+        reference: ''
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Xəbərlər
+        nesting: ''
+        type: cms-page
+        url: ''
+        code: ''
+        reference: xeberler
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: ELANLAR
+        nesting: ''
+        type: cms-page
+        url: ''
+        code: ''
+        reference: elanlar
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: ƏLAQƏ
+        nesting: ''
+        type: header
+        url: ''
+        code: ''
+        reference: ''
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'

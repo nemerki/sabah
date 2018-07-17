@@ -1,3 +1,7 @@
-.contact__info{
+.contact__info {
     display: none;
+}
+
+.active .ajaxPagination {
+    color: #cccccc;
 }

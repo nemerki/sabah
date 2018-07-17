@@ -1,0 +1,175 @@
+title = "Universitet əlaqəli şəxslər"
+url = "/universitet/elaqeli-sexsler/:slug"
+layout = "default"
+is_hidden = 0
+
+[builderDetails]
+modelClass = "Sabah\Student\Models\University"
+identifierValue = "{{ :slug }}"
+modelKeyColumn = "slug"
+displayColumn = "name"
+notFoundMessage = "Record not found"
+==
+<div id="teacher-news-faq" class="main-content">
+    <!-- BANNER-->
+    <div id="banner-area">
+        <div class="container-fluid">
+            <div class="row">
+                <div style="background-image:linear-gradient(0deg,rgba(0, 155, 77, 0.7),rgba(0, 155, 77, 0.7)),
+                    url('{{ 'assets/img/content-img/layer-4.png'|theme }}')" class="background-green">
+                    <div class="banner-title text-center">
+                        <div class="s-star"></div>
+                        <h1>UNİVERSİTETLƏR</h1>
+                        <p class="breadcumb">SABAH TƏLƏBƏLƏRİ</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BANNER-->
+
+    <div id="teacher-news-faq-collapse">
+        <div id="pinBoxContainer" class="container">
+            <div class="row">
+                <div class=" col-sm-12 col-md-8 col-lg-8">
+                    <div class="pad-40">
+                        <div class="sidebar-title-green">
+                            <h1 class="title-bold">{{ record.name }}</h1>
+                        </div>
+
+                        <div class="works-area">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div style="background-image:url({{ record.logo.thumb(180,180) }})"
+                                         class="works-logo"></div>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="company-contact">
+                                        <div class="company-title">
+                                            <div class="content-main">{{ record.top }}</div>
+                                        </div>
+                                        <div class="company-contact-list">
+                                            <div class="university-about-list">
+                                                <a target="_blank" href="{{ record.link }}">{{ record.link }}</a>
+                                                <p>
+                                                    <span>{{ record.student }}</span>SABAH Qrupları tələbəsi;</p>
+                                                <p>
+                                                    <span>{{ record.ixtisas|length }}</span>ixtisas tədris olunur;</p>
+                                                <p>
+                                                    <span>{{ record.programs }}</span>tələbə proqramı qüvvədədir.</p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="tab-panel-category">
+                                <div class="panel-divider"></div>
+                                <ul>
+                                    <a href="/universitet/xeberler/{{ record.slug }}">
+                                        <li>Xəbərlər</li>
+                                    </a>
+                                    <a href="/universitet/ixtisaslar/{{ record.slug }}">
+                                        <li>İxtisaslar</li>
+                                    </a>
+                                    <a href="/universitet/elaqeli-sexsler/{{ record.slug }}">
+                                        <li class="active-panel">Əlaqəli şəxslər</li>
+                                    </a>
+
+                                </ul>
+                            </div>
+
+
+                            <div class="table-for-university">
+                                <div class="spia-table table-responsive">
+
+
+                                    <table class="table">
+                                        <thead>
+                                        <tr>
+                                            <th>KOORDİNATOR</th>
+                                            <th>ƏLAQƏ NÖMRƏSİ</th>
+                                            <th>EMAIL ÜNVANI</th>
+
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            {% for record in record.person %}
+                                        <tr>
+                                            <td>{{ record.person_coordinator }}</td>
+                                            <td>{{ record.person_phone }}</td>
+                                            <td>{{ record.person_email }}</td>
+                                        </tr>
+                                            {% endfor %}
+
+
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class=" col-sm-12 col-md-4 col-lg-4">
+                    <div id="sidebar" class="sidebar pinBox">
+                        <div class="sidebar-title-green">
+                            <h1 class="title-bold">SABAH Tələbələri</h1>
+                            <div class="border"></div>
+                        </div>
+                        <div class="sidebar-list-item-green b-0">
+                            <ul>
+
+                                <li>
+                                    <a href="#">XƏBƏRLƏR</a>
+                                </li>
+
+
+                                <li>
+                                    <a href="#">ELANLAR</a>
+                                </li>
+
+
+                                <li>
+                                    <a href="#">TƏCRÜBƏ PROQRAMLARI</a>
+                                </li>
+
+
+                                <li>
+                                    <a href="#">XARİCDƏ TƏHSİL VƏ MÜBADİLƏ PROQRAMLARI
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#">İXTİSASLAR</a>
+                                </li>
+
+                                <li>
+                                    <a href="#">UNİVERSİTETLƏR</a>
+                                </li>
+
+                                <li>
+                                    <a href="#">ƏLAQƏ</a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

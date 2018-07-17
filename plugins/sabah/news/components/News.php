@@ -221,29 +221,6 @@ class News extends ComponentBase
         return $records;
     }
 
-    public function onPaginate()
-    {
-
-
-        $this->prepareVars();
-
-        $model = new  \Sabah\News\Models\News();
-
-        $model = $this->sort($model);
-        $model = $this->take($model);
-        $model = $this->skip($model);
-
-        $recordsPerPage = trim($this->property('recordsPerPage'));
-
-        $perPage=post('perPage');
-        $pageNumber = $perPage;
-
-
-       $a=$model->paginate($recordsPerPage, $pageNumber);
-
-
-        $this->records = $this->page['partialsRecords'] = $a;
-    }
 
     protected function paginate($model)
     {
@@ -330,5 +307,29 @@ class News extends ComponentBase
         return $model->skip($skip);
     }
 
+
+    public function onPaginate()
+    {
+
+
+        $this->prepareVars();
+
+        $model = new  \Sabah\News\Models\News();
+
+        $model = $this->sort($model);
+        $model = $this->take($model);
+        $model = $this->skip($model);
+
+        $recordsPerPage = trim($this->property('recordsPerPage'));
+
+        $perPage = post('perPage');
+        $pageNumber = $perPage;
+
+
+        $partialsRecords = $model->paginate($recordsPerPage, $pageNumber);
+
+
+        $this->records = $this->page['partialsRecords'] = $partialsRecords;
+    }
 
 }

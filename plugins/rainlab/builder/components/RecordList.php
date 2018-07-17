@@ -60,7 +60,7 @@ class RecordList extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'        => 'rainlab.builder::lang.components.list_title',
+            'name' => 'rainlab.builder::lang.components.list_title',
             'description' => 'rainlab.builder::lang.components.list_description'
         ];
     }
@@ -73,95 +73,95 @@ class RecordList extends ComponentBase
     {
         return [
             'modelClass' => [
-                'title'       => 'rainlab.builder::lang.components.list_model',
-                'type'        => 'dropdown',
+                'title' => 'rainlab.builder::lang.components.list_model',
+                'type' => 'dropdown',
                 'showExternalParam' => false
             ],
             'scope' => [
-                'title'       => 'rainlab.builder::lang.components.list_scope',
+                'title' => 'rainlab.builder::lang.components.list_scope',
                 'description' => 'rainlab.builder::lang.components.list_scope_description',
-                'type'        => 'dropdown',
-                'depends'     => ['modelClass'],
+                'type' => 'dropdown',
+                'depends' => ['modelClass'],
                 'showExternalParam' => false
             ],
             'scopeValue' => [
-                'title'       => 'rainlab.builder::lang.components.list_scope_value',
+                'title' => 'rainlab.builder::lang.components.list_scope_value',
                 'description' => 'rainlab.builder::lang.components.list_scope_value_description',
-                'type'        => 'string',
-                'default'     => '{{ :scope }}',
+                'type' => 'string',
+                'default' => '{{ :scope }}',
             ],
             'displayColumn' => [
-                'title'       => 'rainlab.builder::lang.components.list_display_column',
+                'title' => 'rainlab.builder::lang.components.list_display_column',
                 'description' => 'rainlab.builder::lang.components.list_display_column_description',
-                'type'        => 'autocomplete',
-                'depends'     => ['modelClass'],
-                'validation'  => [
+                'type' => 'autocomplete',
+                'depends' => ['modelClass'],
+                'validation' => [
                     'required' => [
                         'message' => Lang::get('rainlab.builder::lang.components.list_display_column_required')
                     ]
                 ]
             ],
             'noRecordsMessage' => [
-                'title'        => 'rainlab.builder::lang.components.list_no_records',
-                'description'  => 'rainlab.builder::lang.components.list_no_records_description',
-                'type'         => 'string',
-                'default'      => Lang::get('rainlab.builder::lang.components.list_no_records_default'),
+                'title' => 'rainlab.builder::lang.components.list_no_records',
+                'description' => 'rainlab.builder::lang.components.list_no_records_description',
+                'type' => 'string',
+                'default' => Lang::get('rainlab.builder::lang.components.list_no_records_default'),
                 'showExternalParam' => false,
             ],
             'detailsPage' => [
-                'title'       => 'rainlab.builder::lang.components.list_details_page',
+                'title' => 'rainlab.builder::lang.components.list_details_page',
                 'description' => 'rainlab.builder::lang.components.list_details_page_description',
-                'type'        => 'dropdown',
+                'type' => 'dropdown',
                 'showExternalParam' => false,
-                'group'       => 'rainlab.builder::lang.components.list_details_page_link'
+                'group' => 'rainlab.builder::lang.components.list_details_page_link'
             ],
             'detailsKeyColumn' => [
-                'title'       => 'rainlab.builder::lang.components.list_details_key_column',
+                'title' => 'rainlab.builder::lang.components.list_details_key_column',
                 'description' => 'rainlab.builder::lang.components.list_details_key_column_description',
-                'type'        => 'autocomplete',
-                'depends'     => ['modelClass'],
+                'type' => 'autocomplete',
+                'depends' => ['modelClass'],
                 'showExternalParam' => false,
-                'group'       => 'rainlab.builder::lang.components.list_details_page_link'
+                'group' => 'rainlab.builder::lang.components.list_details_page_link'
             ],
             'detailsUrlParameter' => [
-                'title'       => 'rainlab.builder::lang.components.list_details_url_parameter',
+                'title' => 'rainlab.builder::lang.components.list_details_url_parameter',
                 'description' => 'rainlab.builder::lang.components.list_details_url_parameter_description',
-                'type'        => 'string',
-                'default'     => 'id',
+                'type' => 'string',
+                'default' => 'id',
                 'showExternalParam' => false,
-                'group'       => 'rainlab.builder::lang.components.list_details_page_link'
+                'group' => 'rainlab.builder::lang.components.list_details_page_link'
             ],
             'recordsPerPage' => [
-                'title'             => 'rainlab.builder::lang.components.list_records_per_page',
-                'description'       => 'rainlab.builder::lang.components.list_records_per_page_description',
-                'type'              => 'string',
+                'title' => 'rainlab.builder::lang.components.list_records_per_page',
+                'description' => 'rainlab.builder::lang.components.list_records_per_page_description',
+                'type' => 'string',
                 'validationPattern' => '^[0-9]*$',
                 'validationMessage' => 'rainlab.builder::lang.components.list_records_per_page_validation',
-                'group'             => 'rainlab.builder::lang.components.list_pagination'
+                'group' => 'rainlab.builder::lang.components.list_pagination'
             ],
             'pageNumber' => [
-                'title'       => 'rainlab.builder::lang.components.list_page_number',
+                'title' => 'rainlab.builder::lang.components.list_page_number',
                 'description' => 'rainlab.builder::lang.components.list_page_number_description',
-                'type'        => 'string',
-                'default'     => '{{ :page }}',
-                'group'       => 'rainlab.builder::lang.components.list_pagination'
+                'type' => 'string',
+                'default' => '{{ :page }}',
+                'group' => 'rainlab.builder::lang.components.list_pagination'
             ],
             'sortColumn' => [
-                'title'       => 'rainlab.builder::lang.components.list_sort_column',
+                'title' => 'rainlab.builder::lang.components.list_sort_column',
                 'description' => 'rainlab.builder::lang.components.list_sort_column_description',
-                'type'        => 'autocomplete',
-                'depends'     => ['modelClass'],
-                'group'       => 'rainlab.builder::lang.components.list_sorting',
+                'type' => 'autocomplete',
+                'depends' => ['modelClass'],
+                'group' => 'rainlab.builder::lang.components.list_sorting',
                 'showExternalParam' => false
             ],
             'sortDirection' => [
-                'title'       => 'rainlab.builder::lang.components.list_sort_direction',
-                'type'        => 'dropdown',
+                'title' => 'rainlab.builder::lang.components.list_sort_direction',
+                'type' => 'dropdown',
                 'showExternalParam' => false,
-                'group'       => 'rainlab.builder::lang.components.list_sorting',
-                'options'     => [
-                    'asc'     => 'rainlab.builder::lang.components.list_order_direction_asc',
-                    'desc'    => 'rainlab.builder::lang.components.list_order_direction_desc'
+                'group' => 'rainlab.builder::lang.components.list_sorting',
+                'options' => [
+                    'asc' => 'rainlab.builder::lang.components.list_order_direction_asc',
+                    'desc' => 'rainlab.builder::lang.components.list_order_direction_desc'
                 ]
             ]
         ];
@@ -172,8 +172,8 @@ class RecordList extends ComponentBase
         $pages = Page::sortBy('baseFileName')->lists('baseFileName', 'baseFileName');
 
         $pages = [
-            '-' => Lang::get('rainlab.builder::lang.components.list_details_page_no')
-        ] + $pages;
+                '-' => Lang::get('rainlab.builder::lang.components.list_details_page_no')
+            ] + $pages;
 
         return $pages;
     }
@@ -213,8 +213,7 @@ class RecordList extends ComponentBase
                     $result[$method] = $method;
                 }
             }
-        }
-        catch (Exception $ex) {
+        } catch (Exception $ex) {
             // Ignore invalid models
         }
 
@@ -339,4 +338,30 @@ class RecordList extends ComponentBase
         // value is performed here, relying to the ORM sanitizing.
         return $model->orderBy($sortColumn, $sortDirection);
     }
+
+
+    public function onPaginate()
+    {
+        $this->prepareVars();
+        $modelClassName = $this->property('modelClass');
+        if (!strlen($modelClassName) || !class_exists($modelClassName)) {
+            throw new SystemException('Invalid model class name');
+        }
+
+        $model = new $modelClassName();
+
+
+        $model = $this->sort($model);
+        $recordsPerPage = trim($this->property('recordsPerPage'));
+
+        $perPage = post('perPage');
+        $pageNumber = $perPage;
+
+
+        $partialsRecords = $model->paginate($recordsPerPage, $pageNumber);
+
+        $this->records = $this->page['partialsRecords'] = $partialsRecords;
+
+    }
+
 }

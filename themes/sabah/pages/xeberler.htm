@@ -4,21 +4,27 @@ layout = "default"
 is_hidden = 0
 
 [news all]
-detailsPage = "-"
-detailsUrlParameter = "id"
-recordsPerPage = 1
+detailsPage = "xeber"
+detailsKeyColumn = "slug"
+detailsUrlParameter = "slug"
+recordsPerPage = 10
 pageNumber = "{{ :page }}"
 sortColumn = "created_at"
 sortDirection = "asc"
 skip = 4
 
 [news top]
-detailsPage = "-"
-detailsUrlParameter = "id"
+detailsPage = "xeber"
+detailsKeyColumn = "slug"
+detailsUrlParameter = "slug"
 pageNumber = "{{ :page }}"
 sortColumn = "created_at"
 sortDirection = "asc"
 take = 4
+
+[categoryList]
+
+[importantAds]
 ==
 <?php
 function onStart(){
@@ -53,29 +59,7 @@ function onStart(){
                         <div class="detals-news-inner">
                             <div class="row">
 
-                                {% for news in top.records %}
-                                    <div class="col-md-6 col-sm-6">
-                                        <div class="news-box-inner">
-                                            <a href="#">
-                                                <div style="background-image:url({{ news.image.path }})"
-                                                     class="news-picture">
-                                                    <span class="new-category">TƏLƏBƏLƏR</span>
-                                                </div>
-                                            </a>
-
-                                            <div class="news-box-title news-title">
-                                                <a href="#">
-                                                    <h2>{{ news.title }}</h2>
-                                                </a>
-                                            </div>
-
-                                            <p class="box-inner-date news-datetime">{{ news.created_at.format('d M Y') }}</p>
-
-                                        </div>
-
-
-                                    </div>
-                                {% endfor %}
+                                {% partial "xeberler/sonXeberler" partialsRecords=top.records %}
 
 
                             </div>
@@ -89,7 +73,7 @@ function onStart(){
                     </div>
 
                     <div class="news-arena">
-                        {% partial "news" partialsRecords=all.records %}
+                        {% partial "xeberler/digerXeberler" partialsRecords=all.records %}
                     </div>
                     <div class="row pa">
                         {% partial "pagination" partialsRecords=all.records %}
@@ -104,41 +88,14 @@ function onStart(){
                         </div>
                         <div class="sidebar-list-item b-0">
                             <ul>
-
-                                <li>
-                                    <a href="#"> BÜTÜN XƏBƏRLƏR</a>
-                                </li>
-
-
-                                <li>
-                                    <a href="#">TƏLƏBƏLƏR</a>
-                                </li>
+                                {% for category in categories %}
+                                    <li>
+                                        <a href="kateqoriyalar/{{ category.slug }}"> {{ category.name }}</a>
+                                    </li>
+                                {% endfor %}
 
 
-                                <li>
-                                    <a href="#">MÜƏLLİMLƏR</a>
-                                </li>
 
-
-                                <li>
-                                    <a href="#">UNİVERSİTETLƏR</a>
-                                </li>
-
-                                <li>
-                                    <a href="#"> TƏCRÜBƏ PROQRAMLARI</a>
-                                </li>
-
-                                <li>
-                                    <a href="#">XARİCDƏ TƏHSİL PROQRAMLARI</a>
-                                </li>
-
-                                <li>
-                                    <a href="#">MÜBADİLƏ PROQRAMLARI</a>
-                                </li>
-
-                                <li>
-                                    <a href="#">İŞ VƏ KARYERA</a>
-                                </li>
 
                             </ul>
                         </div>
@@ -154,28 +111,14 @@ function onStart(){
                         <div class="news-list-item">
                             <ul class="list-none p-0">
 
-                                <li>
-                                    <a href="#"> 2017/2018-ci tədris ili üçün SABAH Qruplarına tələbə qəbulu /
-                                        Transkriptlərin qəbulu.</a>
-                                </li>
+                                {% for record in importantAds %}
+                                    <li>
+                                        <a href="/elan/{{ record.slug }}">{{ record.title }}</a>
+                                    </li>
+                                {% endfor %}
 
 
-                                <li>
-                                    <a href="#">2017/2018-ci tədris ili üçün SABAH Qruplarına tələbə qəbulu / Müsahibə
-                                        cədvəli.</a>
-                                </li>
 
-
-                                <li>
-                                    <a href="#">SABAH Qruplarında tədrisi aparmaq məqsədi ilə professor-müəllim heyəti
-                                        üçün elan.</a>
-                                </li>
-
-
-                                <li>
-                                    <a href="#">SABAH tələbələri üçün Karyera İnkişafı Sərgisi keçiriləcək.
-                                    </a>
-                                </li>
 
 
                             </ul>
@@ -197,12 +140,25 @@ function onStart(){
                 e.preventDefault();
                 var array = $(this).attr('href').split('/');
                 var page = array[array.length - 1];
-                console.log(page);
+
+                swal({
+                    title: 'Yüklənir...',
+                    html:
+                    '<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>' +
+                    ' <span class="sr-only">Loading...</span>',
+                    showCloseButton: false,
+                    showCancelButton: false,
+                    showConfirmButton: false,
+                    allowOutsideClick: false
+                });
 
                 $.request('onPaginate', {
 
-                    update: {news: '.news-arena', pagination: '.pa'},
+                    update: {"xeberler/digerXeberler": '.news-arena', pagination: '.pa'},
                     data: {perPage: page},
+                    complete: function() {
+                        swal.close();
+                    }
 
 
 

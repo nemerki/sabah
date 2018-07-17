@@ -1,0 +1,10 @@
+name: Ad
+form: $/sabah/ad/models/ad/fields.yaml
+modelClass: Sabah\Ad\Models\Ad
+defaultRedirect: sabah/ad/ad
+create:
+    redirect: 'sabah/ad/ad/update/:id'
+    redirectClose: sabah/ad/ad
+update:
+    redirect: sabah/ad/ad
+    redirectClose: sabah/ad/ad

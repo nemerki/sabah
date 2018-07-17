@@ -1,0 +1,135 @@
+title = "Xeber"
+url = "/xeber/:slug"
+layout = "default"
+is_hidden = 0
+
+[sameCategory]
+detailsPage = "xeber"
+detailsKeyColumn = "slug"
+detailsUrlParameter = "slug"
+modelClass = "Sabah\News\Models\News"
+identifierValue = "{{ :slug }}"
+modelKeyColumn = "slug"
+displayColumn = "title"
+notFoundMessage = "Record not found"
+==
+<div id="teacher-news-faq">
+    <!-- BANNER-->
+    <div id="header-panel">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel-title">
+                        <h1>XƏBƏRLƏR</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BANNER-->
+
+    <div id="teacher-news-faq-collapse" class="content">
+        <div class="container">
+            <div class="row">
+                <div class=" col-sm-12 col-md-8 col-lg-8">
+                    <div class="main">
+                        <div class="news-detal">
+                            <div class="news-detal-title">
+                                <h1>{{ record.title }}</h1>
+                                <p class="news-detal-category">{{ record.category.name|upper }}</p>
+                                <span class="news-datetime ">
+                                      {{ record.created_at.format('d M Y') }}
+                                    </span>
+                            </div>
+
+                            <div class="news-image">
+                                <img src="{{ record.image.thumb(750,413) }}" alt="" class="img-responsive">
+                            </div>
+
+
+                            <div class="news-contents">
+                                <div class="content-main">
+
+                                    {{ record.content |raw }}
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="gall-grid cav-grid">
+                            <div id="aniimated-thumbnials">
+
+                                {% for image in record.gallery %}
+                                    <a href="{{ image.path }}">
+                                        <div class="overlay">
+                                            <i class="fa fa-search"></i>
+                                        </div>
+                                        <img src="{{ image.thumb(180,100,{'mode':'crop'}) }}">
+                                    </a>
+                                {% endfor %}
+
+
+                            </div>
+                        </div>
+                        <div class="social-link-area">
+
+                            <ul class="social-icon">
+                                <li>Paylaş:</li>
+                                <li class="facebook">
+                                    <a href="#">
+                                        <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li class="twitter">
+                                    <a href="#">
+                                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li class="google-plus">
+                                    <a href="#">
+                                        <i class="fa fa-google-plus-official" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                            </ul>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class=" col-sm-12 col-md-4 col-lg-4">
+                    <div id="sidebar" class="sidebar">
+
+                        <div class="sidebar-title">
+                            <h1 class="title-bold">Digər xəbərlər</h1>
+                            <div class="border"></div>
+                        </div>
+                        <div class="news-list-item">
+                            <ul>
+                                {% for record in sameCategoryRecord %}
+                                    <li>
+                                        {% spaceless %}
+                                            {% if detailsPage %}
+                                                <a href="{{ detailsPage|page({ (detailsUrlParameter): record.slug }) }}">
+                                            {% endif %}
+
+                                            {{ record.title }}
+                                            {% if detailsPage %}
+                                                </a>
+                                            {% endif %}
+                                        {% endspaceless %}
+                                    </li>
+                                {% endfor %}
+
+
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

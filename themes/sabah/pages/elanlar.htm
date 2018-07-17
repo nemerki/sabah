@@ -1,0 +1,132 @@
+title = "Elanlar"
+url = "/elanlar/:page?"
+layout = "default"
+is_hidden = 0
+
+[adList]
+detailsPage = "-"
+detailsUrlParameter = "id"
+recordsPerPage = 10
+pageNumber = "{{ :page }}"
+sortColumn = "created_at"
+sortDirection = "asc"
+
+[importantAds]
+==
+<section id="teacher-news-faq">
+    <div id="header-panel">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel-title">
+                        <h1>Elanlar</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="important-add">
+    <div id="pinBoxContainer" class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="title-bold title-before green">
+                    Vacib elanlar
+                </div>
+                <div class="elan-grid">
+                    <div class="row">
+                        {% for record in importantAds %}
+                            <div class="col-md-6">
+                                <a href="/elan/{{ record.slug }}">
+                                    <div class="item text-center">
+                                        <div class="box">
+                                            <div class="datetime">
+                                                01 İyul 2017
+                                            </div>
+                                            <div class="desc">
+                                               {{ record.title }}
+                                            </div>
+                                        </div>
+                                        <div class="overlay"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        {% endfor %}
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12  col-lg-4">
+                <div id="sidebar" class="pinBox">
+                    <div class="sidebar-title">
+                        <h1 class="title-bold">Təqvim</h1>
+                        <div class="border"></div>
+                        <p class="now">Bu gün: 30 İyul 2017</p>
+                    </div>
+                    <div>
+                        <div class="form-group">
+                            <div id="datetimepicker12"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class=" col-sm-12 col-md-8 col-lg-8">
+                <div class="margin-t50">
+                    <div class="title-bold title-before green">
+                        Son elanlar
+                    </div>
+                    <div class="elanlar-list">
+                        <ul class="sonElanlar">
+                            {% partial "elanlar/sonElanlar" partialsRecords=records %}
+
+                        </ul>
+
+                    </div>
+                    <div class="row pa">
+                        {% partial "pagination" partialsRecords=records %}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+</section>
+
+{% put scripts %}
+    <script type="text/javascript">
+
+        $(function () {
+
+            $(document).on('click', '.ajaxPagination', function (e) {
+                e.preventDefault();
+                var array = $(this).attr('href').split('/');
+                var page = array[array.length - 1];
+
+                swal({
+                    title: 'Yüklənir...',
+                    html:
+                    '<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>' +
+                    ' <span class="sr-only">Loading...</span>',
+                    showCloseButton: false,
+                    showCancelButton: false,
+                    showConfirmButton: false,
+                    allowOutsideClick: false
+                });
+
+                $.request('onPaginate', {
+
+                    update: {"elanlar/sonElanlar": '.sonElanlar', pagination: '.pa'},
+                    data: {perPage: page},
+                    complete: function () {
+                        swal.close();
+                    }
+
+
+                });
+            });
+
+
+        })
+
+    </script>
+{% endput %}

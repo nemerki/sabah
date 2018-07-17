@@ -1,0 +1,18 @@
+{% for record in partialsRecords %}
+    <li>
+        <div class="row">
+            <div class="col-md-1 col-sm-1 col-xs-2">
+                <div class="elan-date">
+                    <p class="date-number">04</p>
+                    <p class="month-name">İYUL</p>
+                    <p class="month-name">2017</p>
+                </div>
+            </div>
+            <div class="col-md-11 col-sm-11 col-xs-10 elan-area">
+                <p class="elan-description">
+                    <a href="/elan/{{ record.slug }}">{{ record.title }}</a>
+                </p>
+            </div>
+        </div>
+    </li>
+{% endfor %}

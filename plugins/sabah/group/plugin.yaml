@@ -2,13 +2,13 @@ plugin:
     name: 'sabah.group::lang.plugin.name'
     description: 'sabah.group::lang.plugin.description'
     author: Sabah
-    icon: oc-icon-adjust
+    icon: oc-icon-bank
     homepage: ''
 navigation:
     main-menu-item:
         label: Sabah
         url: sabah/group/faq
-        icon: icon-users
+        icon: icon-bank
         sideMenu:
             side-menu-item:
                 label: 'Verilen Suallar'

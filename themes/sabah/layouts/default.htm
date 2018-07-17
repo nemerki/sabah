@@ -1,3 +1,5 @@
+[staticMenu]
+code = "header"
 ==
 <!DOCTYPE html>
 <!--[if lt IE 7]>
@@ -33,7 +35,52 @@
 <div class="modal-overlay"></div>
 <!-- Header -->
 
-{% partial 'header' %}
+<header class="header-sh">
+    <div class="back" style="background-image:url('{{ 'assets/img/content-img/header-rectangle.png'|theme }}')">
+    </div>
+    <div class="container">
+        <div class="header">
+            <div class="row">
+
+                <div class="col-md-2 col-sm-2 col-xs-6">
+                    <div class="logo">
+                        <a href="">
+                            <img src="{{ 'assets/img/file-img/S-Loqo.svg'|theme }}" alt="" class="img-responsive">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xs-6  visible-xs">
+                    <div class="mobile-menu-i ">
+                        <div class="icon text-right">
+                            <i class="fa fa-bars" aria-hidden="true"></i>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-10 hidden-xs col-sm-10">
+                    <div class="main-menu">
+                        <ul class="main-ul">
+
+                            {% if menuItems %}
+                                {% partial "nav" items=menuItems %}
+                            {% endif %}
+
+                        </ul>
+                        <div class="search">
+                            <form action="home.html" method="get">
+                                <input type="search" placeholder="Axtardiginizi buraya yazin" name="s" class="searc-inp" autocomplete="off">
+                                <button class="fa fa-search"></button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</header>
 
 <!-- Mobile menu -->
 
@@ -64,7 +111,13 @@
 <script src="{{ 'assets/js/plugins/lg-fullscreen.min.js'|theme }}"></script>
 <script src="{{ 'assets/js/plugins/bootstrap-datetimepicker.min.js'|theme }}"></script>
 <script src="{{ 'assets/js/plugins/jquery.pinBox.min.js'|theme }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
+<script>
+    // $(function() {
+    //     $('.sub-menu').closest("li").addClass("sub-item")
+    // });
 
+</script>
 {% framework extras %}
 {% scripts %}
 

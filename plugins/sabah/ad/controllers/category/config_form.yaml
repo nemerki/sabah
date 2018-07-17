@@ -1,0 +1,10 @@
+name: Category
+form: $/sabah/ad/models/category/fields.yaml
+modelClass: Sabah\Ad\Models\Category
+defaultRedirect: sabah/ad/category
+create:
+    redirect: 'sabah/ad/category/update/:id'
+    redirectClose: sabah/ad/category
+update:
+    redirect: sabah/ad/category
+    redirectClose: sabah/ad/category
