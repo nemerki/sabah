@@ -18,3 +18,7 @@ navigation:
                 label: 'Təcrübə Proqramları'
                 url: sabah/student/practiceprogram
                 icon: icon-star-o
+            side-menu-item3:
+                label: 'Xaricde Təhsil'
+                url: sabah/student/abroadstudy
+                icon: icon-stumbleupon

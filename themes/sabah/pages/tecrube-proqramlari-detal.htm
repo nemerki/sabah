@@ -1,0 +1,154 @@
+title = "Təcrübə proqramlari detal"
+url = "/telebe/tecrube/:slug"
+layout = "default"
+is_hidden = 0
+
+[builderDetails]
+modelClass = "Sabah\Student\Models\PracticeProgram"
+identifierValue = "{{ :slug }}"
+modelKeyColumn = "slug"
+displayColumn = "slug"
+notFoundMessage = "Record not found"
+==
+<div id="teacher-news-faq" class="main-content">
+        <!-- BANNER-->
+        <div id="banner-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <div style="background-image:linear-gradient(0deg,rgba(0, 155, 77, 0.7),rgba(0, 155, 77, 0.7)),
+                                 url('./img/content-img/teacher-news-background.png')" class="background-green">
+                        <div class="banner-title text-center">
+                            <div class="s-star"></div>
+                            <h1>TƏCRÜBƏ PROQRAMLARI</h1>
+                            <p class="breadcumb">SABAH TƏLƏBƏLƏRİ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BANNER-->
+
+        <div id="teacher-news-faq-collapse">
+            <div id="pinBoxContainer" class="container">
+                <div class="row">
+
+                    <div class=" col-sm-12 col-md-8 col-lg-8">
+                        <div class="pad-40">
+                            <div class="sidebar-title-green">
+                                <h1 class="title-bold">{{ record.position }} • {{ record.company_name }}</h1>
+                            </div>
+
+                            <div class="works-area">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div style="background-image:url({{ record.logo.thumb(176,176) }})" class="works-logo"></div>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="company-contact">
+                                            <div class="company-title">
+                                                <div class="content-main">{{ record.description_top|raw }}</div>
+                                            </div>
+                                            <div class="company-contact-list">
+                                                <dl class="list-contact">
+                                                    <dt class="">Vəzifə:</dt>
+                                                    <dd class="content-main">{{ record.position }}</dd>
+                                                    <dt class="">Şirkət:</dt>
+                                                    <dd class="content-main">{{ record.company_name }}</dd>
+                                                    <dt class="">Növ:</dt>
+                                                    <dd class="rich-work">
+                                                        {% if record.payment_method==0 %}
+                                                            Ödenişsiz
+                                                        {% else %}
+                                                            Ödenişli
+                                                        {% endif %}
+                                                    </dd>
+                                                    <dt class="">Son tarix:</dt>
+                                                    <dd class="content-main">{{ record.expiry_date|date('d.m.Y') }}</dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="works-area-detal">
+                                    <div class="works-detal-title">
+                                        <p>İşin təsviri</p>
+
+                                           {{ record.job_description|raw }}
+
+                                    </div>
+
+                                    <div class="works-detal-title">
+                                        <p>Namizədə tələblər</p>
+
+                                            {{ record.requirements|raw }}
+
+                                    </div>
+
+                                    <div class="content-main">{{ record.description_bottom }}</div>
+
+                                    <div class="program-detal-submit">
+                                        <button type="submit">MÜRACİƏT ET</button>
+                                        <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class=" col-sm-12 col-md-4 col-lg-4">
+                        <div id="sidebar" class="sidebar pinBox">
+                            <div class="sidebar-title-green">
+                                <h1 class="title-bold">SABAH Tələbələri</h1>
+                                <div class="border"></div>
+                            </div>
+                            <div class="sidebar-list-item-green b-0">
+                                <ul>
+
+                                    <li>
+                                        <a href="#">XƏBƏRLƏR</a>
+                                    </li>
+
+
+                                    <li>
+                                        <a href="#">ELANLAR</a>
+                                    </li>
+
+
+                                    <li>
+                                        <a href="#">TƏCRÜBƏ PROQRAMLARI</a>
+                                    </li>
+
+
+                                    <li>
+                                        <a href="#">XARİCDƏ TƏHSİL VƏ MÜBADİLƏ PROQRAMLARI
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">İXTİSASLAR</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">UNİVERSİTETLƏR</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">ƏLAQƏ</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

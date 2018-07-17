@@ -1,0 +1,5 @@
+columns:
+    title:
+        label: Başlıq
+        type: text
+        searchable: true

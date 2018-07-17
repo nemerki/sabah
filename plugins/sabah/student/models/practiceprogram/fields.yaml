@@ -22,6 +22,17 @@ fields:
         mode: datetime
         span: auto
         type: datepicker
+    is_active:
+        label: Status
+        options:
+            - Passiv
+            - Aktiv
+        span: auto
+        type: dropdown
+    position:
+        label: Vəzifə
+        span: auto
+        type: text
     description_top:
         label: 'Üst Açıqlama'
         size: ''
@@ -32,6 +43,15 @@ fields:
         size: ''
         span: auto
         type: textarea
+    logo:
+        label: 'Şirkət Logosu'
+        span: full
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        type: fileupload
     job_description:
         label: 'İşin təsviri'
         size: ''
@@ -42,16 +62,3 @@ fields:
         size: ''
         span: auto
         type: richeditor
-    position:
-        label: Vəzifə
-        span: auto
-        type: text
-    logo:
-        label: 'Şirkət Logosu'
-        span: auto
-        mode: image
-        useCaption: true
-        thumbOptions:
-            mode: crop
-            extension: auto
-        type: fileupload

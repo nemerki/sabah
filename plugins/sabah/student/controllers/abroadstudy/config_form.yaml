@@ -1,0 +1,10 @@
+name: AbroadStudy
+form: $/sabah/student/models/abroadstudy/fields.yaml
+modelClass: Sabah\Student\Models\AbroadStudy
+defaultRedirect: sabah/student/abroadstudy
+create:
+    redirect: 'sabah/student/abroadstudy/update/:id'
+    redirectClose: sabah/student/abroadstudy
+update:
+    redirect: sabah/student/abroadstudy
+    redirectClose: sabah/student/abroadstudy

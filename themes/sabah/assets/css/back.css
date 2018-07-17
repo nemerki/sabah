@@ -5,3 +5,7 @@
 .active .ajaxPagination {
     color: #cccccc;
 }
+
+.works-area .works-logo {
+    background-size: auto !important;
+}
