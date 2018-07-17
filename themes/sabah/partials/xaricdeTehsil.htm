@@ -1,0 +1,38 @@
+{% for record in partialsRecords %}
+    <div class="row">
+        <div class="news-block-inner">
+            <div class="col-md-3 col-sm-3">
+                {% spaceless %}
+                    {% if detailsPage %}
+                        <a href="{{ detailsPage|page({ (detailsUrlParameter): record.slug }) }}">
+                    {% endif %}
+                    <div style="background-image:url({{ record.image.path }})"
+                         class="news-img">
+                    </div>
+                    {% if detailsPage %}
+                        </a>
+                    {% endif %}
+                {% endspaceless %}
+            </div>
+
+            <div class="news-title col-sm-9 col-md-9">
+                <p class="description-news">
+                    <a href="#">
+                        {{ record.title }}
+                    </a>
+
+                </p>
+                <h6 class="news-category">
+                    {{ record.category.name|upper }}
+                </h6>
+                <span class="news-datetime ">
+                                            {{ record.created_at.format('d M Y') }}
+                                        </span>
+            </div>
+
+        </div>
+    </div>
+
+{% endfor %}
+
+
