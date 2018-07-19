@@ -1,0 +1,285 @@
+[staticPage]
+useContent = 1
+default = 0
+
+[builderList]
+modelClass = "Sabah\Student\Models\TeacherAdmission"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "question"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+
+[staticMenu muellimQebulu]
+code = "muellim-qebulu"
+
+[staticMenu header]
+code = "header"
+
+[staticMenu sabahQuruplariFooter]
+code = "sabah-qruplari"
+
+[staticMenu telebelerUcunFooter]
+code = "telebeler-ucun-footer"
+==
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sabah - {{ this.page.title }}</title>
+    <meta name="description" content="{{ this.page.meta_description }}">
+    <meta name="title" content="{{ this.page.meta_title }}">
+    <meta name="author" content="Nova">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Sabah">
+    <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}">
+    <link href="{{ 'assets/css/bootstrap.css'|theme }}" rel="stylesheet">
+    <link href="{{ 'assets/css/bootstrap-theme.css'|theme }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="{{ 'assets/css/owl.carousel.min.css'|theme }}" rel="stylesheet">
+    <link href="{{ 'assets/css/owl.theme.default.min.css'|theme }}" rel="stylesheet">
+    <link href="{{ 'assets/css/style.css'|theme }}" rel="stylesheet">
+    <link href="{{ 'assets/css/back.css'|theme }}" rel="stylesheet">
+    {% styles %}
+</head>
+<body>
+<div class="modal-overlay"></div>
+<!-- Header -->
+
+<header class="header-sh">
+    <div class="back" style="background-image:url('{{ 'assets/img/content-img/header-rectangle.png'|theme }}')">
+    </div>
+    <div class="container">
+        <div class="header">
+            <div class="row">
+
+                <div class="col-md-2 col-sm-2 col-xs-6">
+                    <div class="logo">
+                        <a href="{{ '/'|app }}">
+                            <img src="{{ 'assets/img/file-img/S-Loqo.svg'|theme }}" alt="" class="img-responsive">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xs-6  visible-xs">
+                    <div class="mobile-menu-i ">
+                        <div class="icon text-right">
+                            <i class="fa fa-bars" aria-hidden="true"></i>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-10 hidden-xs col-sm-10">
+                    <div class="main-menu">
+                        <ul class="main-ul">
+
+                            {% if header.menuItems %}
+                                {% partial "nav" items=header.menuItems %}
+                            {% endif %}
+
+                        </ul>
+                        <div class="search">
+                            <form action="{{ 'xeber-axtar'|page }}" method="post">
+                                <input required type="search" placeholder="Axtardiginizi buraya yazin" name="search" class="searc-inp"
+                                       autocomplete="off">
+                                <i class="arama fa fa-search"></i>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</header>
+
+<!-- Mobile menu -->
+
+{% partial 'mobile-menu' %}
+
+<!-- Content -->
+
+
+<div id="teacher-news-faq" class="main-content">
+        <!-- BANNER-->
+        <div id="banner-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <div style="background-image:linear-gradient(0deg,rgba(0, 131, 192,0.7),rgba(0, 131, 192,0.7)),
+                                   url('{{'assets/img/content-img/teacher-news-background.png'|theme}}')" class="background-green">
+                        <div class="banner-title text-center">
+                            <div class="s-star"></div>
+                            <h1>MÜTƏMADİ VERİLƏN SUALLAR</h1>
+                            <p class="breadcumb">MÜƏLLİM QƏBULU</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BANNER-->
+
+        <div id="teacher-news-faq-collapse">
+            <div id="pinBoxContainer" class="container">
+                <div class="row">
+                    <div class=" col-sm-12 col-md-8 col-lg-8">
+                        <div class="teacher-news-collapse">
+                            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+                                {% for faq in records %}
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab" id="heading{{ loop.index }}">
+                                            <h4 class="panel-title">
+                                                <a class="collapsed" role="button" data-toggle="collapse"
+                                                   data-parent="#accordion" href="#collapse{{ loop.index }}" aria-expanded="false"
+                                                   aria-controls="collapse{{ loop.index }}">
+                                                    <div class="title-collaps">
+                                                        <span class="collapse-number"> {{ loop.index }}.</span>
+                                                        <p>{{ faq.question }}</p>
+                                                    </div>
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapse{{ loop.index }}" class="panel-collapse collapse" role="tabpanel"
+                                             aria-labelledby="heading{{ loop.index }}">
+                                            <div class="panel-body partners-text">{{ faq.answer }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+
+
+                            </div>
+                        </div>
+                        <div id="teacher-news-form">
+                            <div class="questions-form">
+                                <dəv class="partners-text">{% page %}</dəv>
+                            </div>
+                            <div class="form-area">
+                                <form>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-md-6">
+                                                <label class="content-text" for="exampleInputEmail1">Soyadınız və adınız:</label>
+                                                <input type="text" class="form-control" id="examplename" placeholder="Tam adınız">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="content-text" for="exampleInputEmail1">Email ünvanınız:</label>
+                                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="content-text" for="exampleFormControlSelect1">İsmarıcınızın növü:</label>
+                                                <select class="form-control" id="exampleFormControlSelect1">
+                                                    <option>Sual</option>
+                                                    <option>Sual1</option>
+                                                    <option>Sual2</option>
+                                                    <option>Sual3</option>
+                                                    <option>Sual4</option>
+                                                </select>
+                                                <!-- <i class="fa fa-chevron-down" aria-hidden="true"></i> -->
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="content-text" for="exampleInputEmail1">Mövzu:</label>
+                                                <input type="text" class="form-control" id="exampleInputtext" placeholder="Mövzu">
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label class="content-text" for="exampleInputEmail1">İsmarıcınız:</label>
+                                                <textarea class="form-control" rows="5" cols="50" placeholder="İsmarıcınız"></textarea>
+                                            </div>
+
+
+
+                                        </div>
+
+                                    </div>
+                                    <div class="send">
+                                        <button type="submit" class="button-txt">GÖNDƏR
+                                            <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+
+                                </form>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class=" col-sm-12 col-md-4 col-lg-4">
+                        <div id="sidebar" class="sidebar pinBox">
+                            <div class="sidebar-title">
+                                <h1 class="title-bold">Müəllim qəbulu</h1>
+                                <div class="border"></div>
+                            </div>
+                            <div class="sidebar-list-item">
+                                <ul>
+
+                                    {% if muellimQebulu.menuItems %}
+                                        {% partial "sabahTelebeleriNav" items=muellimQebulu.menuItems %}
+                                    {% endif %}
+                                </ul>
+                            </div>
+
+                            <div class="request-button">
+                                <button type="submit" class="">MÜRACİƏT ET </button>
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+<!-- Subscribe -->
+
+{% partial 'subscribe' %}
+
+<!-- Footer -->
+
+{% partial 'footer' %}
+
+
+<!-- Scripts -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+<script src="{{ 'assets/js/plugins/bootstrap.min.js'|theme }}"></script>
+<script src="{{ 'assets/js/plugins/owlcarousel/owl.carousel.min.js'|theme }}"></script>
+<script src="{{ 'assets/js/plugins/lightgallery.min.js'|theme }}"></script>
+<script src="{{ 'assets/js/plugins/lg-thumbnail.min.js'|theme }}"></script>
+<script src="{{ 'assets/js/plugins/lg-fullscreen.min.js'|theme }}"></script>
+<script src="{{ 'assets/js/plugins/bootstrap-datetimepicker.min.js'|theme }}"></script>
+<script src="{{ 'assets/js/plugins/jquery.pinBox.min.js'|theme }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
+<script>
+    $(function () {
+        $('.arama').on("click", function () {
+            $("header .main-menu .search input").css("width", "200px");
+        });
+    });
+
+</script>
+{% framework extras %}
+{% scripts %}
+
+</body>
+</html>
