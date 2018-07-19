@@ -2,6 +2,9 @@ title = "Müəllim qəbulu seçim şərtləri"
 url = "/muellim-qebulu/secim-sertleri"
 layout = "default"
 is_hidden = 0
+
+[staticMenu muellimQebulu]
+code = "muellim-qebulu"
 ==
 <div id="teacher-news-faq" class="main-content">
         <!-- BANNER-->
@@ -80,32 +83,9 @@ is_hidden = 0
                             <div class="sidebar-list-item">
                                 <ul>
 
-                                    <li>
-                                        <a href="#">SEÇİM ŞƏRTLƏRİ</a>
-                                    </li>
-
-                                    <li>
-                                        <a href="#">QAYDALAR</a>
-                                    </li>
-
-                                    <li>
-                                        <a href="#">İXTİSASLAR</a>
-                                    </li>
-
-
-                                    <li>
-                                        <a href="#">ELANLAR</a>
-                                    </li>
-
-
-                                    <li>
-                                        <a href="#">XƏBƏRLƏR</a>
-                                    </li>
-
-
-                                    <li>
-                                        <a href="#">MÜTƏMADİ VERİLƏN SUALLAR</a>
-                                    </li>
+                                    {% if muellimQebulu.menuItems %}
+                                        {% partial "sabahTelebeleriNav" items=muellimQebulu.menuItems %}
+                                    {% endif %}
 
                                 </ul>
                             </div>

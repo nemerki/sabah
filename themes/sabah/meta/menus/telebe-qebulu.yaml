@@ -1,0 +1,56 @@
+name: 'Telebe qebulu'
+items:
+    -
+        title: 'SEÇİM ŞƏRTLƏRİ'
+        type: cms-page
+        code: ''
+        reference: telebe-qebulu-secim-sertleri
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: QAYDALAR
+        type: cms-page
+        code: ''
+        reference: telebe-qebulu-qaydalar
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: İXTİSASLAR
+        type: cms-page
+        code: ''
+        reference: telebe-qebulu-ixtisaslar
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: ELANLAR
+        type: cms-page
+        code: ''
+        reference: telebe-qebulu-elanlar
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: XƏBƏRLƏR
+        type: cms-page
+        code: ''
+        reference: telebe-qebulu-xeberler
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'MÜTƏMADİ VERİLƏN SUALLAR'
+        type: cms-page
+        code: ''
+        reference: telebe-qebulu-mutemadi-verilen-suallar
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'

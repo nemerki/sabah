@@ -13,6 +13,9 @@ detailsPage = "-"
 detailsUrlParameter = "id"
 recordsPerPage = 5
 pageNumber = "{{ :page }}"
+
+[staticMenu sabahTelebeleri]
+code = "sabah-telebeleri"
 ==
 <div id="teacher-news-faq" class="main-content">
         <!-- BANNER-->
@@ -67,38 +70,9 @@ pageNumber = "{{ :page }}"
                             <div class="sidebar-list-item-green b-0">
                                 <ul>
 
-                                    <li>
-                                        <a href="#">XƏBƏRLƏR</a>
-                                    </li>
-
-
-                                    <li>
-                                        <a href="#">ELANLAR</a>
-                                    </li>
-
-
-                                    <li>
-                                        <a href="#">TƏCRÜBƏ PROQRAMLARI</a>
-                                    </li>
-
-
-                                    <li>
-                                        <a href="#">XARİCDƏ TƏHSİL VƏ MÜBADİLƏ PROQRAMLARI
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="#">İXTİSASLAR</a>
-                                    </li>
-
-                                    <li>
-                                        <a href="#">UNİVERSİTETLƏR</a>
-                                    </li>
-
-                                    <li>
-                                        <a href="#">ƏLAQƏ</a>
-                                    </li>
-
+                                    {% if sabahTelebeleri.menuItems %}
+                                        {% partial "sabahTelebeleriNav" items=sabahTelebeleri.menuItems %}
+                                    {% endif %}
                                 </ul>
                             </div>
 

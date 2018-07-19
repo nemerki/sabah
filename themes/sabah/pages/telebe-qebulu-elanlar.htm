@@ -11,6 +11,10 @@ recordsPerPage = 10
 pageNumber = "{{ :page }}"
 sortColumn = "created_at"
 sortDirection = "desc"
+
+
+[staticMenu telebeQebulu]
+code = "telebe-qebulu"
 ==
 <div id="teacher-news-faq" class="main-content">
         <!-- BANNER-->
@@ -58,32 +62,9 @@ sortDirection = "desc"
                             <div class="sidebar-list-item">
                                 <ul>
 
-                                    <li>
-                                        <a href="#">SEÇİM ŞƏRTLƏRİ</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">qaydalar
-
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">ixtisaslar</a>
-                                    </li>
-
-
-                                    <li>
-                                        <a href="#">ELANLAR</a>
-                                    </li>
-
-
-                                    <li>
-                                        <a href="#">XƏBƏRLƏR</a>
-                                    </li>
-
-
-                                    <li>
-                                        <a href="#">MÜTƏMADİ VERİLƏN SUALLAR</a>
-                                    </li>
+                                    {% if telebeQebulu.menuItems %}
+                                        {% partial "sabahTelebeleriNav" items=telebeQebulu.menuItems %}
+                                    {% endif %}
 
                                 </ul>
                             </div>

@@ -9,3 +9,24 @@
 .works-area .works-logo {
     background-size: auto !important;
 }
+
+.arama {
+    font-size: 18px;
+    border: none;
+    outline: 0;
+    background: white;
+    color: #999999;
+    background: transparent;
+
+}
+
+header .main-menu .search input {
+    width: 0;
+    display: inline-block;
+    text-align: left;
+}
+
+.cav-grid {
+    margin-bottom: 50px;
+    margin-top: 50px;
+}

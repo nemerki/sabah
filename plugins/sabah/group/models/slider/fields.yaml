@@ -1,0 +1,23 @@
+fields:
+    title:
+        label: Başlığı
+        span: full
+        type: text
+    description:
+        label: 'Qısa açıqlaması'
+        size: ''
+        span: full
+        type: textarea
+    link:
+        label: Linki
+        span: full
+        type: text
+    image:
+        label: Şəkli
+        span: full
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        type: fileupload

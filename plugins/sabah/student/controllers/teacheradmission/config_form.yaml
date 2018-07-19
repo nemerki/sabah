@@ -1,0 +1,10 @@
+name: TeacherAdmission
+form: $/sabah/student/models/teacheradmission/fields.yaml
+modelClass: Sabah\Student\Models\TeacherAdmission
+defaultRedirect: sabah/student/teacheradmission
+create:
+    redirect: 'sabah/student/teacheradmission/update/:id'
+    redirectClose: sabah/student/teacheradmission
+update:
+    redirect: sabah/student/teacheradmission
+    redirectClose: sabah/student/teacheradmission

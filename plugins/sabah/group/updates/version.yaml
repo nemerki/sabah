@@ -15,3 +15,6 @@
 1.0.6:
     - 'Updated table sabah_group_galleries'
     - builder_table_update_sabah_group_galleries.php
+1.0.7:
+    - 'Created table sabah_group_sliders'
+    - builder_table_create_sabah_group_sliders.php

@@ -1,0 +1,11 @@
+fields:
+    question:
+        label: Sual
+        size: ''
+        span: auto
+        type: textarea
+    answer:
+        label: Cavab
+        size: ''
+        span: auto
+        type: textarea

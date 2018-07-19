@@ -1,0 +1,127 @@
+title = "Əlaqə"
+url = "/elaqe/:page?"
+layout = "default"
+is_hidden = 0
+
+[builderList]
+modelClass = "Sabah\Student\Models\University"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "slug"
+noRecordsMessage = "No records found"
+detailsPage = "universitet-xeberler"
+detailsKeyColumn = "slug"
+detailsUrlParameter = "slug"
+recordsPerPage = 5
+pageNumber = "{{ :page }}"
+sortColumn = "created_at"
+sortDirection = "desc"
+==
+<div id="teacher-news-faq" class="main-content">
+        <!-- BANNER-->
+        <div id="banner-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <div style="background-image:linear-gradient(0deg,rgba(0, 155, 77, 0.7),rgba(0, 155, 77, 0.7)),
+                                 url('./img/content-img/layer-13.png')" class="background-green">
+                        <div class="banner-title text-center">
+                            <div class="s-star"></div>
+                            <h1>UNİVERSİTET NÜMAYƏNDƏLİKLƏRİ</h1>
+                            <p class="breadcumb">ƏLAQƏ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BANNER-->
+
+        <div id="teacher-news-faq-collapse">
+            <div class="container">
+                <div class="row">
+                    <div class=" col-sm-12 col-md-12 col-lg-12">
+                        <div class="university-table">
+                            <div class="head-title">
+                                <div class="sidebar-title-green">
+                                    <h1 class="title-bold">SABAH qruplarının baza ali təhsil müəssisələri üzrə koordinatorları</h1>
+                                </div>
+                            </div>
+
+                            <div class="table-for-university">
+                                <div class="conatct-table table-responsive">
+
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>ATM</th>
+                                                <th>KOORDİNATOR</th>
+                                                <th>ƏLAQƏ NÖMRƏSI</th>
+                                                <th>EMAIL ÜNVANI</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+
+                                        {% partial "elaqeNumayendelikler" partialsRecords=records %}
+
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                                <div class="row pa">
+                                    {% partial "pagination" partialsRecords=records %}
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+{% put scripts %}
+    <script type="text/javascript">
+
+        $(function () {
+
+            $(document).on('click', '.ajaxPagination', function (e) {
+                e.preventDefault();
+                var array = $(this).attr('href').split('/');
+                var page = array[array.length - 1];
+
+                swal({
+                    title: 'Yüklənir...',
+                    html:
+                    '<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>' +
+                    ' <span class="sr-only">Loading...</span>',
+                    showCloseButton: false,
+                    showCancelButton: false,
+                    showConfirmButton: false,
+                    allowOutsideClick: false
+                });
+
+                $.request('onPaginate', {
+
+                    update: {elaqeNumayendelikler:'.table', pagination: '.pa'},
+                    data: {perPage: page},
+                    complete: function () {
+                        swal.close();
+                    }
+
+
+                });
+            });
+
+
+        })
+
+    </script>
+{% endput %}

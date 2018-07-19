@@ -13,13 +13,16 @@ detailsPage = "universitet-xeberler"
 detailsKeyColumn = "slug"
 detailsUrlParameter = "slug"
 pageNumber = "{{ :page }}"
+
+[staticMenu sabahTelebeleri]
+code = "sabah-telebeleri"
 ==
 <section id="teacher-news-faq" class="main-content">
     <div id="banner-area">
         <div class="container-fluid">
             <div class="row">
                 <div style="background-image:linear-gradient(0deg,rgba(0, 155, 77, 0.7),rgba(0, 155, 77, 0.7)),
-                                         url('./img/content-img/ixtisaslar-back.png')" class="background-green">
+                                         url('{{ 'assets/img/content-img/ixtisaslar-back.png'|theme }}')" class="background-green">
                     <div class="banner-title text-center">
                         <div class="s-star"></div>
                         <h1>Universitetlər</h1>
@@ -70,37 +73,10 @@ pageNumber = "{{ :page }}"
                     <div class="sidebar-list-item-green b-0">
                         <ul>
 
-                            <li>
-                                <a href="#">XƏBƏRLƏR</a>
-                            </li>
 
-
-                            <li>
-                                <a href="#">ELANLAR</a>
-                            </li>
-
-
-                            <li>
-                                <a href="#">TƏCRÜBƏ PROQRAMLARI</a>
-                            </li>
-
-
-                            <li>
-                                <a href="#">XARİCDƏ TƏHSİL VƏ MÜBADİLƏ PROQRAMLARI
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="#">İXTİSASLAR</a>
-                            </li>
-
-                            <li>
-                                <a href="#">UNİVERSİTETLƏR</a>
-                            </li>
-
-                            <li>
-                                <a href="#">ƏLAQƏ</a>
-                            </li>
+                            {% if sabahTelebeleri.menuItems %}
+                                {% partial "sabahTelebeleriNav" items=sabahTelebeleri.menuItems %}
+                            {% endif %}
 
                         </ul>
                     </div>

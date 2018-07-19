@@ -45,22 +45,10 @@
                         sabah qruplari
                     </div>
                     <ul class="sabah-ul">
-                        <li>
-                            <a href="">
-                                Layİhənİn məqsədİ
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">Tərəfdaşlar</a>
-                        </li>
-                        <li>
-                            <a href="">Fotoqalereya</a>
-                        </li>
-                        <li>
-                            <a href="">
-                                Mütəmadİ verİlən suallar
-                            </a>
-                        </li>
+                        {% if sabahQuruplariFooter.menuItems %}
+                                                              {% partial "footerNav" items=sabahQuruplariFooter.menuItems %}
+                                                          {% endif %}
+
                     </ul>
                 </div>
                 <div class="col-md-2 hidden-sm hidden-xs">
@@ -68,21 +56,9 @@
                         TƏLƏBƏLƏR ÜÇÜN
                     </div>
                     <ul class="sabah-ul">
-                        <li>
-                            <a href="">təcrübə proqramları</a>
-                        </li>
-                        <li>
-                            <a href="">Xarİcdə təhsİl və mübadİlə proqramları</a>
-                        </li>
-                        <li>
-                            <a href=""> İxtİsaslar</a>
-                        </li>
-                        <li>
-                            <a href="">Unİversİtetlər</a>
-                        </li>
-                        <li>
-                            <a href="">Seçİm şərtlərİ və qaydalar</a>
-                        </li>
+                         {% if telebelerUcunFooter.menuItems %}
+                                                                                      {% partial "footerNav" items=telebelerUcunFooter.menuItems %}
+                                                                                  {% endif %}
                     </ul>
                 </div>
                 <div class="col-md-3 hidden-sm hidden-xs">

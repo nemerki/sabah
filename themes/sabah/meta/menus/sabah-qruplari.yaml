@@ -1,62 +1,56 @@
 name: 'SABAH Qrupları'
 items:
     -
-        title: 'Layihenin meqsedi'
-        nesting: ''
-        type: cms-page
-        url: ''
+        title: 'LAYİHƏNİN MƏQSƏDİ'
+        nesting: '0'
+        type: static-page
         code: ''
         reference: layihenin-meqsedi
-        cmsPage: ''
-        replace: ''
+        replace: '0'
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
         title: TƏRƏFDAŞLAR
-        nesting: ''
-        type: cms-page
-        url: ''
+        nesting: '0'
+        type: static-page
         code: ''
         reference: terefdaslar
-        cmsPage: ''
-        replace: ''
+        replace: '0'
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
         title: KOMANDAMIZ
-        nesting: ''
-        type: cms-page
-        url: ''
+        nesting: '0'
+        type: static-page
         code: ''
         reference: komandamiz
-        cmsPage: ''
-        replace: ''
+        replace: '0'
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
         title: 'FOTO QALEREYA'
-        nesting: ''
-        type: cms-page
-        url: ''
+        nesting: '0'
+        type: static-page
         code: ''
-        reference: qalereya
-        cmsPage: ''
-        replace: ''
+        reference: fotoqalereya
+        replace: '0'
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
         title: 'MÜTƏMADİ VERİLƏN SUALLAR'
-        type: cms-page
+        nesting: '0'
+        type: static-page
         code: ''
-        reference: mutemadi-verilen-suallar
+        reference: faq
+        replace: '0'
         viewBag:
             isHidden: '0'
             cssClass: ''

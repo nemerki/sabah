@@ -58,6 +58,7 @@ class Plugin extends PluginBase
             'Nemerki\News\Components\StudentNews' => 'studentNews',
             'Nemerki\News\Components\UniversityNews' => 'universityNews',
             'Nemerki\News\Components\StudentAdmissionNews' => 'studentAdmissionNews',
+            'Nemerki\News\Components\TeacherAdmissionNews' => 'teacherAdmissionNews',
         ];
     }
 

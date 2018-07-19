@@ -1,0 +1,17 @@
+{% for record in partialsRecords %}
+    <div class="search-result">
+        <div class="text">
+            {{ record.title }}
+        </div>
+        {% spaceless %}
+            {% if detailsPage %}
+                <a href="{{ detailsPage|page({ (detailsUrlParameter): record.slug }) }}">
+            {% endif %}
+            ƏTRAFLI
+            {% if detailsPage %}
+                </a>
+            {% endif %}
+        {% endspaceless %}
+    </div>
+
+{% endfor %}

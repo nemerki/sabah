@@ -1,0 +1,241 @@
+[staticPage]
+useContent = 1
+default = 0
+
+[staticMenu header]
+code = "header"
+
+[staticMenu sabahQuruplariFooter]
+code = "sabah-qruplari"
+
+[staticMenu telebelerUcunFooter]
+code = "telebeler-ucun-footer"
+
+[staticMenu sabahQurup]
+code = "sabah-qruplari"
+==
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sabah - {{ this.page.title }}</title>
+    <meta name="description" content="{{ this.page.meta_description }}">
+    <meta name="title" content="{{ this.page.meta_title }}">
+    <meta name="author" content="Nova">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Sabah">
+    <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}">
+    <link href="{{ 'assets/css/bootstrap.css'|theme }}" rel="stylesheet">
+    <link href="{{ 'assets/css/bootstrap-theme.css'|theme }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="{{ 'assets/css/owl.carousel.min.css'|theme }}" rel="stylesheet">
+    <link href="{{ 'assets/css/owl.theme.default.min.css'|theme }}" rel="stylesheet">
+    <link href="{{ 'assets/css/style.css'|theme }}" rel="stylesheet">
+    <link href="{{ 'assets/css/back.css'|theme }}" rel="stylesheet">
+    {% styles %}
+</head>
+<body>
+<div class="modal-overlay"></div>
+<!-- Header -->
+
+<header class="header-sh">
+    <div class="back" style="background-image:url('{{ 'assets/img/content-img/header-rectangle.png'|theme }}')">
+    </div>
+    <div class="container">
+        <div class="header">
+            <div class="row">
+
+                <div class="col-md-2 col-sm-2 col-xs-6">
+                    <div class="logo">
+                        <a href="{{ '/'|app }}">
+                            <img src="{{ 'assets/img/file-img/S-Loqo.svg'|theme }}" alt="" class="img-responsive">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xs-6  visible-xs">
+                    <div class="mobile-menu-i ">
+                        <div class="icon text-right">
+                            <i class="fa fa-bars" aria-hidden="true"></i>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-10 hidden-xs col-sm-10">
+                    <div class="main-menu">
+                        <ul class="main-ul">
+
+                            {% if header.menuItems %}
+                                {% partial "nav" items=header.menuItems %}
+                            {% endif %}
+
+                        </ul>
+                        <div class="search">
+                            <form action="{{ 'xeber-axtar'|page }}" method="post">
+                                <input required type="search" placeholder="Axtardiginizi buraya yazin" name="search" class="searc-inp"
+                                       autocomplete="off">
+                                <i class="arama fa fa-search"></i>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</header>
+
+<!-- Mobile menu -->
+
+{% partial 'mobile-menu' %}
+
+<!-- Content -->
+
+<div id="teacher-news-faq" class="main-content">
+    <!-- HEADER PANEL-->
+    <div id="header-panel">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel-title">
+
+                        <h1>LAYİHƏNİN MƏQSƏDİ</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER PANEL-->
+
+    <div id="teacher-news-faq-collapse">
+        <div id="pinBoxContainer" class="container">
+
+            <div class="row">
+                <div class=" col-sm-12 col-md-8 col-lg-8">
+                    <div class="teacher-news-collapse">
+                        <div class="project-content">
+                            <div class="head-title">
+                                <div class="sidebar-title-green">
+                                    <h1 class="title-bold">SABAH-ın Məqsədi</h1>
+                                </div>
+                                <div class="content-main">
+                                      {% page  %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="head-title">
+                                <div class="sidebar-title-green">
+                                    <h1 class="title-bold">Faktlar</h1>
+                                </div>
+
+                                <div class="content-main">  {% placeholder Faktlar title="Faktlar" %}</div>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="project-content">
+                                    <div class="head-title">
+                                        <div class="sidebar-title-green">
+                                            <h1 class="title-bold">SABAH-ın Üstünlükləri</h1>
+                                        </div>
+
+                                        <div
+                                            class="content-main">{% placeholder Ustunlukleri title="Ustunlukleri" %} </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="project-content">
+                                    <div class="head-title">
+                                        <div class="sidebar-title-green">
+                                            <h1 class="title-bold">SABAH-a Qəbul</h1>
+                                        </div>
+
+                                        <div class="content-main">{% placeholder Qebul title="Qebul" %} </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class=" col-sm-12 col-md-4 col-lg-4">
+                    <div id="sidebar" class=" pinBox sidebar ">
+                        <div class="sidebar-title">
+                            <h1 class="title-bold">SABAH Qrupları</h1>
+                            <div class="border"></div>
+                        </div>
+                        <div class="sidebar-list-item b-0">
+                            <ul>
+
+                                {% if sabahQurup.menuItems %}
+                                    {% partial "sabahQurup" items=sabahQurup.menuItems %}
+                                {% endif %}
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- Subscribe -->
+
+{% partial 'subscribe' %}
+
+<!-- Footer -->
+
+{% partial 'footer' %}
+
+
+<!-- Scripts -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+<script src="{{ 'assets/js/plugins/bootstrap.min.js'|theme }}"></script>
+<script src="{{ 'assets/js/plugins/owlcarousel/owl.carousel.min.js'|theme }}"></script>
+<script src="{{ 'assets/js/plugins/lightgallery.min.js'|theme }}"></script>
+<script src="{{ 'assets/js/plugins/lg-thumbnail.min.js'|theme }}"></script>
+<script src="{{ 'assets/js/plugins/lg-fullscreen.min.js'|theme }}"></script>
+<script src="{{ 'assets/js/plugins/bootstrap-datetimepicker.min.js'|theme }}"></script>
+<script src="{{ 'assets/js/plugins/jquery.pinBox.min.js'|theme }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
+<script>
+    $(function () {
+        $('.arama').on("click", function () {
+            $("header .main-menu .search input").css("width", "200px");
+        });
+    });
+
+</script>
+{% framework extras %}
+{% scripts %}
+
+</body>
+</html>

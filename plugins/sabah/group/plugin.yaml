@@ -26,3 +26,7 @@ navigation:
                 label: Qalereya
                 url: sabah/group/gallery
                 icon: icon-image
+            side-menu-item5:
+                label: Slider
+                url: sabah/group/slider
+                icon: icon-sliders

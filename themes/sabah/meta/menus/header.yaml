@@ -120,14 +120,19 @@ items:
                     cssClass: ''
                     isExternal: '0'
             -
-                title: UNİVERSİTETLƏR
-                nesting: ''
+                title: 'TƏCRÜBƏ PROQRAMLARI'
                 type: cms-page
-                url: ''
                 code: ''
-                reference: universitetler
-                cmsPage: ''
-                replace: ''
+                reference: tecrube-programlari
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: 'XARİCDƏ TƏHSİL VƏ MÜBADİLƏ PROQRAMLARI'
+                type: cms-page
+                code: ''
+                reference: xaricde-tehsil-ve-mubadile-proqramlari
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
@@ -145,10 +150,28 @@ items:
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
+            -
+                title: UNİVERSİTETLƏR
+                nesting: ''
+                type: cms-page
+                url: ''
+                code: ''
+                reference: universitetler
+                cmsPage: ''
+                replace: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
     -
         title: QƏBUL
+        nesting: ''
         type: header
+        url: ''
         code: ''
+        reference: ''
+        cmsPage: ''
+        replace: ''
         viewBag:
             isHidden: '0'
             cssClass: sub-item
@@ -156,9 +179,22 @@ items:
         items:
             -
                 title: 'TƏLƏBƏ QƏBULU'
+                nesting: ''
                 type: cms-page
+                url: ''
                 code: ''
                 reference: telebe-qebulu-secim-sertleri
+                cmsPage: ''
+                replace: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: 'MÜƏLLIM QƏBULU'
+                type: cms-page
+                code: ''
+                reference: muellim-qebulu-secim-sertleri
                 viewBag:
                     isHidden: '0'
                     cssClass: ''

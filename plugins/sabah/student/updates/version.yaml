@@ -33,3 +33,6 @@
 1.0.12:
     - 'Updated table sabah_student_student_admissions_faqs'
     - builder_table_update_sabah_student_student_admission_faqs.php
+1.0.13:
+    - 'Created table sabah_student_teacher_admission_faqs'
+    - builder_table_create_sabah_student_teacher_admission_faqs.php

@@ -1,0 +1,16 @@
+{% for item in items if not item.viewBag.isHidden %}
+    <li role="presentation"
+        class="{{ item.isActive ? 'active' : '' }} {{ item.isChildActive ? 'child-active' : '' }} {{ item.viewBag.cssClass }}">
+        {% if item.url %}
+            <a class="" href="{{ item.url }}" {{ item.viewBag.isExternal ? 'target="_blank"' }}>
+                {{ item.title }}
+            </a>
+        {% else %}
+            <a href="" class="menu-text no-link"> {{ item.title }}</a>
+        {% endif %}
+
+        {% if item.items %}
+            <ul class="sub-menu content-text">{% partial "nav" items=item.items %}</ul>
+        {% endif %}
+    </li>
+{% endfor %}

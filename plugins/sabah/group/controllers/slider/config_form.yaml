@@ -1,0 +1,10 @@
+name: Slider
+form: $/sabah/group/models/slider/fields.yaml
+modelClass: Sabah\Group\Models\Slider
+defaultRedirect: sabah/group/slider
+create:
+    redirect: 'sabah/group/slider/update/:id'
+    redirectClose: sabah/group/slider
+update:
+    redirect: sabah/group/slider
+    redirectClose: sabah/group/slider

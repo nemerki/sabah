@@ -1,0 +1,74 @@
+title = "Search"
+url = "/search"
+layout = "default"
+is_hidden = 0
+
+[search]
+==
+<section id="teacher-news-faq">
+        <div id="header-panel">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel-title bg-blue">
+                            <h1>AXTARIS</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="search">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div id="imaginary_container">
+                        <form action="">
+                            <input type="text" placeholder="Axtarish">
+                            <button type="sumbit" name="button">
+                                <i class="fa fa-search open" aria-hidden="true"></i>
+                                <i class="fa fa-close close" aria-hidden="true"></i>
+                            </button>
+                        </form>
+                        <p class="search-info">
+                            <span class="span-sabah">“Sabah” </span>açar sözü üzrə axtarış
+                            <span> 10</span> nəticə verdi:
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="border-line"></div>
+                    <ul>
+                        <li class="active">
+                            <a href="">Xəbərlər
+                                <span class="badges">10</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">Elanlar
+                                <span class="badges">0</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-8">
+                    {% for record in adSearchResult %}
+                        <div class="search-result">
+                            <div class="text">
+                                {{ record.title }}
+                            </div>
+                            <a href="">ƏTRAFLI</a>
+                        </div>
+
+                    {% endfor %}
+
+
+
+                </div>
+            </div>
+
+        </div>
+    </section>

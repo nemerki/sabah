@@ -1,0 +1,118 @@
+title = "Müellim qəbulu xəbərlər"
+url = "/muellim-qebulu/xeberler/:page?"
+layout = "default"
+is_hidden = 0
+
+[teacherAdmissionNews]
+detailsPage = "muellim-qebulu-xeber-detal"
+detailsKeyColumn = "slug"
+detailsUrlParameter = "slug"
+recordsPerPage = 10
+pageNumber = "{{ :page }}"
+sortColumn = "created_at"
+sortDirection = "desc"
+
+[staticMenu muellimQebulu]
+code = "muellim-qebulu"
+==
+<div id="teacher-news-faq" class="main-content">
+        <!-- BANNER-->
+        <div id="banner-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <div style="background-image:linear-gradient(0deg,rgba(0, 131, 192,0.7),rgba(0, 131, 192,0.7)),
+                                 url('./img/content-img/teacher-news-background.png')" class="background-green">
+                        <div class="banner-title text-center">
+                            <div class="s-star"></div>
+                            <h1>XƏBƏRLƏR</h1>
+                            <p class="breadcumb">MÜƏLLİM QƏBULU</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BANNER-->
+
+        <div id="teacher-news-faq-collapse">
+            <div id="pinBoxContainer" class="container">
+                <div class="row">
+                    <div class=" col-sm-12 col-md-8 col-lg-8">
+                        <div class="news-arena">
+                            {% partial "xeberler/telebelerXeber" partialsRecords=records %}
+                        </div>
+                        <div class="row pa">
+                            {% partial "pagination" partialsRecords=records %}
+                        </div>
+                    </div>
+
+                    <div class=" col-sm-12 col-md-4 col-lg-4">
+                        <div id="sidebar" class="sidebar pinBox">
+                            <div class="sidebar-title">
+                                <h1 class="title-bold">Müəllim qəbulu</h1>
+                                <div class="border"></div>
+                            </div>
+                            <div class="sidebar-list-item">
+                                <ul>
+                                    {% if muellimQebulu.menuItems %}
+                                        {% partial "sabahTelebeleriNav" items=muellimQebulu.menuItems %}
+                                    {% endif %}
+
+                                </ul>
+
+                            </div>
+                            <div class="request-button">
+                                <button type="submit" class="">MÜRACİƏT ET </button>
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+{% put scripts %}
+    <script type="text/javascript">
+
+        $(function () {
+
+            $(document).on('click', '.ajaxPagination', function (e) {
+                e.preventDefault();
+                var array = $(this).attr('href').split('/');
+                var page = array[array.length - 1];
+
+                swal({
+                    title: 'Yüklənir...',
+                    html:
+                    '<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>' +
+                    ' <span class="sr-only">Loading...</span>',
+                    showCloseButton: false,
+                    showCancelButton: false,
+                    showConfirmButton: false,
+                    allowOutsideClick: false
+                });
+
+                $.request('onPaginate', {
+
+                    update: {"xeberler/telebelerXeber": '.news-arena', pagination: '.pa'},
+                    data: {perPage: page},
+                    complete: function() {
+                        swal.close();
+                    }
+
+
+
+                });
+            });
+
+
+        })
+
+    </script>
+{% endput %}

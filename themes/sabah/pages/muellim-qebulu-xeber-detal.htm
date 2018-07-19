@@ -1,0 +1,143 @@
+title = "Müellim qəbulu xəbər detal"
+url = "/muellim-qebulu/xeber/:slug"
+layout = "default"
+is_hidden = 0
+
+[builderDetails]
+modelClass = "Sabah\News\Models\News"
+identifierValue = "{{ :slug }}"
+modelKeyColumn = "slug"
+displayColumn = "slug"
+notFoundMessage = "Record not found"
+==
+<div id="teacher-news-faq" class="main-content">
+    <!-- BANNER-->
+    <div id="banner-area">
+        <div class="container-fluid">
+            <div class="row">
+                <div style="background-image:linear-gradient(0deg,rgba(0, 131, 192,0.7),rgba(0, 131, 192,0.7)),
+                    url('{{ 'assets/img/content-img/teacher-news-background.png'|theme }}')" class="background-green">
+                    <div class="banner-title text-center">
+                        <div class="s-star"></div>
+                        <h1>XƏBƏRLƏR</h1>
+                        <p class="breadcumb">TƏLƏBƏ QƏBULU</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BANNER-->
+
+    <div id="teacher-news-faq-collapse">
+        <div id="pinBoxContainer" class="container">
+            <div class="row">
+                <div class=" col-sm-12 col-md-8 col-lg-8">
+                    <div class="main">
+                        <div class="news-detal">
+                            <div class="news-detal-title">
+                                <h1>{{ record.title }}</h1>
+                                <p class="news-detal-category">{{ record.category.name|upper }}</p>
+                                <span class="news-datetime ">
+                                      {{ record.created_at.format('d M Y') }}
+                                    </span>
+                            </div>
+
+                            <div class="news-image">
+                                <img src="{{ record.image.thumb(750,413) }}" alt="" class="img-responsive">
+                            </div>
+
+
+                            <div class="news-contents">
+                                <div class="content-main">
+
+                                    {{ record.content |raw }}
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="gall-grid cav-grid">
+                            <div id="aniimated-thumbnials">
+
+                                {% for image in record.gallery %}
+                                    <a href="{{ image.path }}">
+                                        <div class="overlay">
+                                            <i class="fa fa-search"></i>
+                                        </div>
+                                        <img src="{{ image.thumb(180,100,{'mode':'crop'}) }}">
+                                    </a>
+                                {% endfor %}
+
+
+                            </div>
+                        </div>
+                        <div class="social-link-area">
+
+                            <ul class="social-icon">
+                                <li>Paylaş:</li>
+                                <li class="facebook">
+                                    <a href="#">
+                                        <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li class="twitter">
+                                    <a href="#">
+                                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li class="google-plus">
+                                    <a href="#">
+                                        <i class="fa fa-google-plus-official" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                            </ul>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class=" col-sm-12 col-md-4 col-lg-4">
+                    <div id="sidebar" class="sidebar pinBox">
+                        <div class="sidebar-title">
+                            <h1 class="title-bold">Müəllim qəbulu</h1>
+                            <div class="border"></div>
+                        </div>
+                        <div class="sidebar-list-item">
+                            <ul>
+
+                                <li>
+                                    <a href="#">SEÇİM ŞƏRTLƏRİ</a>
+                                </li>
+
+
+                                <li>
+                                    <a href="#">ELANLAR</a>
+                                </li>
+
+
+                                <li>
+                                    <a href="#">XƏBƏRLƏR</a>
+                                </li>
+
+
+                                <li>
+                                    <a href="#">MÜTƏMADİ VERİLƏN SUALLAR</a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        <div class="request-button">
+                            <button type="submit" class="">MÜRACİƏT ET</button>
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

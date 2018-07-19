@@ -1,0 +1,130 @@
+title = "Elan axtar"
+url = "/search/elan/:page?"
+layout = "default"
+is_hidden = 0
+
+[search]
+modelClass = "Sabah\Ad\Models\Ad"
+displayColumn = "title"
+noRecordsMessage = "No records found"
+detailsPage = "elan"
+detailsKeyColumn = "slug"
+detailsUrlParameter = "slug"
+recordsPerPage = 10
+pageNumber = "{{ :page }}"
+sortColumn = "created_at"
+sortDirection = "desc"
+==
+<section id="teacher-news-faq">
+    <div id="header-panel">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel-title bg-blue">
+                        <h1>AXTARIS</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="search">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div id="imaginary_container">
+                    <form action="{{ "elan-axtar"|page }}" method="post">
+                        <input required name="search" type="text" placeholder="Axtarish">
+                        <button type="sumbit" name="button">
+                            <i class="fa fa-search open" aria-hidden="true"></i>
+                            <i class="fa fa-close close" aria-hidden="true"></i>
+                        </button>
+                    </form>
+                    <p class="search-info">
+                        <span class="span-sabah">“{{ post }}” </span>açar sözü üzrə axtarış
+                        <span> {{ recordCount+otherRecordCount }}</span> nəticə verdi:
+                    </p>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="border-line"></div>
+                <ul>
+                    <li >
+                        <a href="{{ "xeber-axtar"|page }}">Xəbərlər
+                            <span class="badges">{{ otherRecordCount  }}</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a >Elanlar
+                            <span class="badges">{{ recordCount}}</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-8 ">
+                <div class="searchResult">
+                    {% partial "searchResult" partialsRecords=records %}
+                </div>
+
+                <div class="margin-t50">
+                    <div class="row pa">
+                        {% partial "pagination" partialsRecords=records %}
+                    </div>
+                </div>
+
+            </div>
+
+            {% if recordCount==0 %}
+                <div class="col-md-8">
+                    <div class="no-result">
+                        Axtarışınız üzrə heç bir elan tapılmadı.
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+
+    </div>
+</section>
+
+
+{% put scripts %}
+    <script type="text/javascript">
+
+        $(function () {
+
+            $(document).on('click', '.ajaxPagination', function (e) {
+                e.preventDefault();
+                var array = $(this).attr('href').split('/');
+                var page = array[array.length - 1];
+
+                swal({
+                    title: 'Yüklənir...',
+                    html:
+                    '<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>' +
+                    ' <span class="sr-only">Loading...</span>',
+                    showCloseButton: false,
+                    showCancelButton: false,
+                    showConfirmButton: false,
+                    allowOutsideClick: false
+                });
+
+                $.request('onPaginate', {
+
+                    update: {"searchResult": '.searchResult', pagination: '.pa'},
+                    data: {perPage: page},
+                    complete: function () {
+                        swal.close();
+                    }
+
+
+                });
+            });
+
+
+        })
+
+    </script>
+{% endput %}

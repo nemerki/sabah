@@ -1,0 +1,45 @@
+{% for record in partialsRecords %}
+    <tr>
+        <td>
+            <div class="university-logo">
+                <div class="inners">
+                    {% spaceless %}
+                        {% if detailsPage %}
+                            <a href="{{ detailsPage|page({ (detailsUrlParameter): record.slug }) }}">
+                        {% endif %}
+                        <img src="{{ record.logo.thumb(100,100) }}" alt="">
+                        {% if detailsPage %}
+                            </a>
+                        {% endif %}
+                    {% endspaceless %}
+
+
+
+                    <p class="uni-name">{{ record.name }}</p>
+                </div>
+
+            </div>
+
+        </td>
+        <td>
+            {% for per in record.person %}
+                <p> {{ per.person_coordinator }}</p>
+            {% endfor %}
+
+
+
+        </td>
+        <td>
+            {% for per in record.person %}
+                <a href="#">{{ per.person_phone }}</a>
+            {% endfor %}
+
+        </td>
+        <td class="mail-personal">
+            {% for per in record.person %}
+                <p>{{ per.person_email }}</p>
+            {% endfor %}
+        </td>
+
+    </tr>
+{% endfor %}

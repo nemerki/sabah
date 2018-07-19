@@ -1,5 +1,11 @@
-[staticMenu]
+[staticMenu header]
 code = "header"
+
+[staticMenu sabahQuruplariFooter]
+code = "sabah-qruplari"
+
+[staticMenu telebelerUcunFooter]
+code = "telebeler-ucun-footer"
 ==
 <!DOCTYPE html>
 <!--[if lt IE 7]>
@@ -44,7 +50,7 @@ code = "header"
 
                 <div class="col-md-2 col-sm-2 col-xs-6">
                     <div class="logo">
-                        <a href="">
+                        <a href="{{ '/'|app }}">
                             <img src="{{ 'assets/img/file-img/S-Loqo.svg'|theme }}" alt="" class="img-responsive">
                         </a>
                     </div>
@@ -61,15 +67,16 @@ code = "header"
                     <div class="main-menu">
                         <ul class="main-ul">
 
-                            {% if menuItems %}
-                                {% partial "nav" items=menuItems %}
+                            {% if header.menuItems %}
+                                {% partial "nav" items=header.menuItems %}
                             {% endif %}
 
                         </ul>
                         <div class="search">
-                            <form action="home.html" method="get">
-                                <input type="search" placeholder="Axtardiginizi buraya yazin" name="s" class="searc-inp" autocomplete="off">
-                                <button class="fa fa-search"></button>
+                            <form action="{{ 'xeber-axtar'|page }}" method="post">
+                                <input required type="search" placeholder="Axtardiginizi buraya yazin" name="search" class="searc-inp"
+                                       autocomplete="off">
+                                <i class="arama fa fa-search"></i>
                             </form>
                         </div>
                     </div>
@@ -113,9 +120,11 @@ code = "header"
 <script src="{{ 'assets/js/plugins/jquery.pinBox.min.js'|theme }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
 <script>
-    // $(function() {
-    //     $('.sub-menu').closest("li").addClass("sub-item")
-    // });
+    $(function () {
+        $('.arama').on("click", function () {
+            $("header .main-menu .search input").css("width", "200px");
+        });
+    });
 
 </script>
 {% framework extras %}

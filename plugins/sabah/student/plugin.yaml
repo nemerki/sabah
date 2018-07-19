@@ -26,3 +26,7 @@ navigation:
                 label: 'Tələbə qəbulu faq'
                 url: sabah/student/studentadmissionfaq
                 icon: icon-question-circle
+            side-menu-item5:
+                label: 'Müəllim qəbulu faq'
+                url: sabah/student/teacheradmission
+                icon: icon-question-circle

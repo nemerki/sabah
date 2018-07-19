@@ -1,0 +1,50 @@
+name: 'Muellim qebulu'
+items:
+    -
+        title: 'SEÇİM ŞƏRTLƏRİ'
+        nesting: ''
+        type: cms-page
+        url: ''
+        code: ''
+        reference: muellim-qebulu-secim-sertleri
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: ELANLAR
+        type: cms-page
+        code: ''
+        reference: muellim-qebulu-elanlar
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: XƏBƏRLƏR
+        nesting: ''
+        type: cms-page
+        url: ''
+        code: ''
+        reference: muellim-qebulu-xeberler
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'MÜTƏMADİ VERİLƏN SUALLAR'
+        nesting: ''
+        type: cms-page
+        url: ''
+        code: ''
+        reference: muellim-qebulu-mutemadi-verilen-suallar
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
