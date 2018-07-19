@@ -30,3 +30,8 @@ header .main-menu .search input {
     margin-bottom: 50px;
     margin-top: 50px;
 }
+
+#partners #partners-sld .partner-img {
+    background-repeat: no-repeat;
+    background-position: center;
+}

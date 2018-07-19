@@ -16,65 +16,55 @@ items:
         items:
             -
                 title: 'LAYİHƏNİN MƏQSƏDİ'
-                nesting: ''
-                type: cms-page
-                url: ''
+                nesting: '0'
+                type: static-page
                 code: ''
                 reference: layihenin-meqsedi
-                cmsPage: ''
-                replace: ''
+                replace: '0'
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
             -
                 title: TƏRƏFDAŞLAR
-                nesting: ''
-                type: cms-page
-                url: ''
+                nesting: '0'
+                type: static-page
                 code: ''
                 reference: terefdaslar
-                cmsPage: ''
-                replace: ''
+                replace: '0'
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
             -
                 title: KOMANDAMIZ
-                nesting: ''
-                type: cms-page
-                url: ''
+                nesting: '0'
+                type: static-page
                 code: ''
                 reference: komandamiz
-                cmsPage: ''
-                replace: ''
+                replace: '0'
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
             -
-                title: Qalereya
-                nesting: ''
-                type: cms-page
-                url: ''
+                title: 'FOTO QALEREYA'
+                nesting: '0'
+                type: static-page
                 code: ''
-                reference: qalereya
-                cmsPage: ''
-                replace: ''
+                reference: fotoqalereya
+                replace: '0'
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
             -
                 title: 'MÜTƏMADİ VERİLƏN SUALLAR'
-                nesting: ''
-                type: cms-page
-                url: ''
+                nesting: '0'
+                type: static-page
                 code: ''
-                reference: mutemadi-verilen-suallar
-                cmsPage: ''
-                replace: ''
+                reference: faq
+                replace: '0'
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
@@ -121,18 +111,26 @@ items:
                     isExternal: '0'
             -
                 title: 'TƏCRÜBƏ PROQRAMLARI'
+                nesting: ''
                 type: cms-page
+                url: ''
                 code: ''
                 reference: tecrube-programlari
+                cmsPage: ''
+                replace: ''
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
             -
                 title: 'XARİCDƏ TƏHSİL VƏ MÜBADİLƏ PROQRAMLARI'
+                nesting: ''
                 type: cms-page
+                url: ''
                 code: ''
                 reference: xaricde-tehsil-ve-mubadile-proqramlari
+                cmsPage: ''
+                replace: ''
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
@@ -179,22 +177,22 @@ items:
         items:
             -
                 title: 'TƏLƏBƏ QƏBULU'
-                nesting: ''
-                type: cms-page
-                url: ''
+                nesting: '0'
+                type: static-page
                 code: ''
                 reference: telebe-qebulu-secim-sertleri
-                cmsPage: ''
-                replace: ''
+                replace: '0'
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
             -
                 title: 'MÜƏLLIM QƏBULU'
-                type: cms-page
+                nesting: '0'
+                type: static-page
                 code: ''
                 reference: muellim-qebulu-secim-sertleri
+                replace: '0'
                 viewBag:
                     isHidden: '0'
                     cssClass: ''

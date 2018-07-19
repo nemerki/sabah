@@ -2,54 +2,72 @@ name: 'Telebe qebulu'
 items:
     -
         title: 'SEÇİM ŞƏRTLƏRİ'
-        type: cms-page
+        nesting: '0'
+        type: static-page
         code: ''
         reference: telebe-qebulu-secim-sertleri
+        replace: '0'
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
         title: QAYDALAR
-        type: cms-page
+        nesting: '0'
+        type: static-page
         code: ''
         reference: telebe-qebulu-qaydalar
+        replace: '0'
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
         title: İXTİSASLAR
+        nesting: ''
         type: cms-page
+        url: ''
         code: ''
         reference: telebe-qebulu-ixtisaslar
+        cmsPage: ''
+        replace: ''
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
         title: ELANLAR
+        nesting: ''
         type: cms-page
+        url: ''
         code: ''
         reference: telebe-qebulu-elanlar
+        cmsPage: ''
+        replace: ''
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
         title: XƏBƏRLƏR
+        nesting: ''
         type: cms-page
+        url: ''
         code: ''
         reference: telebe-qebulu-xeberler
+        cmsPage: ''
+        replace: ''
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
         title: 'MÜTƏMADİ VERİLƏN SUALLAR'
-        type: cms-page
+        nesting: '0'
+        type: static-page
         code: ''
-        reference: telebe-qebulu-mutemadi-verilen-suallar
+        reference: telebe-qebulu-faq
+        replace: '0'
         viewBag:
             isHidden: '0'
             cssClass: ''
