@@ -33,18 +33,18 @@ fields:
         label: Vəzifə
         span: auto
         type: text
-    description_top:
-        label: 'Üst Açıqlama'
+    description:
+        label: 'sabah.student::lang.practice_programs.description'
         size: ''
-        span: auto
+        span: full
         type: textarea
-    description_bottom:
-        label: 'Alt Açıqlama'
+    content:
+        label: 'sabah.student::lang.practice_programs.content'
         size: ''
-        span: auto
-        type: textarea
+        span: full
+        type: richeditor
     logo:
-        label: 'Şirkət Logosu'
+        label: 'sabah.student::lang.practice_programs.logo'
         span: full
         mode: image
         useCaption: true
@@ -52,13 +52,3 @@ fields:
             mode: crop
             extension: auto
         type: fileupload
-    job_description:
-        label: 'İşin təsviri'
-        size: ''
-        span: auto
-        type: richeditor
-    requirements:
-        label: 'Namizədə tələblər'
-        size: ''
-        span: auto
-        type: richeditor

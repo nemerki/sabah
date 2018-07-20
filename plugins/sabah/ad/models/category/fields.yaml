@@ -1,10 +1,10 @@
 fields:
     name:
-        label: Adı
+        label: 'sabah.ad::lang.ads_category.name'
         span: auto
         type: text
     slug:
-        label: Slug
+        label: 'sabah.ad::lang.ads_category.slug'
         span: auto
         preset:
             field: name

@@ -1,5 +1,9 @@
 columns:
     title:
-        label: Başlığı
+        label: 'sabah.group::lang.slider.title'
         type: text
         searchable: true
+    image:
+        label: 'sabah.group::lang.slider.image'
+        type: partial
+        path: ~/plugins/sabah/group/models/slider/_image_column.htm

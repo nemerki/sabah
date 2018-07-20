@@ -1,5 +1,9 @@
 columns:
     name:
-        label: Adı
+        label: 'sabah.group::lang.partner.name'
         type: text
         searchable: true
+    logo:
+        label: 'sabah.group::lang.partner.logo'
+        type: partial
+        path: ~/plugins/sabah/group/models/partner/_logo_column.htm

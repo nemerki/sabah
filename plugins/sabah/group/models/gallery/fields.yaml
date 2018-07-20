@@ -1,14 +1,14 @@
 fields:
     name:
-        label: Adı
-        span: auto
+        label: 'sabah.group::lang.gallery.name'
+        span: full
         type: text
     image:
-        label: Şekil
-        span: auto
+        label: 'sabah.group::lang.gallery.image'
         mode: image
         useCaption: true
         thumbOptions:
             mode: crop
             extension: auto
+        span: full
         type: fileupload

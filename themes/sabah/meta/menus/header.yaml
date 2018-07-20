@@ -18,8 +18,10 @@ items:
                 title: 'LAYİHƏNİN MƏQSƏDİ'
                 nesting: '0'
                 type: static-page
+                url: ''
                 code: ''
                 reference: layihenin-meqsedi
+                cmsPage: ''
                 replace: '0'
                 viewBag:
                     isHidden: '0'
@@ -29,8 +31,10 @@ items:
                 title: TƏRƏFDAŞLAR
                 nesting: '0'
                 type: static-page
+                url: ''
                 code: ''
                 reference: terefdaslar
+                cmsPage: ''
                 replace: '0'
                 viewBag:
                     isHidden: '0'
@@ -40,8 +44,10 @@ items:
                 title: KOMANDAMIZ
                 nesting: '0'
                 type: static-page
+                url: ''
                 code: ''
                 reference: komandamiz
+                cmsPage: ''
                 replace: '0'
                 viewBag:
                     isHidden: '0'
@@ -51,8 +57,10 @@ items:
                 title: 'FOTO QALEREYA'
                 nesting: '0'
                 type: static-page
+                url: ''
                 code: ''
                 reference: fotoqalereya
+                cmsPage: ''
                 replace: '0'
                 viewBag:
                     isHidden: '0'
@@ -62,8 +70,10 @@ items:
                 title: 'MÜTƏMADİ VERİLƏN SUALLAR'
                 nesting: '0'
                 type: static-page
+                url: ''
                 code: ''
                 reference: faq
+                cmsPage: ''
                 replace: '0'
                 viewBag:
                     isHidden: '0'
@@ -179,8 +189,10 @@ items:
                 title: 'TƏLƏBƏ QƏBULU'
                 nesting: '0'
                 type: static-page
+                url: ''
                 code: ''
                 reference: telebe-qebulu-secim-sertleri
+                cmsPage: ''
                 replace: '0'
                 viewBag:
                     isHidden: '0'
@@ -190,8 +202,10 @@ items:
                 title: 'MÜƏLLIM QƏBULU'
                 nesting: '0'
                 type: static-page
+                url: ''
                 code: ''
                 reference: muellim-qebulu-secim-sertleri
+                cmsPage: ''
                 replace: '0'
                 viewBag:
                     isHidden: '0'
@@ -225,14 +239,20 @@ items:
             isExternal: '0'
     -
         title: ƏLAQƏ
-        nesting: ''
-        type: header
-        url: ''
+        type: cms-page
         code: ''
-        reference: ''
-        cmsPage: ''
-        replace: ''
+        reference: elaqe
         viewBag:
             isHidden: '0'
-            cssClass: ''
+            cssClass: sub-item
             isExternal: '0'
+        items:
+            -
+                title: NÜMAYENDELİKLERİ
+                type: cms-page
+                code: ''
+                reference: elaqe-numayendelikler
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'

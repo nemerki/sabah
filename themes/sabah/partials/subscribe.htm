@@ -1,3 +1,4 @@
+[viewBag]
 ==
 <section id="subscribe">
     <div class="container">
@@ -6,27 +7,27 @@
                 <div class="social-icons ">
                     <ul>
                         <li>
-                            <a href="">
+                            <a target="_blank" href="{{ this.theme.facebook }}">
                                 <i class="fa fa-facebook-official" aria-hidden="true"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="">
+                            <a target="_blank" href="{{ this.theme.youtube }}">
                                 <i class="fa fa-youtube-play" aria-hidden="true"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="">
+                            <a target="_blank" href="{{ this.theme.twitter }}">
                                 <i class="fa fa-twitter" aria-hidden="true"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="">
+                            <a target="_blank" href="{{ this.theme.instagram }}">
                                 <i class="fa fa-instagram" aria-hidden="true"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="">
+                            <a target="_blank" href="{{ this.theme.googleplus }}">
                                 <i class="fa fa-google-plus" aria-hidden="true"></i>
                             </a>
                         </li>
@@ -44,9 +45,13 @@
                         Xəbər lentinə abunə olun:
                     </div>
 
-                    <form action="">
+                    <form name="form-subscribe-andradedev" id="form-subscribe-andradedev"
+                          data-request="{{ formSubscribe }}::onAddSubscriber"
+                          data-request-update="'{{ formSubscribe }}::alert': '#result'">
 
-                        <input type="text" placeholder="Emailinizi daxil edin">
+                        <input name="email" type="text" placeholder="Emailinizi daxil edin">
+                        <input type="hidden" name="latitude" id="latitude">
+                        <input type="hidden" name="longitude" id="longitude">
                         <button type="submit" name="button" id="button">
                             <i class="fa fa-check" aria-hidden="true"></i>
                             ABUNƏ OL

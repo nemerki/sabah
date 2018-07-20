@@ -1,15 +1,15 @@
 fields:
     name:
-        label: Adı
+        label: 'sabah.group::lang.partner.name'
         span: auto
         type: text
     link:
-        label: Link
+        label: 'sabah.group::lang.partner.link'
         span: auto
         type: text
     logo:
-        label: Logosu
-        span: auto
+        label: 'sabah.group::lang.partner.logo'
+        span: full
         mode: image
         useCaption: true
         thumbOptions:

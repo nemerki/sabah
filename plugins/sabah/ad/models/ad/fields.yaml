@@ -1,30 +1,30 @@
 fields:
     title:
-        label: 'Elan Başlığı'
+        label: 'sabah.ad::lang.ads.title'
         span: auto
         type: text
     slug:
-        label: Slug
+        label: 'sabah.ad::lang.ads.slug'
         span: auto
         preset:
             field: title
             type: slug
         type: text
     category:
-        label: Kategoriya
+        label: 'sabah.ad::lang.ads.category'
         nameFrom: name
         descriptionFrom: description
         span: auto
         type: relation
     is_home:
-        label: 'Əsas Səyfədə'
+        label: 'sabah.ad::lang.ads.is_home'
         options:
             - Göstərmə
             - Göstər
         span: auto
         type: dropdown
     organized:
-        label: 'Keçirilmə Tarixi'
+        label: 'sabah.ad::lang.ads.organized'
         mode: datetime
         span: auto
         type: datepicker
@@ -36,7 +36,7 @@ fields:
             - 'Vacib Elan'
         type: dropdown
     content:
-        label: Content
+        label: 'sabah.ad::lang.ads.content'
         span: full
         size: ''
         type: richeditor

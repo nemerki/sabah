@@ -1,20 +1,29 @@
 fields:
     name:
-        label: Adı
+        label: 'sabah.group::lang.team.name'
         span: auto
         type: text
     surname:
-        label: Soyadı
+        label: 'sabah.group::lang.team.surname'
         span: auto
         type: text
     company:
-        label: Şirket
+        label: 'sabah.group::lang.team.company'
         span: auto
         type: text
     career:
-        label: Peşəsi
+        label: 'sabah.group::lang.team.career'
         span: auto
         type: text
+    image:
+        label: 'sabah.group::lang.team.image'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: full
+        type: fileupload
     facebook:
         label: Facebook
         span: auto
@@ -31,15 +40,6 @@ fields:
         label: Twitter
         span: auto
         type: text
-    image:
-        label: Şekli
-        mode: image
-        useCaption: true
-        thumbOptions:
-            mode: crop
-            extension: auto
-        span: auto
-        type: fileupload
     instagram:
         label: İnstagram
         span: auto

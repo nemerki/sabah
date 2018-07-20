@@ -1,0 +1,66 @@
+<form
+    data-request="onContact"
+    data-request-validate
+    data-request-flash
+    class="contact-form">
+    <div class="row">
+        <div class="col-md-6">
+            <label for="">Adınız və soyadınız:</label>
+            <input name="name" class="formInput" type="text">
+            <p class="error-p" data-validate-for="name"></p>
+        </div>
+        <div class="col-md-6">
+            <label for="">Email ünvanınız:</label>
+            <input class="formInput"  name="email" type="email">
+            <p class="error-p" data-validate-for="email"></p>
+        </div>
+
+        <div class="col-md-12">
+            <label for="">Mövzu:</label>
+            <input  class="formInput"  name="subject" type="text" placeholder="Mövzu">
+            <p class="error-p" data-validate-for="subject"></p>
+        </div>
+
+        <div class="col-md-12">
+            <label for="">İsmarıcınız:</label>
+            <textarea class="formInput" name="message" id="" cols="30" rows="10" placeholder="İsmarıcınız"></textarea>
+            <p class="error-p" data-validate-for="content"></p>
+        </div>
+    </div>
+
+
+    <button>GÖNDƏR
+        <i class="fa fa-paper-plane" aria-hidden="true"></i>
+    </button>
+
+    <div class="info contact__info">
+        <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+        <div class="text">
+            <h5>Müraciətiniz göndərildi.</h5>
+            <p>Yenidən müraciət etmək istəyirsinizsə, yuxarıdakı formanı təkrar doldurmağınız xahiş
+                olunur.
+            </p>
+        </div>
+    </div>
+
+
+</form>
+
+{% put scripts %}
+
+    <script>
+        $('.contact-form').on('ajaxSuccess', function (event, message) {
+            $('.info').removeClass('contact__info');
+
+        })
+        $(window).on('ajaxInvalidField', function(event, fieldElement, fieldName, errorMsg, isFirst) {
+            $(fieldElement).closest('.formInput').addClass('error');
+        });
+
+        $(document).on('ajaxPromise', '[data-request]', function() {
+            $(this).closest('form').find('.error').removeClass('error');
+        });
+
+    </script>
+
+{% endput %}

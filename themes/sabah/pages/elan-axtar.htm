@@ -21,7 +21,7 @@ sortDirection = "desc"
             <div class="row">
                 <div class="col-md-12">
                     <div class="panel-title bg-blue">
-                        <h1>AXTARIS</h1>
+                        <h1>{{ 'AXTARIS' |_ }}</h1>
                     </div>
                 </div>
             </div>
@@ -41,8 +41,8 @@ sortDirection = "desc"
                         </button>
                     </form>
                     <p class="search-info">
-                        <span class="span-sabah">“{{ post }}” </span>açar sözü üzrə axtarış
-                        <span> {{ recordCount+otherRecordCount }}</span> nəticə verdi:
+                        <span class="span-sabah">“{{ post }}” </span>{{ 'açar sözü üzrə axtarış' |_ }}
+                        <span> {{ recordCount+otherRecordCount }}</span> {{ 'nəticə verdi:' |_ }}
                     </p>
                 </div>
             </div>
@@ -53,12 +53,12 @@ sortDirection = "desc"
                 <div class="border-line"></div>
                 <ul>
                     <li >
-                        <a href="{{ "xeber-axtar"|page }}">Xəbərlər
+                        <a href="{{ "xeber-axtar"|page }}">{{ 'Xəbərlər' |_ }}
                             <span class="badges">{{ otherRecordCount  }}</span>
                         </a>
                     </li>
                     <li class="active">
-                        <a >Elanlar
+                        <a >{{ 'Elanlar' |_ }}
                             <span class="badges">{{ recordCount}}</span>
                         </a>
                     </li>
@@ -80,7 +80,7 @@ sortDirection = "desc"
             {% if recordCount==0 %}
                 <div class="col-md-8">
                     <div class="no-result">
-                        Axtarışınız üzrə heç bir elan tapılmadı.
+                        {{ '  Axtarışınız üzrə heç bir elan tapılmadı.' |_ }}
                     </div>
                 </div>
             {% endif %}

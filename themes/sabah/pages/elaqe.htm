@@ -1,127 +1,126 @@
 title = "Əlaqə"
-url = "/elaqe/:page?"
+url = "/elaqe"
 layout = "default"
 is_hidden = 0
 
-[builderList]
-modelClass = "Sabah\Student\Models\University"
-scope = "-"
-scopeValue = "{{ :scope }}"
-displayColumn = "slug"
-noRecordsMessage = "No records found"
-detailsPage = "universitet-xeberler"
-detailsKeyColumn = "slug"
-detailsUrlParameter = "slug"
-recordsPerPage = 5
-pageNumber = "{{ :page }}"
-sortColumn = "created_at"
-sortDirection = "desc"
+[Nemerki\Form\Components\ContactForm ContactForm]
 ==
-<div id="teacher-news-faq" class="main-content">
-        <!-- BANNER-->
-        <div id="banner-area">
-            <div class="container-fluid">
-                <div class="row">
-                    <div style="background-image:linear-gradient(0deg,rgba(0, 155, 77, 0.7),rgba(0, 155, 77, 0.7)),
-                                 url('./img/content-img/layer-13.png')" class="background-green">
-                        <div class="banner-title text-center">
-                            <div class="s-star"></div>
-                            <h1>UNİVERSİTET NÜMAYƏNDƏLİKLƏRİ</h1>
-                            <p class="breadcumb">ƏLAQƏ</p>
-                        </div>
+<section id="teacher-news-faq">
+    <div id="banner-area">
+        <div class="container-fluid">
+            <div class="row">
+                <div style="background-image:linear-gradient(0deg,rgba(0, 155, 77, 0.7),rgba(0, 155, 77, 0.7)),
+                    url('{{ 'assets/img/content-img/layer-4.png'|theme }}')" class="background-green">
+                    <div class="banner-title text-center">
+                        <div class="s-star"></div>
+                        <h1>Eleqe</h1>
+                        <p class="breadcumb">SABAH TƏLƏBƏLƏRİ</p>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- BANNER-->
-
-        <div id="teacher-news-faq-collapse">
-            <div class="container">
-                <div class="row">
-                    <div class=" col-sm-12 col-md-12 col-lg-12">
-                        <div class="university-table">
-                            <div class="head-title">
-                                <div class="sidebar-title-green">
-                                    <h1 class="title-bold">SABAH qruplarının baza ali təhsil müəssisələri üzrə koordinatorları</h1>
-                                </div>
-                            </div>
-
-                            <div class="table-for-university">
-                                <div class="conatct-table table-responsive">
-
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>ATM</th>
-                                                <th>KOORDİNATOR</th>
-                                                <th>ƏLAQƏ NÖMRƏSI</th>
-                                                <th>EMAIL ÜNVANI</th>
-
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-
-
-                                        {% partial "elaqeNumayendelikler" partialsRecords=records %}
-
-                                        </tbody>
-                                    </table>
-
-                                </div>
-                                <div class="row pa">
-                                    {% partial "pagination" partialsRecords=records %}
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-
     </div>
+</section>
+<section id="contact">
+    <div id="pinBoxContainer" class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="right-contact">
+                    <div class="title">
+                        <p>Əlaqə üçün Təhsil Nazirliyinin məlumat mərkəzinə, {{ this.theme.hotline }} nömrəli telefona,
+                            <a href="">{{ this.theme.email }}</a> və yaxud baza ali təhsil müəssisələrinin kordinatorlarına
+                            müraciət edə
+                            bilərsiniz.
+                        </p>
+                        <p class="title-bottom">{{ 'Sual və ya təklifiniz varsa, bizə yazın:' |_ }}</p>
+                    </div>
 
 
+
+                   {% component 'ContactForm' %}
+
+
+
+
+                </div>
+            </div>
+            <div class=" col-sm-12 col-md-4 col-lg-4">
+                <div id="sidebar" class="sidebar tall c_sidebar " data-sticky_column="">
+                    <div class="c-title">
+                        {{ 'Ünvan' |_ }}
+                    </div>
+                    <p class="c-p">
+                        {{ this.theme.address }}
+                    </p>
+                    <div class="c-title-phone">
+                        Əlaqə
+                    </div>
+                    <ul class="c-ul">
+                        <li>
+                            <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+                            <a href="">{{ this.theme.hotline }}</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                            <a href="">{{ this.theme.email }}</a>
+                        </li>
+                    </ul>
+                    <p class="c-p">
+                        {{ 'Təhsil Nazirliyinin Məlumat Mərkəzi:' |_ }}
+                        <br>{{ ' Telefon: ' |_ }}{{ this.theme.telephone }}
+                        <br> {{ 'Faks:' |_ }} {{ this.theme.fax }}
+                    </p>
+                    <div class="border-c"></div>
+                    <div class="request-button">
+
+                        <a href="{{ "elaqe-numayendelikler"|page }}">  <button type="submit" class="cav-but">{{ 'UNİVERSİTET NÜMAYƏNDƏLİKLƏRİ' |_ }}</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <section id="s-map">
+        <div class="container">
+
+            <div id="map"></div>
+
+
+        </div>
+    </section>
 
 {% put scripts %}
-    <script type="text/javascript">
 
-        $(function () {
+    <script>
+        function initMap() {
+            // Create a map object and specify the DOM element for display.
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: {
+                    lat: 40.391614,
+                    lng: 49.861520
+                },
+                zoom: 16,
+                mapTypeControl: true,
+                mapControl: true,
+                disableDefaultUI: true,
+                draggable: true
 
-            $(document).on('click', '.ajaxPagination', function (e) {
-                e.preventDefault();
-                var array = $(this).attr('href').split('/');
-                var page = array[array.length - 1];
-
-                swal({
-                    title: 'Yüklənir...',
-                    html:
-                    '<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>' +
-                    ' <span class="sr-only">Loading...</span>',
-                    showCloseButton: false,
-                    showCancelButton: false,
-                    showConfirmButton: false,
-                    allowOutsideClick: false
-                });
-
-                $.request('onPaginate', {
-
-                    update: {elaqeNumayendelikler:'.table', pagination: '.pa'},
-                    data: {perPage: page},
-                    complete: function () {
-                        swal.close();
-                    }
-
-
-                });
             });
 
+            var marker = new google.maps.Marker({
+                position: map.getCenter(),
+                icon: '{{ 'assets/img/content-img/map_pin_raster.png'|theme }}',
 
-        })
+                map: map
+            });
 
+        }
     </script>
+
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzcjNsx85w-30LSsNSF_hyuCf_fn8pOS4&amp;callback=initMap" async=""
+            defer=""></script>
 {% endput %}

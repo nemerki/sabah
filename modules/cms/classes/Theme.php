@@ -392,7 +392,7 @@ class Theme
             return Url::asset('themes/'.$this->getDirName().'/'.$previewPath);
         }
 
-        return Url::asset('modules/cms/assets/images/default-theme-preview.png');
+        return Url::asset('modules/cms/assets/images/theme-preview.png');
     }
 
     /**

@@ -1,6 +1,6 @@
 columns:
     name:
-        label: Adı
+        label: 'sabah.ad::lang.ads_category.slug'
         type: text
         searchable: true
         sortable: true

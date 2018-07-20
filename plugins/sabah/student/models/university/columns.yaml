@@ -1,11 +1,18 @@
 columns:
     name:
-        label: Adı
+        label: 'sabah.student::lang.university.name'
         type: text
         searchable: true
         sortable: true
     student:
-        label: 'Tələbə Sayi'
+        label: 'sabah.student::lang.university.student'
         type: text
         searchable: true
         sortable: true
+    programs:
+        label: 'sabah.student::lang.university.programs'
+        type: text
+    logo:
+        label: 'sabah.student::lang.university.logo'
+        type: partial
+        path: ~/plugins/sabah/student/models/university/_logo_column.htm

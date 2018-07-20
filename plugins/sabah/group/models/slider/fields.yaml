@@ -1,19 +1,19 @@
 fields:
     title:
-        label: Başlığı
+        label: 'sabah.group::lang.slider.title'
         span: full
         type: text
     description:
-        label: 'Qısa açıqlaması'
+        label: 'sabah.group::lang.slider.description'
         size: ''
         span: full
         type: textarea
     link:
-        label: Linki
+        label: 'sabah.group::lang.slider.link'
         span: full
         type: text
     image:
-        label: Şəkli
+        label: 'sabah.group::lang.slider.image'
         span: full
         mode: image
         useCaption: true

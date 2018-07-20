@@ -1,17 +1,17 @@
 columns:
     title:
-        label: Başlığı
+        label: 'sabah.ad::lang.ads.title'
         type: text
         searchable: true
     category:
-        label: Kategoriyası
+        label: 'sabah.ad::lang.ads.category'
         type: text
         searchable: true
         sortable: true
         select: name
         relation: category
     organized:
-        label: 'Keçırılme Tarixi'
+        label: 'sabah.ad::lang.ads.organized'
         type: datetime
         searchable: true
         sortable: true

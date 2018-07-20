@@ -1,0 +1,147 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+tabs:
+    fields:
+
+        site_name:
+            label: Site name
+            comment: The website name as it should appear on the front-end
+            tab: General informations
+            default: SABAH Qrupları
+            readOnly: true
+            span: auto
+
+        site_title:
+            label: Site title
+            comment: The website title as it should appear on browser tab
+            required: true
+            tab: General informations
+            default: SABAH Qrupları
+            span: auto
+
+        copyright_text:
+            label: Copyright
+            comment: The copyright text as it should appear on the footer bottom side
+            tab: General informations
+            default: SABAH Qrupları
+            span: auto
+
+        address:
+            label: Address
+            tab: Contact informations
+            span: auto
+
+        google_maps_link:
+            label: Google Maps link
+            tab: Contact informations
+            span: auto
+
+        hotline:
+            label: Hotline number
+            tab: Contact informations
+            span: auto
+
+        telephone:
+            label: Telephone number
+            tab: Contact informations
+            span: auto
+
+        fax:
+            label: Fax number
+            tab: Contact informations
+            span: auto
+
+        email:
+            label: E-mail
+            tab: Contact informations
+            span: auto
+
+        facebook:
+            label: Facebook
+            tab: Contact informations
+            span: auto
+
+        youtube:
+            label: Youtube
+            tab: Contact informations
+            span: auto
+
+        twitter:
+            label: Twitter
+            tab: Contact informations
+            span: auto
+
+        instagram:
+            label: Instagram
+            tab: Contact informations
+            span: auto
+
+        googleplus:
+            label: Google Plus
+            tab: Contact informations
+            span: auto
+
+
+
+        site_logo:
+            label: Site logo
+            comment: The logo will be used in the website <b><i>(165x50px)</i></b>
+            commentHtml: true
+            required: true
+            tab: Logos
+            type: fileupload
+            mode: image
+            span: auto
+            filetypes: svg
+
+
+        footer_logo_left:
+            label: Footer logo (Left)
+            comment: The logo will be used in the website <b><i>(165x50px)</i></b>
+            commentHtml: true
+            required: true
+            tab: Logos
+            type: fileupload
+            mode: image
+            span: auto
+            attachMany: true
+            attachOnUpload: true
+            imageHeight: 44
+            imageWidth: 144
+            filetypes: png
+            thumbOptions:
+                mode: crop
+                quality: 100
+                extension: auto
+
+        footer_logo_right:
+            label: Footer logo (Right)
+            comment: The logo will be used in the website <b><i>(165x50px)</i></b>
+            commentHtml: true
+            required: true
+            tab: Logos
+            type: fileupload
+            mode: image
+            span: auto
+            attachOnUpload: true
+            imageHeight: 99
+            imageWidth: 165
+            filetypes: png
+            thumbOptions:
+                mode: crop
+                quality: 100
+                extension: auto
+
+        default_alternate_text:
+            label: Default alternate text
+            comment: Default alternate text for common use
+            tab: Others
+            default: SABAH Qrupları
+            span: auto
+
+
+
+
+

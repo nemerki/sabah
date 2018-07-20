@@ -1,6 +1,55 @@
 <?php return [
     'plugin' => [
         'name' => 'Student',
-        'description' => ''
-    ]
+        'description' => '',
+    ],
+    'abroad_study' => [
+        'title' => 'Title',
+        'slug' => 'Slug',
+        'content' => 'Content',
+        'image' => 'Image',
+        'teacher_admission_faq' => 'Teacher Admission_faq',
+    ],
+    'practice_programs' => [
+        'company_name' => 'Company Name',
+        'slug' => 'Slug',
+        'payment_method' => 'Payment Method',
+        'expiry_date' => 'Expiry Date',
+        'status' => 'Status',
+        'position' => 'Position',
+        'description' => 'Description',
+        'content' => 'Content',
+        'logo' => 'Logo',
+    ],
+    'student_admission_faq' => [
+        'question' => 'Question',
+        'answer' => 'Answer',
+    ],
+    'teacher_admission' => [
+        'question' => 'Question',
+        'answer' => 'Answer',
+    ],
+    'university' => [
+        'name' => 'Name',
+        'slug' => 'Slug',
+        'description' => 'Description',
+        'link' => 'Link',
+        'student' => 'Student',
+        'programs' => 'Programs',
+        'logo' => 'Logo',
+        'ixtisas' => 'İxtisas',
+        'related_person' => 'Related  Person',
+        'person_coordinator' => 'Coordinator',
+        'person_phone' => 'Phone',
+        'person_email' => 'Email',
+    ],
+    'backend_menu' => 'Student Admission Faq',
+    'student_menu' => [
+        'university' => 'University',
+        'student' => 'Student',
+        'practice_programs' => 'Practice Programs',
+        'abroad_study' => 'Abroad Study',
+        'student_admission_faq' => 'Studen Admission Faq',
+        'teacher_admission_faq' => 'Teacher Admission Faq',
+    ],
 ];

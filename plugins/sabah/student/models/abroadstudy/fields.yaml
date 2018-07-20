@@ -1,17 +1,22 @@
 fields:
     title:
-        label: Başlığı
+        label: 'sabah.student::lang.abroad_study.title'
         span: auto
         type: text
     slug:
-        label: Slug
+        label: 'sabah.student::lang.abroad_study.slug'
         span: auto
         preset:
             field: title
             type: slug
         type: text
+    content:
+        label: 'sabah.student::lang.abroad_study.content'
+        size: ''
+        span: full
+        type: richeditor
     image:
-        label: Şəkil
+        label: 'sabah.student::lang.abroad_study.image'
         mode: image
         useCaption: true
         thumbOptions:
@@ -19,8 +24,3 @@ fields:
             extension: auto
         span: full
         type: fileupload
-    content:
-        label: Content
-        span: full
-        size: ''
-        type: richeditor

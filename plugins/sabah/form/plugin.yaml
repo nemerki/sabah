@@ -1,0 +1,11 @@
+plugin:
+    name: 'sabah.form::lang.plugin.name'
+    description: 'sabah.form::lang.plugin.description'
+    author: Sabah
+    icon: oc-icon-send
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: 'sabah.form::lang.contact_menu.contact'
+        url: sabah/form/contact
+        icon: icon-send

@@ -1,0 +1,13 @@
+columns:
+    name:
+        label: 'sabah.form::lang.contact.name'
+        type: text
+        searchable: true
+    email:
+        label: 'sabah.form::lang.contact.email'
+        type: text
+        searchable: true
+    subject:
+        label: 'sabah.form::lang.contact.subject'
+        type: text
+        searchable: true

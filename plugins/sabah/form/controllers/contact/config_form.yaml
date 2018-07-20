@@ -1,0 +1,11 @@
+name: Contact
+modelClass: Sabah\Form\Models\Contact
+form: $/sabah/form/models/contact/fields.yaml
+defaultRedirect: sabah/form/contact
+create:
+    redirect: 'sabah/form/contact/update/:id'
+    redirectClose: sabah/form/contact
+update:
+    redirect: sabah/form/contact
+    redirectClose: sabah/form/contact
+preview: {  }

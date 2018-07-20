@@ -71,6 +71,11 @@ noRecordsMessage = "No records found"
 detailsPage = "-"
 detailsUrlParameter = "id"
 pageNumber = "{{ :page }}"
+
+[tagFeed]
+tag = "baku"
+limit = 10
+cache = 10
 ==
 <section id="home-slider">
     <div class="container-fluid">
@@ -101,6 +106,7 @@ pageNumber = "{{ :page }}"
 
             </div>
         </div>
+    </div>
 </section>
 <section id="news-sec">
     <div class="container">
@@ -382,35 +388,28 @@ pageNumber = "{{ :page }}"
 <section id="ins-sabah">
     <div class="container-fluid">
         <div id="ins-sld" class="owl-carousel owl-theme owl-carousel-default owl-carousel-class-light">
-            <div class="item">
-                <div class="instagram-img text-center">
-                    <a href="">
 
-                        <img src="./img/content-img/Layer 10.png" alt="intagram_image" class="img-responsive">
-                        <div class="slider-overlay">
-                        </div>
-                        <div class="elements-container">
-                            <i class="fa fa-instagram" aria-hidden="true"></i>
-                            @moonlight123
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="item">
-                <div class="instagram-img text-center">
-                    <a href="">
+            {% for m in tagFeed.media %}
+{{ loop.index }}
+            <img alt="" src="{{ m.getLowResImage().url }}">
 
-                        <img src="./img/content-img/Layer 11.png" alt="intagram_image" class="img-responsive">
-                        <div class="slider-overlay">
-                        </div>
-                        <div class="elements-container">
-                            <i class="fa fa-instagram" aria-hidden="true"></i>
-                            @moonlight123
-                        </div>
-                    </a>
-                </div>
+            <div class="item">
+
+                <a href="">
+                    <img src="{{ m.getLowResImage().url }}" alt="intagram_image" class="img-responsive">
+                    <div class="slider-overlay">
+                    </div>
+                    <div class="elements-container">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                        @moonlight123
+                    </div>
+                </a>
             </div>
         </div>
+        {% endfor %}
+
+
+    </div>
     </div>
 </section>
 <section id="partners">
@@ -433,7 +432,7 @@ pageNumber = "{{ :page }}"
                     {% for record in partner.records %}
                         <div class="item">
                             <a href="">
-                                <div class="partner-img"  style="background-image: url({{ record.logo.thumb(130,60) }})">
+                                <div class="partner-img" style="background-image: url({{ record.logo.thumb(130,60) }})">
                                     {#<img src="{{ record.logo.path }}" class="img-responsive" alt="">#}
                                 </div>
                             </a>
@@ -459,15 +458,15 @@ pageNumber = "{{ :page }}"
                 loop: true,
                 margin: 10,
                 nav: true,
-                responsive:{
-                    0:{
-                        items:1
+                responsive: {
+                    0: {
+                        items: 1
                     },
-                    600:{
-                        items:3
+                    600: {
+                        items: 3
                     },
-                    1000:{
-                        items:4
+                    1000: {
+                        items: 4
                     }
                 }
             })

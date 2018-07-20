@@ -6,11 +6,15 @@ plugin:
     homepage: ''
 navigation:
     main-menu-item:
-        label: Xəbərlər
+        label: 'sabah.news::lang.news_menu.news'
         url: sabah/news/news
         icon: icon-newspaper-o
         sideMenu:
+            side-menu-item2:
+                label: 'sabah.news::lang.news_menu.news'
+                url: sabah/news/news
+                icon: icon-newspaper-o
             side-menu-item:
-                label: Kategoriya
+                label: 'sabah.news::lang.news_menu.category'
                 url: sabah/news/category
                 icon: icon-sitemap

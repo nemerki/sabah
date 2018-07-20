@@ -1,6 +1,20 @@
 <?php return [
     'plugin' => [
         'name' => 'News',
-        'description' => ''
-    ]
+        'description' => '',
+    ],
+    'news' => [
+        'published' => 'Published',
+        'title' => 'Title',
+        'slug' => 'Slug',
+        'category' => 'Category',
+        'is_home' => 'Show Home',
+        'content' => 'Content',
+        'image' => 'Image',
+        'gallery' => 'Gallery',
+    ],
+    'news_menu' => [
+        'news' => 'News',
+        'category' => 'Category',
+    ],
 ];

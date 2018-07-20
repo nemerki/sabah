@@ -12,6 +12,7 @@ notFoundMessage = "Record not found"
 
 [otherAds]
 ==
+
 <div id="teacher-news-faq" class="main-content">
     <!-- BANNER-->
     <div id="header-panel">
@@ -19,7 +20,7 @@ notFoundMessage = "Record not found"
             <div class="row">
                 <div class="col-md-12">
                     <div class="panel-title">
-                        <h1>ELANLAR</h1>
+                        <h1>{{ 'ELANLAR' |_ }}</h1>
                     </div>
                 </div>
             </div>
@@ -41,7 +42,7 @@ notFoundMessage = "Record not found"
                                     {{ record.created_at.format('d M Y') }}
                                 </span>
                             {% if record.organized %}
-                                <p class="future-news">Keçirilmə tarixi:
+                                <p class="future-news">{{ 'Keçirilmə tarixi:' |_ }}
                                     <span>{{ record.organized|date('d M Y') }}</span>
                                 </p>
                             {% endif %}
@@ -60,7 +61,7 @@ notFoundMessage = "Record not found"
                     <div class="social-link-area">
 
                         <ul class="social-icon">
-                            <li>Paylaş:</li>
+                            <li>{{ 'Paylaş:' |_ }}</li>
                             <li class="facebook">
                                 <a href="#">
                                     <i class="fa fa-facebook-official" aria-hidden="true"></i>
@@ -86,7 +87,7 @@ notFoundMessage = "Record not found"
                 <div class=" col-sm-12 col-md-4 col-lg-4">
                     <div id="sidebar">
                         <div class="sidebar-title">
-                            <h1 class="title-bold">Digər elanlar</h1>
+                            <h1 class="title-bold">{{ 'Digər elanlar' |_ }}</h1>
                             <div class="border"></div>
                         </div>
                         <div class="news-list-item">

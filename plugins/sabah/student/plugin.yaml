@@ -6,27 +6,27 @@ plugin:
     homepage: ''
 navigation:
     main-menu-item:
-        label: Tələbə
+        label: 'sabah.student::lang.student_menu.student'
         url: sabah/student/university
         icon: icon-users
         sideMenu:
             side-menu-item:
-                label: Üniversitetler
+                label: 'sabah.student::lang.student_menu.university'
                 url: sabah/student/university
-                icon: icon-bank
+                icon: icon-university
             side-menu-item2:
-                label: 'Təcrübə Proqramları'
+                label: 'sabah.student::lang.student_menu.practice_programs'
                 url: sabah/student/practiceprogram
                 icon: icon-star-o
             side-menu-item3:
-                label: 'Xaricde Təhsil'
+                label: 'sabah.student::lang.student_menu.abroad_study'
                 url: sabah/student/abroadstudy
                 icon: icon-stumbleupon
             side-menu-item4:
-                label: 'Tələbə qəbulu faq'
+                label: 'sabah.student::lang.student_menu.student_admission_faq'
                 url: sabah/student/studentadmissionfaq
                 icon: icon-question-circle
             side-menu-item5:
-                label: 'Müəllim qəbulu faq'
+                label: 'sabah.student::lang.student_menu.teacher_admission_faq'
                 url: sabah/student/teacheradmission
                 icon: icon-question-circle

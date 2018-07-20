@@ -44,7 +44,7 @@ notFoundMessage = "Record not found"
                             </div>
 
                             <div class="news-image">
-                                <img src="{{ record.image.thumb(750,413) }}" alt="" class="img-responsive">
+                                <img src="{{ record.image.thumb(750,413) }}" alt="{{ record.name }}" class="img-responsive">
                             </div>
 
 
@@ -65,7 +65,7 @@ notFoundMessage = "Record not found"
                                         <div class="overlay">
                                             <i class="fa fa-search"></i>
                                         </div>
-                                        <img src="{{ image.thumb(180,100,{'mode':'crop'}) }}">
+                                        <img alt="{{ record.name }}" src="{{ image.thumb(180,100,{'mode':'crop'}) }}">
                                     </a>
                                 {% endfor %}
 

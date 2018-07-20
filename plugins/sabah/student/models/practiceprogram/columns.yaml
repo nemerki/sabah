@@ -1,6 +1,15 @@
 columns:
     company_name:
-        label: 'Şirkət Adı'
+        label: 'sabah.student::lang.practice_programs.company_name'
         type: text
         searchable: true
         sortable: true
+    position:
+        label: 'sabah.student::lang.practice_programs.position'
+        type: text
+        searchable: true
+        sortable: true
+    logo:
+        label: 'sabah.student::lang.practice_programs.logo'
+        type: partial
+        path: ~/plugins/sabah/student/models/practiceprogram/_logo_column.htm

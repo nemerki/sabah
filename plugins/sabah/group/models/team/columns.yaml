@@ -1,15 +1,15 @@
 columns:
     name:
-        label: 'Ad Soyad'
+        label: 'sabah.group::lang.plugin.name'
         type: text
-        searchable: false
-        sortable: false
         select: 'concat(name,'' '',surname)'
     company:
-        label: Şirket
+        label: 'sabah.group::lang.team.company'
         type: text
-        searchable: false
     career:
-        label: Peşəsi
+        label: 'sabah.group::lang.team.career'
         type: text
-        searchable: false
+    image:
+        label: 'sabah.group::lang.team.image'
+        type: partial
+        path: ~/plugins/sabah/group/models/team/_image_column.htm

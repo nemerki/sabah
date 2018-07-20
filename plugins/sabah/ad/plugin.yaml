@@ -6,11 +6,15 @@ plugin:
     homepage: ''
 navigation:
     main-menu-item:
-        label: Elan
+        label: 'sabah.ad::lang.ads_menu.ads'
         url: sabah/ad/ad
-        icon: icon-thumb-tack
+        icon: icon-buysellads
         sideMenu:
+            side-menu-item2:
+                label: 'sabah.ad::lang.ads_menu.ads'
+                url: sabah/ad/ad
+                icon: icon-buysellads
             side-menu-item:
-                label: Kategoriya
+                label: 'sabah.ad::lang.ads_menu.category'
                 url: sabah/ad/category
                 icon: icon-sitemap

@@ -1,9 +1,9 @@
 columns:
     name:
-        label: Adı
+        label: 'sabah.group::lang.gallery.name'
         type: text
         searchable: true
     image:
-        label: Şekil
+        label: 'sabah.group::lang.gallery.image'
         type: partial
         path: ~/plugins/sabah/group/models/gallery/_image_column.htm

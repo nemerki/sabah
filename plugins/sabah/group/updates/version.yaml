@@ -18,3 +18,6 @@
 1.0.7:
     - 'Created table sabah_group_sliders'
     - builder_table_create_sabah_group_sliders.php
+1.0.8:
+    - 'Created table sabah_group_settings'
+    - builder_table_create_sabah_group_settings.php

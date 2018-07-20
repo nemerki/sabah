@@ -1,15 +1,15 @@
 columns:
     title:
-        label: Adı
+        label: 'sabah.news::lang.news.title'
         type: text
         searchable: true
     category:
-        label: Kateqoriyası
+        label: 'sabah.news::lang.news.category'
         type: text
         select: name
         relation: category
     created_at:
-        label: 'Elave olunma Tarixi'
+        label: 'sabah.news::lang.news.published'
         type: text
         searchable: true
         sortable: true

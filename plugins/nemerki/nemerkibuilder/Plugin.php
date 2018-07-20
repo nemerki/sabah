@@ -54,6 +54,7 @@ class Plugin extends PluginBase
 
         return [
             'Nemerki\NemerkiBuilder\Components\RecordList' => 'RecordList',
+            'Nemerki\NemerkiBuilder\Components\RecordDetails' => 'RecordDetails',
         ];
     }
 

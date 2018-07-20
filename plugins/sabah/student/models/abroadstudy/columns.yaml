@@ -1,5 +1,9 @@
 columns:
     title:
-        label: Başlıq
+        label: 'sabah.student::lang.abroad_study.title'
         type: text
         searchable: true
+    image:
+        label: 'sabah.student::lang.abroad_study.image'
+        type: partial
+        path: ~/plugins/sabah/student/models/abroadstudy/_image_column.htm

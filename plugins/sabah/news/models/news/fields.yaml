@@ -1,30 +1,40 @@
 fields:
     title:
-        label: Adı
+        label: 'sabah.news::lang.news.title'
         span: auto
         type: text
     slug:
-        label: Slug
+        label: 'sabah.news::lang.news.slug'
         span: auto
         preset:
             field: title
             type: slug
         type: text
     category:
-        label: Kategoriya
+        label: 'sabah.news::lang.news.category'
         nameFrom: name
         descriptionFrom: description
         span: auto
         type: relation
     is_home:
-        label: 'Əsas səyfədə'
+        label: 'sabah.news::lang.news.is_home'
         options:
             - Göstərmə
             - Göstər
         span: auto
         type: dropdown
+    created_at:
+        label: 'sabah.news::lang.news.published'
+        mode: datetime
+        span: full
+        type: datepicker
+    content:
+        label: 'sabah.news::lang.news.content'
+        size: ''
+        span: full
+        type: richeditor
     image:
-        label: 'Xəbər şəkli'
+        label: 'sabah.news::lang.news.image'
         mode: image
         useCaption: true
         thumbOptions:
@@ -33,7 +43,7 @@ fields:
         span: auto
         type: fileupload
     gallery:
-        label: Qalereya
+        label: 'sabah.news::lang.news.gallery'
         mode: image
         useCaption: true
         thumbOptions:
@@ -41,8 +51,3 @@ fields:
             extension: auto
         span: auto
         type: fileupload
-    content:
-        label: Content
-        size: ''
-        span: full
-        type: richeditor

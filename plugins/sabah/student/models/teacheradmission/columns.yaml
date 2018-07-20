@@ -1,9 +1,9 @@
 columns:
     question:
-        label: Sual
+        label: 'sabah.student::lang.teacher_admission.question'
         type: text
         searchable: true
     answer:
-        label: Cavab
+        label: 'sabah.student::lang.teacher_admission.answer'
         type: text
         searchable: true

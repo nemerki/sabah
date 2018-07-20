@@ -1,5 +1,6 @@
 name: Sabah
-description: ''
-author: Nova
-homepage: 'http://sabah.edu.az/'
+description: 'SABAH Groups Offical Web Site template'
+author: NOVADigitalSolutions
+homepage: www.nova.az
+form: theme_fields.yaml
 code: ''

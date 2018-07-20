@@ -6,3 +6,6 @@
 1.0.3:
     - 'Created table sabah_news_categories'
     - builder_table_create_sabah_news_categories.php
+1.0.4:
+    - 'Updated table sabah_news_news'
+    - builder_table_update_sabah_news_news.php

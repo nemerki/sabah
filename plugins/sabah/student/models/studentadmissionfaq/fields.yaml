@@ -1,11 +1,11 @@
 fields:
     question:
-        label: Sual
+        label: 'sabah.student::lang.student_admission_faq.question'
         size: ''
-        span: auto
+        span: full
         type: textarea
     answer:
-        label: Cavab
-        span: auto
+        label: 'sabah.student::lang.student_admission_faq.answer'
+        span: full
         size: ''
         type: textarea

@@ -1,5 +1,9 @@
 columns:
     question:
-        label: Sual
+        label: 'sabah.group::lang.faq.question'
+        type: text
+        searchable: true
+    answer:
+        label: 'sabah.group::lang.faq.answer'
         type: text
         searchable: true

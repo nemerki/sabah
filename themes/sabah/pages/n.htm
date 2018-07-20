@@ -1,0 +1,20 @@
+title = "n"
+url = "/n"
+layout = "default"
+is_hidden = 0
+
+[tagFeed]
+tag = "instalifecz"
+limit = 10
+cache = 10
+==
+{% for m in tagFeed.media %}
+  {% if m.getType() == 'image' %}
+    <img src="{{ m.getLowResImage().url }}" >
+  {% elseif m.getType() == 'video' %}
+    <video width="480" height="480" controls>
+      <source src="{{ m.getLowResVideo().url }}" 
+      type="video/mp4"/>
+    </video>
+  {% endif %}
+{% endfor %}

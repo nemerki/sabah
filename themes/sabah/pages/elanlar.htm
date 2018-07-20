@@ -19,7 +19,7 @@ sortDirection = "asc"
             <div class="row">
                 <div class="col-md-12">
                     <div class="panel-title">
-                        <h1>Elanlar</h1>
+                        <h1>{{ 'Elanlar' |_ }}</h1>
                     </div>
                 </div>
             </div>
@@ -31,7 +31,7 @@ sortDirection = "asc"
         <div class="row">
             <div class="col-md-8">
                 <div class="title-bold title-before green">
-                    Vacib elanlar
+                    {{ '  Vacib elanlar' |_ }}
                 </div>
                 <div class="elan-grid">
                     <div class="row">
@@ -41,10 +41,10 @@ sortDirection = "asc"
                                     <div class="item text-center">
                                         <div class="box">
                                             <div class="datetime">
-                                                01 İyul 2017
+                                               {{ record.created_at.format('d M Y') }}
                                             </div>
                                             <div class="desc">
-                                               {{ record.title }}
+                                                {{ record.title }}
                                             </div>
                                         </div>
                                         <div class="overlay"></div>
@@ -90,6 +90,7 @@ sortDirection = "asc"
 
             </div>
         </div>
+    </div>
 </section>
 
 {% put scripts %}
