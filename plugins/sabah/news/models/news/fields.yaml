@@ -23,7 +23,7 @@ fields:
             - Göstər
         span: auto
         type: dropdown
-    created_at:
+    published:
         label: 'sabah.news::lang.news.published'
         mode: datetime
         span: full
@@ -51,3 +51,7 @@ fields:
             extension: auto
         span: auto
         type: fileupload
+    tags:
+        label: 'News Tags'
+        span: full
+        type: tags

@@ -1,0 +1,5 @@
+title: Testimonial
+nameFrom: name
+modelClass: Sabah\Group\Models\Testimonial
+toolbar:
+    buttons: reorder_toolbar

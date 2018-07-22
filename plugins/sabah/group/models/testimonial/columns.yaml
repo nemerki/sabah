@@ -1,0 +1,20 @@
+columns:
+    name:
+        label: 'sabah.group::lang.testimonial.name'
+        type: text
+        searchable: true
+        sortable: true
+    info:
+        label: 'sabah.group::lang.testimonial.info'
+        type: text
+        searchable: true
+    comment:
+        label: 'sabah.group::lang.testimonial.comment'
+        type: text
+    image:
+        label: 'sabah.group::lang.testimonial.image'
+        type: partial
+        path: ~/plugins/sabah/group/models/testimonial/_image_column.htm
+    sort_order:
+        label: 'sabah.group::lang.testimonial.sort_order'
+        type: number

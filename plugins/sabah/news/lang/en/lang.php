@@ -12,6 +12,7 @@
         'content' => 'Content',
         'image' => 'Image',
         'gallery' => 'Gallery',
+        'tags' => 'Tags',
     ],
     'news_menu' => [
         'news' => 'News',

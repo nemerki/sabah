@@ -9,3 +9,20 @@ navigation:
         label: 'sabah.form::lang.contact_menu.contact'
         url: sabah/form/contact
         icon: icon-send
+        sideMenu:
+            side-menu-item2:
+                label: 'sabah.form::lang.contact_menu.contact'
+                url: sabah/form/contact
+                icon: icon-send
+            side-menu-item:
+                label: 'sabah.form::lang.application_forms.menu_name'
+                url: sabah/form/applicationforms
+                icon: icon-server
+            side-menu-item3:
+                label: 'sabah.form::lang.contact_menu.faq'
+                url: sabah/form/faq
+                icon: icon-question
+            side-menu-item4:
+                label: 'sabah.form::lang.faq_menu.category'
+                url: sabah/form/faqcategory
+                icon: icon-sitemap

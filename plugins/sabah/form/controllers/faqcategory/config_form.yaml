@@ -1,0 +1,10 @@
+name: FaqCategory
+form: $/sabah/form/models/fagcategory/fields.yaml
+modelClass: Sabah\Form\Models\FagCategory
+defaultRedirect: sabah/form/faqcategory
+create:
+    redirect: 'sabah/form/faqcategory/update/:id'
+    redirectClose: sabah/form/faqcategory
+update:
+    redirect: sabah/form/faqcategory
+    redirectClose: sabah/form/faqcategory

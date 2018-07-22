@@ -11,7 +11,8 @@ class Faq extends Model
 
     use \October\Rain\Database\Traits\SoftDelete;
     use \October\Rain\Database\Traits\Sortable;
-    const SORT_ORDER = 'question';
+
+    const SORT_ORDER = 'sort_order';
 
     protected $dates = ['deleted_at'];
 
@@ -25,4 +26,5 @@ class Faq extends Model
      * @var string The database table used by the model.
      */
     public $table = 'sabah_group_faqs';
+
 }

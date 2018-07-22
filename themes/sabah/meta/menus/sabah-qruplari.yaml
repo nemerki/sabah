@@ -4,8 +4,10 @@ items:
         title: 'LAYİHƏNİN MƏQSƏDİ'
         nesting: '0'
         type: static-page
+        url: ''
         code: ''
         reference: layihenin-meqsedi
+        cmsPage: ''
         replace: '0'
         viewBag:
             isHidden: '0'
@@ -15,8 +17,10 @@ items:
         title: TƏRƏFDAŞLAR
         nesting: '0'
         type: static-page
+        url: ''
         code: ''
         reference: terefdaslar
+        cmsPage: ''
         replace: '0'
         viewBag:
             isHidden: '0'
@@ -26,8 +30,10 @@ items:
         title: KOMANDAMIZ
         nesting: '0'
         type: static-page
+        url: ''
         code: ''
         reference: komandamiz
+        cmsPage: ''
         replace: '0'
         viewBag:
             isHidden: '0'
@@ -37,8 +43,10 @@ items:
         title: 'FOTO QALEREYA'
         nesting: '0'
         type: static-page
+        url: ''
         code: ''
         reference: fotoqalereya
+        cmsPage: ''
         replace: '0'
         viewBag:
             isHidden: '0'
@@ -46,11 +54,9 @@ items:
             isExternal: '0'
     -
         title: 'MÜTƏMADİ VERİLƏN SUALLAR'
-        nesting: '0'
-        type: static-page
+        type: cms-page
         code: ''
-        reference: faq
-        replace: '0'
+        reference: mutemadi-verelen-suallar
         viewBag:
             isHidden: '0'
             cssClass: ''

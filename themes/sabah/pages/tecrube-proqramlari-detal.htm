@@ -16,11 +16,11 @@ notFoundMessage = "Record not found"
             <div class="container-fluid">
                 <div class="row">
                     <div style="background-image:linear-gradient(0deg,rgba(0, 155, 77, 0.7),rgba(0, 155, 77, 0.7)),
-                                 url('./img/content-img/teacher-news-background.png')" class="background-green">
+                                 url('{{ 'assets/img/content-img/teacher-news-background.png'|theme }}')" class="background-green">
                         <div class="banner-title text-center">
                             <div class="s-star"></div>
-                            <h1>TƏCRÜBƏ PROQRAMLARI</h1>
-                            <p class="breadcumb">SABAH TƏLƏBƏLƏRİ</p>
+                            <h1>{{ 'TƏCRÜBƏ PROQRAMLARI' |_ }}</h1>
+                            <p class="breadcumb">{{ 'SABAH TƏLƏBƏLƏRİ' |_ }}</p>
                         </div>
                     </div>
                 </div>
@@ -47,7 +47,7 @@ notFoundMessage = "Record not found"
                                     <div class="col-md-9">
                                         <div class="company-contact">
                                             <div class="company-title">
-                                                <div class="content-main">{{ record.description_top|raw }}</div>
+                                                <div class="content-main">{{ record.description|raw }}</div>
                                             </div>
                                             <div class="company-contact-list">
                                                 <dl class="list-contact">
@@ -74,23 +74,14 @@ notFoundMessage = "Record not found"
 
                                 <div class="works-area-detal">
                                     <div class="works-detal-title">
-                                        <p>İşin təsviri</p>
 
-                                           {{ record.job_description|raw }}
 
-                                    </div>
-
-                                    <div class="works-detal-title">
-                                        <p>Namizədə tələblər</p>
-
-                                            {{ record.requirements|raw }}
+                                           {{ record.content|raw }}
 
                                     </div>
-
-                                    <div class="content-main">{{ record.description_bottom }}</div>
 
                                     <div class="program-detal-submit">
-                                        <button type="submit">MÜRACİƏT ET</button>
+                                        <button type="submit">{{ 'MÜRACİƏT ET' |_ }}</button>
                                         <i class="fa fa-angle-double-right" aria-hidden="true"></i>
                                     </div>
                                 </div>

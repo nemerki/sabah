@@ -8,8 +8,12 @@ columns:
         type: text
         select: name
         relation: category
-    created_at:
+    published:
         label: 'sabah.news::lang.news.published'
         type: text
         searchable: true
         sortable: true
+    image:
+        label: 'sabah.news::lang.news.image'
+        type: partial
+        path: ~/plugins/sabah/news/models/news/_image_column.htm

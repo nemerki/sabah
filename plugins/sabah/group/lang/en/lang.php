@@ -40,5 +40,13 @@
         'abroad_study' => 'Abroad Study',
         'student_admission_faq' => 'Student Admission Faq',
         'teacher_admission_faq' => 'Teacher Admission Faq',
+        'testimonials' => 'Testimonials',
+    ],
+    'testimonial' => [
+        'name' => 'Name',
+        'info' => 'Info',
+        'comment' => 'Comment',
+        'image' => 'İmage',
+        'sort_order' => 'Sort Order',
     ],
 ];

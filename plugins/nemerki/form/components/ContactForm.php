@@ -63,7 +63,7 @@ class ContactForm extends ComponentBase
             'name' => 'required',
             'email' => 'required|email',
             'subject' => 'required',
-            'message' => 'required',
+            'content' => 'required',
         ];
 
         $validation = Validator::make($data, $rules);

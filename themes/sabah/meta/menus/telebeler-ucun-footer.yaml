@@ -2,45 +2,63 @@ name: 'Tələbələr üçün footer'
 items:
     -
         title: 'TƏCRÜBƏ PROQRAMLARI'
+        nesting: ''
         type: cms-page
+        url: ''
         code: ''
         reference: tecrube-programlari
+        cmsPage: ''
+        replace: ''
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
         title: 'XARİCDƏ TƏHSİL VƏ MÜBADİLƏ PROQRAMLARI'
+        nesting: ''
         type: cms-page
+        url: ''
         code: ''
         reference: xaricde-tehsil-ve-mubadile-proqramlari
+        cmsPage: ''
+        replace: ''
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
         title: İXTİSASLAR
+        nesting: ''
         type: cms-page
+        url: ''
         code: ''
         reference: telebe-ixtisaslar
+        cmsPage: ''
+        replace: ''
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
         title: UNİVERSİTETLƏR
+        nesting: ''
         type: cms-page
+        url: ''
         code: ''
         reference: universitetler
+        cmsPage: ''
+        replace: ''
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
         title: 'SEÇİM ŞƏRTLƏRİ VƏ QAYDALAR'
-        type: cms-page
+        nesting: '0'
+        type: static-page
         code: ''
         reference: telebe-qebulu-secim-sertleri
+        replace: '0'
         viewBag:
             isHidden: '0'
             cssClass: ''

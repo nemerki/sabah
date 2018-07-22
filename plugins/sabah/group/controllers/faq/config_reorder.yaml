@@ -1,4 +1,5 @@
 title: Faq
+nameFrom: question
 modelClass: Sabah\Group\Models\Faq
 toolbar:
     buttons: reorder_toolbar

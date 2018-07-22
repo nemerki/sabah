@@ -1,7 +1,12 @@
-title = "Homepage"
+title = "Əsas Səhifə"
 url = "/"
 layout = "default"
+meta_title = "Homepage"
+meta_description = "fgmnf"
 is_hidden = 0
+seo_keywords = "gn"
+robot_index = "index"
+robot_follow = "follow"
 
 [RecordList slider]
 modelClass = "Sabah\Group\Models\Slider"
@@ -76,6 +81,16 @@ pageNumber = "{{ :page }}"
 tag = "baku"
 limit = 10
 cache = 10
+
+[RecordList testimonial]
+modelClass = "Sabah\Group\Models\Testimonial"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "name"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
 ==
 <section id="home-slider">
     <div class="container-fluid">
@@ -113,7 +128,7 @@ cache = 10
         <div class="row">
             <div class="col-md-4 col-sm-5">
                 <div class="title-bold title-before">
-                    Elanlar
+                    {{ 'Elanlar' |_ }}
                 </div>
                 <div class="border"></div>
                 {% for record in ad.records %}
@@ -153,7 +168,7 @@ cache = 10
                 </div>
                 <div class="col-md-12">
                     <div class="read-more">
-                        <a href="{{ "xeberler"|page }}">Butun Xeberler</a>
+                        <a href="{{ "xeberler"|page }}">{{ 'Butun Xeberler' |_ }}</a>
                     </div>
                 </div>
             </div>
@@ -202,7 +217,7 @@ cache = 10
                         </div>
                         <div class="col-md-12">
                             <div class="read-more">
-                                <a href="{{ "elanlar"|page }}">Butun Elanlar</a>
+                                <a href="{{ "elanlar"|page }}">{{ 'Butun Elanlar' |_ }}</a>
                             </div>
                         </div>
                     </div>
@@ -211,35 +226,36 @@ cache = 10
         </div>
     </div>
 </section>
-<section id="applying" style="background-image: url('./img/content-img/Layer-16.png')">
+<section id="applying" style="background-image: url('{{ 'assets/img/content-img/Layer-16.png'|theme }}')">
     <div class="overlay"></div>
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="shape text-center">
-                    <img src="./img/file-img/center-divider-white.png" alt="">
+                    <img src="{{ 'assets/img/file-img/center-divider-white.png'|theme }}" alt="">
                 </div>
                 <div class="aligner">
                     <div class="aling-item">
                         <div class="item">
                             <div class="row">
                                 <div class="col-md-6 col-sm-12 col-xs-7 x">
-                                    <div class="title-bold title-before green">Telebe</div>
+                                    <div class="title-bold title-before green">{{ 'Telebe' |_ }}</div>
                                     <div class="border"></div>
-                                    <div class="desc">2017-2018-ci tədris ili üçün SABAH Qruplarına tələbə qəbulu
-                                        müsabiqəsi
+                                    <div class="desc">{{ '2017-2018-ci tədris ili üçün SABAH Qruplarına tələbə qəbulu
+                                        müsabiqəsi' |_ }}
                                     </div>
 
                                     <a href="">
                                         <div class="aplay-button ">
-                                            <button type="submit" class="telebe-but">TƏLƏBƏ PORTALI</button>
+                                            <button type="submit" class="telebe-but">{{ 'TƏLƏBƏ PORTALI' |_ }}</button>
                                             <i class="fa fa-chevron-right" aria-hidden="true"></i>
                                         </div>
                                     </a>
 
                                 </div>
                                 <div class="col-md-6 hidden-sm col-xs-5">
-                                    <img src="./img/content-img/portal-student.jpg" class="img-responsive" alt="">
+                                    <img src="{{ 'assets/img/content-img/portal-student.jpg'|theme }}"
+                                         class="img-responsive" alt="">
                                 </div>
                             </div>
                         </div>
@@ -248,20 +264,21 @@ cache = 10
                         <div class="item">
                             <div class="row">
                                 <div class="col-md-6 col-sm-12 col-xs-7 x">
-                                    <div class="title-bold title-before blue">Müəllim</div>
+                                    <div class="title-bold title-before blue">{{ 'Müəllim' |_ }}</div>
                                     <div class="border"></div>
-                                    <div class="desc">2017-2018-ci tədris ili üçün SABAH Qruplarına tələbə qəbulu
-                                        müsabiqəsi
+                                    <div class="desc">{{ '2017-2018-ci tədris ili üçün SABAH Qruplarına tələbə qəbulu
+                                        müsabiqəsi' |_ }}
                                     </div>
                                     <a href="">
                                         <div class="aplay-button muellim">
-                                            <button type="submit" class="muellim">MÜRACİƏT ET</button>
+                                            <button type="submit" class="muellim">{{ 'MÜRACİƏT ET' |_ }}</button>
                                             <i class="fa fa-plus" aria-hidden="true"></i>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="col-md-6 hidden-sm col-xs-5">
-                                    <img src="./img/content-img/portal_teacher.jpg" class="img-responsive" alt="">
+                                    <img src="{{ 'assets/img/content-img/portal_teacher.jpg'|theme }}"
+                                         class="img-responsive" alt="">
                                 </div>
                             </div>
                         </div>
@@ -275,30 +292,33 @@ cache = 10
 </section>
 <section id="testimonial-sec">
     <div class="container">
-        <div id="testim-sld" class="owl-carousel owl-theme">
-            <div class="item">
-                <div class="back"></div>
-                <div class="row">
-                    <div class="col-md-3  col-sm-3">
-                        <div class="card-img">
-                            <img src="./img/content-img/Layer 7.png" class="img-circle" alt="Cinque Terre">
+        <div id="testim-sld" class="testimonial owl-carousel owl-theme">
+            {% for record in testimonial.records %}
+                <div class="item">
+                    <div class="back"></div>
+                    <div class="row">
+                        <div class="col-md-3  col-sm-3">
+                            <div class="card-img">
+                                <img src="{{ record.image.path }}" class="img-circle" alt="Cinque Terre">
+                            </div>
+                        </div>
+                        <div class="col-md-9 col-sm-9">
+                            <div class="card-desc">
+                                <p class="up-desc">They must find it difficult, those who have taken authority as truth,
+                                    rather than truth as
+                                    authority. On the other hand, we denounce with righteous indignation and dislike men
+                                    who are so beguiled and moralized.
+                                </p>
+                                <p class="down-desc">
+                                    <span>Rəna Məmmədova</span>
+                                    <br> Kompüter elmləri, 2016. Bakı Dövlət Universitet</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-9 col-sm-9">
-                        <div class="card-desc">
-                            <p class="up-desc">They must find it difficult, those who have taken authority as truth,
-                                rather than truth as
-                                authority. On the other hand, we denounce with righteous indignation and dislike men
-                                who are so beguiled and moralized.
-                            </p>
-                            <p class="down-desc">
-                                <span>Rəna Məmmədova</span>
-                                <br> Kompüter elmləri, 2016. Bakı Dövlət Universitet</p>
-                        </div>
-                    </div>
-                </div>
 
-            </div>
+                </div>
+            {% endfor %}
+
         </div>
     </div>
 </section>
@@ -360,7 +380,7 @@ cache = 10
             </div>
             <div class="col-md-12">
                 <div class="all-uni text-center">
-                    <a href="{{ 'universitetler'|page }}">BÜTÜN UNİVERSİTETLƏR</a>
+                    <a href="{{ 'universitetler'|page }}">{{ 'BÜTÜN UNİVERSİTETLƏR' |_ }}</a>
                 </div>
             </div>
         </div>
@@ -372,25 +392,26 @@ cache = 10
             <div class="col-md-12">
                 <div class="univer-shape">
                     <div class="line-border"></div>
-                    <img src="./img/file-img/stars-blue.svg" alt="">
+                    <img src="{{ 'assets/img/file-img/stars-blue.svg'|theme }}" alt="">
                 </div>
             </div>
             <div class="col-md-12">
                 <div class="uni-title text-center">
-                    <h4>#IamSabah</h4>
-                    <p>Şəkillərin burada görünməsi üçün paylaşım zamanı açar sözdən istifadə edin.</p>
+                    <h4>{{ '#IamSabah' |_ }}</h4>
+                    <p>{{ 'Şəkillərin burada görünməsi üçün paylaşım zamanı açar sözdən istifadə edin.' |_ }}</p>
                 </div>
             </div>
         </div>
     </div>
     </div>
 </section>
+
 <section id="ins-sabah">
     <div class="container-fluid">
         <div id="ins-sld" class="owl-carousel owl-theme owl-carousel-default owl-carousel-class-light">
 
             {% for m in tagFeed.media %}
-{{ loop.index }}
+            {{ loop.index }}
             <img alt="" src="{{ m.getLowResImage().url }}">
 
             <div class="item">
@@ -418,12 +439,12 @@ cache = 10
             <div class="col-md-12">
                 <div class="univer-shape">
                     <div class="line-border"></div>
-                    <img src="./img/file-img/stars-blue.svg" alt="">
+                    <img src="{{ 'assets/img/file-img/stars-blue.svg'|theme }}" alt="">
                 </div>
             </div>
             <div class="col-md-12">
                 <div class="uni-title text-center">
-                    <h4>Tərəfdaşlarımız</h4>
+                    <h4>{{ 'Tərəfdaşlarımız' |_ }}</h4>
 
                 </div>
             </div>
@@ -451,13 +472,16 @@ cache = 10
             $('.indexSlider').owlCarousel({
                 loop: true,
                 margin: 10,
-                nav: true,
+                dots: false,
+                autoplay: true,
                 items: 1,
             })
             $('#partners-sld').owlCarousel({
                 loop: true,
                 margin: 10,
-                nav: true,
+                nav: false,
+                autoplay: true,
+                dots: false,
                 responsive: {
                     0: {
                         items: 1
@@ -471,5 +495,16 @@ cache = 10
                 }
             })
         });
+
+        $('.testimonial').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            items: 1,
+            autoplay: true,
+            dots: false,
+            nav: false,
+
+        })
     </script>
 {% endput %}

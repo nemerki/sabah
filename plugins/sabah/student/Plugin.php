@@ -11,4 +11,13 @@ class Plugin extends PluginBase
     public function registerSettings()
     {
     }
+
+
+    public function registerFormWidgets()
+    {
+        return [
+            'Sabah\Student\FormWidgets\StudentAdmissionFaqWidget' => 'studentadmissionfaqwidget',
+
+        ];
+    }
 }

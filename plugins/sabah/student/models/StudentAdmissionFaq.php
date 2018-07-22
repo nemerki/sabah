@@ -8,8 +8,10 @@ use Model;
 class StudentAdmissionFaq extends Model
 {
     use \October\Rain\Database\Traits\Validation;
-    
+
     use \October\Rain\Database\Traits\SoftDelete;
+    use \October\Rain\Database\Traits\Sortable;
+    const SORT_ORDER = 'sort_order';
 
     protected $dates = ['deleted_at'];
 

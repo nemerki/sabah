@@ -30,3 +30,7 @@ navigation:
                 label: Slider
                 url: sabah/group/slider
                 icon: icon-sliders
+            side-menu-item6:
+                label: 'sabah.group::lang.backend_menu.testimonials'
+                url: sabah/group/testimonial
+                icon: icon-comments-o

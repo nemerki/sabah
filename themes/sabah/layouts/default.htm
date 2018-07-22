@@ -13,6 +13,14 @@ urlToProfile = "subscriber-profile"
 geo = "enabled"
 thanksMessage = "Thanks for subscribe!"
 errorMessage = "Email already exists!"
+
+[staticMenu muellimlerUcunFooter]
+code = "muellimler-ucun-footer"
+
+[staticMenu elaqeFooter]
+code = "elaqe-footer"
+
+[SeoCmsPage]
 ==
 <!DOCTYPE html>
 <!--[if lt IE 7]>
@@ -30,54 +38,8 @@ errorMessage = "Email already exists!"
 </head>
 <body>
 
+{% partial "header" %}
 
-<header class="header-sh">
-    <div class="back" style="background-image:url('{{ 'assets/img/content-img/header-rectangle.png'|theme }}')">
-    </div>
-    <div class="container">
-        <div class="header">
-            <div class="row">
-
-                <div class="col-md-2 col-sm-2 col-xs-6">
-                    <div class="logo">
-                        <a href="{{ '/'|app }}">
-                            <img src="{{ 'assets/img/file-img/S-Loqo.svg'|theme }}" alt="" class="img-responsive">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xs-6  visible-xs">
-                    <div class="mobile-menu-i ">
-                        <div class="icon text-right">
-                            <i class="fa fa-bars" aria-hidden="true"></i>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-md-10 hidden-xs col-sm-10">
-                    <div class="main-menu">
-                        <ul class="main-ul">
-
-                            {% if header.menuItems %}
-                                {% partial "nav" items=header.menuItems %}
-                            {% endif %}
-
-                        </ul>
-                        <div class="search">
-                            <form action="{{ 'xeber-axtar'|page }}" method="post">
-                                <input required type="search" placeholder="Axtardiginizi buraya yazin" name="search" class="searc-inp"
-                                       autocomplete="off">
-                                <i class="arama fa fa-search"></i>
-                            </form>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-</header>
 
 <!-- Mobile menu -->
 

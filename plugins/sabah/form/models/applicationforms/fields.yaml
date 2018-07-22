@@ -1,0 +1,43 @@
+fields:
+    name:
+        label: 'sabah.form::lang.application_forms.name'
+        span: auto
+        type: text
+    surname:
+        label: 'sabah.form::lang.application_forms.surname'
+        span: auto
+        type: text
+    father:
+        label: 'sabah.form::lang.application_forms.father'
+        span: auto
+        type: text
+    birth_date:
+        label: 'sabah.form::lang.application_forms.birth_date'
+        span: auto
+        type: text
+    mobile:
+        label: 'sabah.form::lang.application_forms.mobile'
+        span: auto
+        type: text
+    email:
+        label: 'sabah.form::lang.application_forms.email'
+        span: auto
+        type: text
+    linkedin:
+        label: 'sabah.form::lang.application_forms.linkedin'
+        span: auto
+        type: text
+    activities:
+        label: 'sabah.form::lang.application_forms.activities'
+        size: ''
+        span: auto
+        type: textarea
+    language:
+        label: 'sabah.form::lang.application_forms.language'
+        size: ''
+        span: auto
+        type: textarea
+    university:
+        label: 'sabah.form::lang.application_forms.university'
+        span: auto
+        type: text

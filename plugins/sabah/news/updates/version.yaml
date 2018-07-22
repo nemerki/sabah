@@ -9,3 +9,15 @@
 1.0.4:
     - 'Updated table sabah_news_news'
     - builder_table_update_sabah_news_news.php
+1.0.5:
+    - 'Created table sabah_news_tagable'
+    - builder_table_create_sabah_news_tagable.php
+1.0.6:
+    - 'Updated table sabah_news_tagable'
+    - builder_table_update_sabah_news_taggables.php
+1.0.7:
+    - 'Updated table sabah_news_taggables'
+    - builder_table_update_sabah_news_taggables_2.php
+1.0.8:
+    - 'Updated table sabah_news_news'
+    - builder_table_update_sabah_news_news_2.php

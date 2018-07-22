@@ -1,0 +1,5 @@
+title: Faq
+nameFrom: full_name
+modelClass: Sabah\Group\Models\Team
+toolbar:
+    buttons: reorder_toolbar

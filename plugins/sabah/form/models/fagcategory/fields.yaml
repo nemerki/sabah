@@ -1,0 +1,5 @@
+fields:
+    name:
+        label: 'sabah.form::lang.faq_category.name'
+        span: full
+        type: text

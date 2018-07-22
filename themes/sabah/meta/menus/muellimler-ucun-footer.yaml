@@ -1,0 +1,22 @@
+name: 'Müellimler üçün footer'
+items:
+    -
+        title: Elanlar
+        type: cms-page
+        code: ''
+        reference: muellim-qebulu-elanlar
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'SEÇİM ŞƏRTLƏRİ VƏ QAYDALAR'
+        nesting: '0'
+        type: static-page
+        code: ''
+        reference: muellim-qebulu-secim-sertleri
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'

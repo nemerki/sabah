@@ -14,4 +14,19 @@ class Plugin extends PluginBase
     public function registerSettings()
     {
     }
+
+    public function registerFormWidgets()
+    {
+        return [
+            'Sabah\News\FormWidgets\NewsTags' => [
+                'label' => 'Tags field',
+                'code' => 'tags'
+            ],
+            'Sabah\News\FormWidgets\NewsWidget' => [
+                'label' => 'News field',
+                'code' => 'newswidget'
+            ]
+        ];
+    }
+
 }

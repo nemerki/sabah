@@ -34,4 +34,8 @@ class News extends Model
     public $attachMany = [
         'gallery' => 'System\Models\File'
     ];
+
+    public $morphToMany = [
+        'tags' => ['Sabah\Student\Models\University', 'name' => 'sabah_news_taggable']
+    ];
 }

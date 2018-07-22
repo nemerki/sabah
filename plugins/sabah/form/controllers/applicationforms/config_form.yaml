@@ -1,0 +1,10 @@
+name: ApplicationForms
+form: $/sabah/form/models/applicationforms/fields.yaml
+modelClass: Sabah\Form\Models\ApplicationForms
+defaultRedirect: sabah/form/applicationforms
+create:
+    redirect: 'sabah/form/applicationforms/update/:id'
+    redirectClose: sabah/form/applicationforms
+update:
+    redirect: sabah/form/applicationforms
+    redirectClose: sabah/form/applicationforms

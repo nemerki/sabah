@@ -39,3 +39,18 @@
 1.0.14:
     - 'Updated table sabah_student_practice_programs'
     - builder_table_update_sabah_student_practice_programs_5.php
+1.0.15:
+    - 'Updated table sabah_student_universities'
+    - builder_table_update_sabah_student_universities_2.php
+1.0.16:
+    - 'Updated table sabah_student_teacher_admission_faqs'
+    - builder_table_update_sabah_student_teacher_admission_faqs.php
+1.0.17:
+    - 'Updated table sabah_student_student_admission_faqs'
+    - builder_table_update_sabah_student_student_admission_faqs_2.php
+1.0.18:
+    - 'Updated table sabah_student_practice_programs'
+    - builder_table_update_sabah_student_practice_programs_6.php
+1.0.19:
+    - 'Updated table sabah_student_abroad_studies'
+    - builder_table_update_sabah_student_abroad_studies.php

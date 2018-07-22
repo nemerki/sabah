@@ -17,7 +17,7 @@ class Plugin extends PluginBase
     {
         return [
             'name'        => 'Form',
-            'description' => 'Kullanıcıdan alınan formalrın eklenmesi ve mail gönderimi',
+            'description' => 'Kullanıcıdan alınan formalrın kaydedilmesi ve mail gönderimi',
             'author'      => 'Nemerki',
             'icon'        => 'icon-send'
         ];
@@ -54,6 +54,7 @@ class Plugin extends PluginBase
 
         return [
             'Nemerki\Form\Components\ContactForm' => 'ContactForm',
+            'Nemerki\Form\Components\FormSave' => 'FormSave',
         ];
     }
 

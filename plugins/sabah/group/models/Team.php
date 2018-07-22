@@ -11,6 +11,10 @@ class Team extends Model
 
     use \October\Rain\Database\Traits\SoftDelete;
 
+    use \October\Rain\Database\Traits\Sortable;
+
+    const SORT_ORDER = 'sort_order';
+
     protected $dates = ['deleted_at'];
 
     /**
@@ -27,4 +31,14 @@ class Team extends Model
     public $attachOne = [
         'image' => 'System\Models\File'
     ];
+
+    public function getFullNameAttribute()
+    {
+        return $this->name . " " . $this->surname;
+    }
+
+    public function getOrderAndFullNameAttribute()
+    {
+        return $this->sort_order . ". " . $this->name . " " . $this->surname;
+    }
 }

@@ -29,4 +29,9 @@ class University extends Model
     public $attachOne = [
         'logo' => 'System\Models\File'
     ];
+
+    public $morphedByMany = [
+        'news'  => ['Sabah\News\Models\News', 'name' => 'sabah_news_taggable'],
+
+    ];
 }

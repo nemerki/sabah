@@ -14,4 +14,13 @@ class Plugin extends PluginBase
     public function registerSettings()
     {
     }
+
+    public function registerFormWidgets()
+    {
+        return [
+            'Sabah\Group\FormWidgets\TestimonialWidget' => 'testimonialwidget',
+            'Sabah\Group\FormWidgets\TeamWidget' => 'teamwidget',
+
+        ];
+    }
 }

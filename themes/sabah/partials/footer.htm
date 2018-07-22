@@ -1,10 +1,11 @@
+[viewBag]
 ==
 <footer>
         <div class="container">
             <div class="row">
                 <div class="col-md-3 col-sm-6">
                     <div class="logo">
-                        <img src="{{ 'assets/img/content-img/logo-w.png" class="img-responsive'|theme }}'|theme }}" alt="">
+                        <img src="{{ this.theme.footer_logo_left.path }}" alt="">
                     </div>
                     <ul class="info">
                         <li class="margin-bott">
@@ -20,19 +21,19 @@
                             </a>
                         </li>
                         <li>
-                            <a href="">
+                            <a href="tel: {{ this.theme.telephone }}">
                                 <i class="fa fa-phone" aria-hidden="true"></i>
                               {{ this.theme.telephone }}
                             </a>
                         </li>
                         <li>
-                            <a href="">
+                            <a href="tel: {{ this.theme.fax }}">
                                 <i class="fa fa-fax" aria-hidden="true"></i>
                                {{ this.theme.fax }}
                             </a>
                         </li>
                         <li>
-                            <a href="">
+                            <a href="mailto:  {{ this.theme.email }}">
                                 <i class="fa fa-envelope" aria-hidden="true"></i>
                                {{ this.theme.email }}
                             </a>
@@ -65,32 +66,34 @@
                         MÜƏLLİMLƏR ÜÇÜN
                     </div>
                     <ul class="sabah-ul">
-                        <li>
-                            <a href="">Fənlər</a>
-                        </li>
-                        <li>
-                            <a href="">Seçİm şərtlərİ və qaydalar</a>
-                        </li>
-
+                             {% if muellimlerUcunFooter.menuItems %}
+                                                                                      {% partial "footerNav" items=muellimlerUcunFooter.menuItems %}
+                                                                                  {% endif %}
                     </ul>
-                    <div class="title margin-0">
-                        XƏBƏRLƏR
-                    </div>
+                    <a href="{{'xeberler'|page}}">
+	                    <div class="title margin-0">
+	                        XƏBƏRLƏR
+	                    </div>
+                    </a>
+                    <a href="{{'elanlar'|page}}">
                     <div class="title margin-0">
                         ELANLAR
                     </div>
+                    </a>
+                    <a href="{{'elaqe'|page}}">
                     <div class="title margin-0">
                         ƏLAQƏ
                     </div>
+                    </a>
                     <ul class="sabah-ul">
-                        <li>
-                            <a href="">Unİversİtet nümayəndəlİklərİ</a>
-                        </li>
+                          {% if elaqeFooter.menuItems %}
+                                                                                      {% partial "footerNav" items=elaqeFooter.menuItems %}
+                                                                                  {% endif %}
                     </ul>
                 </div>
                 <div class="col-md-2 col-sm-6">
                     <div class="tehsil-logo">
-                        <img src="{{ 'assets/img/content-img/Loqo_az_monoxrom.png'|theme }}" class="img-responsive" alt="">
+                        <img src="{{ this.theme.footer_logo_right.path }}" class="img-responsive" alt="">
                     </div>
                     <div class="office">
                         <a href=""><img src="{{ 'assets/img/content-img/office.png'|theme }}" class="img-responsive" alt=""></a>
@@ -123,7 +126,7 @@
                     </div>
                     <div class="col-md-3 col-md-offset-4 col-sm-6">
                         <div class="nova">
-                            <a href="">
+                            <a target="_blank" href="https://nova.az/">
                                 <img src="{{ 'assets/img/content-img/White - Brand only.png'|theme }}" alt="">
                             </a>
                             <span class="hidden-xs">şirkəti tərəfindən hazırlanıb</span>

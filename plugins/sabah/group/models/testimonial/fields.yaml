@@ -1,0 +1,25 @@
+fields:
+    name:
+        label: 'sabah.group::lang.testimonial.name'
+        span: full
+        type: text
+    info:
+        label: 'sabah.group::lang.testimonial.info'
+        size: ''
+        span: full
+        type: textarea
+    comment:
+        label: 'sabah.group::lang.testimonial.comment'
+        span: full
+        size: ''
+        type: textarea
+    image:
+        label: 'sabah.group::lang.testimonial.image'
+        span: full
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        type: fileupload
+

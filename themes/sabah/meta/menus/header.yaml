@@ -68,13 +68,9 @@ items:
                     isExternal: '0'
             -
                 title: 'MÜTƏMADİ VERİLƏN SUALLAR'
-                nesting: '0'
-                type: static-page
-                url: ''
+                type: cms-page
                 code: ''
-                reference: faq
-                cmsPage: ''
-                replace: '0'
+                reference: mutemadi-verelen-suallar
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
@@ -239,9 +235,13 @@ items:
             isExternal: '0'
     -
         title: ƏLAQƏ
+        nesting: ''
         type: cms-page
+        url: ''
         code: ''
         reference: elaqe
+        cmsPage: ''
+        replace: ''
         viewBag:
             isHidden: '0'
             cssClass: sub-item
@@ -249,9 +249,13 @@ items:
         items:
             -
                 title: NÜMAYENDELİKLERİ
+                nesting: ''
                 type: cms-page
+                url: ''
                 code: ''
                 reference: elaqe-numayendelikler
+                cmsPage: ''
+                replace: ''
                 viewBag:
                     isHidden: '0'
                     cssClass: ''

@@ -1,0 +1,10 @@
+name: Testimonial
+form: $/sabah/group/models/testimonial/fields.yaml
+modelClass: Sabah\Group\Models\Testimonial
+defaultRedirect: sabah/group/testimonial
+create:
+    redirect: 'sabah/group/testimonial/update/:id'
+    redirectClose: sabah/group/testimonial
+update:
+    redirect: sabah/group/testimonial
+    redirectClose: sabah/group/testimonial

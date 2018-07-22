@@ -1,0 +1,5 @@
+title: Testimonial
+nameFrom: question
+modelClass: Sabah\Student\Models\StudentAdmissionFaq
+toolbar:
+    buttons: reorder_toolbar

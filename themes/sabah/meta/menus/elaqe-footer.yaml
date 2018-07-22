@@ -1,0 +1,11 @@
+name: 'Əlaqə footer'
+items:
+    -
+        title: 'UNİVERSİTET NÜMAYƏNDƏLİKLƏRİ'
+        type: cms-page
+        code: ''
+        reference: elaqe-numayendelikler
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'

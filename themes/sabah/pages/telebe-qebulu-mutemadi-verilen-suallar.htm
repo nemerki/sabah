@@ -1,0 +1,163 @@
+title = "Tələbə qəbulu mütəmadi verilən suallar"
+url = "/telebe-qebulu/faq"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[RecordList]
+modelClass = "Sabah\Student\Models\StudentAdmissionFaq"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "questəon"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+sortColumn = "sort_order"
+sortDirection = "asc"
+
+[staticMenu telebeQebulu]
+code = "telebe-qebulu"
+==
+<div id="teacher-news-faq" class="main-content">
+        <!-- BANNER-->
+        <div id="banner-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <div style="background-image:linear-gradient(0deg,rgba(0, 131, 192,0.7),rgba(0, 131, 192,0.7)),
+                                 url('{{ 'assets/img/content-img/layer-12.png'|theme }}')" class="background-green">
+                        <div class="banner-title text-center">
+                            <div class="s-star"></div>
+                            <h1>MÜTƏMADİ VERİLƏN SUALLAR</h1>
+                            <p class="breadcumb">TƏLƏBƏ QƏBULU</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BANNER-->
+
+        <div id="teacher-news-faq-collapse">
+            <div id="pinBoxContainer" class="container">
+                <div class="row">
+                    <div class=" col-sm-12 col-md-8 col-lg-8">
+                        <div class="teacher-news-collapse">
+                            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+                                {% for faq in records %}
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab" id="heading{{ loop.index }}">
+                                            <h4 class="panel-title">
+                                                <a class="collapsed" role="button" data-toggle="collapse"
+                                                   data-parent="#accordion" href="#collapse{{ loop.index }}" aria-expanded="false"
+                                                   aria-controls="collapse{{ loop.index }}">
+                                                    <div class="title-collaps">
+                                                        <span class="collapse-number"> {{ loop.index }}.</span>
+                                                        <p>{{ faq.question }}</p>
+                                                    </div>
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapse{{ loop.index }}" class="panel-collapse collapse" role="tabpanel"
+                                             aria-labelledby="heading{{ loop.index }}">
+                                            <div class="panel-body partners-text">{{ faq.answer }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+
+
+                            </div>
+                        </div>
+                        <div id="teacher-news-form">
+                            <div class="questions-form">
+
+                                <div class="partners-text">
+                                    {% content "SabahGuruplari/TelebeQebuluFaq" %}
+                                </div>
+                            </div>
+                            <div class="form-area">
+                                <form>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-md-6">
+                                                <label class="content-text" for="exampleInputEmail1">Soyadınız və
+                                                    adınız:</label>
+                                                <input type="text" class="form-control" id="examplename"
+                                                       placeholder="Tam adınız">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="content-text" for="exampleInputEmail1">Email
+                                                    ünvanınız:</label>
+                                                <input type="email" class="form-control" id="exampleInputEmail1"
+                                                       placeholder="Email">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="content-text" for="exampleFormControlSelect1">İsmarıcınızın
+                                                    növü:</label>
+                                                <select class="form-control" id="exampleFormControlSelect1">
+                                                    <option>Sual</option>
+                                                    <option>Sual1</option>
+                                                    <option>Sual2</option>
+                                                    <option>Sual3</option>
+                                                    <option>Sual4</option>
+                                                </select>
+                                                <!-- <i class="fa fa-chevron-down" aria-hidden="true"></i> -->
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="content-text" for="exampleInputEmail1">Mövzu:</label>
+                                                <input type="text" class="form-control" id="exampleInputtext"
+                                                       placeholder="Mövzu">
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label class="content-text" for="exampleInputEmail1">İsmarıcınız:</label>
+                                                <textarea class="form-control" rows="5" cols="50"
+                                                          placeholder="İsmarıcınız"></textarea>
+                                            </div>
+
+
+                                        </div>
+
+                                    </div>
+                                    <div class="send">
+                                        <button type="submit" class="button-txt">GÖNDƏR
+                                            <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+
+                                </form>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class=" col-sm-12 col-md-4 col-lg-4">
+                        <div id="sidebar" class="sidebar pinBox">
+                            <div class="sidebar-title">
+                                <h1 class="title-bold">Tələbə qəbulu</h1>
+                                <div class="border"></div>
+                            </div>
+                            <div class="sidebar-list-item">
+                                <ul>
+
+                                    {% if telebeQebulu.menuItems %}
+                                        {% partial "sabahTelebeleriNav" items=telebeQebulu.menuItems %}
+                                    {% endif %}
+
+                                </ul>
+                            </div>
+
+                            <div class="request-button">
+                                <button type="submit" class="">MÜRACİƏT ET </button>
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

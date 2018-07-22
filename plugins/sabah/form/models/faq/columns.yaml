@@ -1,0 +1,9 @@
+columns:
+    name:
+        label: 'sabah.form::lang.faq.name'
+        type: text
+        searchable: true
+    subject:
+        label: 'sabah.form::lang.faq.subject'
+        type: text
+        searchable: true

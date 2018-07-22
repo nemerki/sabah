@@ -4,6 +4,9 @@ layout = "default"
 is_hidden = 0
 
 [ContactForm]
+
+[staticMenu sabahTelebeleri]
+code = "sabah-telebeleri"
 ==
 <section id="teacher-news-faq">
     <div id="banner-area">
@@ -35,10 +38,8 @@ is_hidden = 0
                         <p class="title-bottom">Sual və ya təklifiniz varsa, bizə yazın:</p>
                     </div>
 
-                    
 
-
-{% component 'ContactForm' %}
+                    {% component 'ContactForm' %}
 
 
                 </div>
@@ -52,37 +53,9 @@ is_hidden = 0
                     <div class="sidebar-list-item-green b-0">
                         <ul>
 
-                            <li>
-                                <a href="#">XƏBƏRLƏR</a>
-                            </li>
-
-
-                            <li>
-                                <a href="#">ELANLAR</a>
-                            </li>
-
-
-                            <li>
-                                <a href="#">TƏCRÜBƏ PROQRAMLARI</a>
-                            </li>
-
-
-                            <li>
-                                <a href="#">XARİCDƏ TƏHSİL VƏ MÜBADİLƏ PROQRAMLARI
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="#">İXTİSASLAR</a>
-                            </li>
-
-                            <li>
-                                <a href="#">UNİVERSİTETLƏR</a>
-                            </li>
-
-                            <li>
-                                <a href="#">ƏLAQƏ</a>
-                            </li>
+                            {% if sabahTelebeleri.menuItems %}
+                                {% partial "sabahTelebeleriNav" items=sabahTelebeleri.menuItems %}
+                            {% endif %}
 
                         </ul>
                     </div>

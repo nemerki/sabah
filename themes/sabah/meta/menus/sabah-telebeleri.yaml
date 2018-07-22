@@ -2,54 +2,87 @@ name: 'SABAH Telebeleri'
 items:
     -
         title: XƏBƏRLƏR
+        nesting: ''
         type: cms-page
+        url: ''
         code: ''
         reference: telebe-xeberler
+        cmsPage: ''
+        replace: ''
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
         title: ELANLAR
+        nesting: ''
         type: cms-page
+        url: ''
         code: ''
         reference: telebe-elanlari
+        cmsPage: ''
+        replace: ''
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
         title: 'TƏCRÜBƏ PROQRAMLARI'
+        nesting: ''
         type: cms-page
+        url: ''
         code: ''
         reference: tecrube-programlari
+        cmsPage: ''
+        replace: ''
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
         title: 'XARİCDƏ TƏHSİL VƏ MÜBADİLƏ PROQRAMLARI'
+        nesting: ''
         type: cms-page
+        url: ''
         code: ''
         reference: xaricde-tehsil-ve-mubadile-proqramlari
+        cmsPage: ''
+        replace: ''
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
         title: İXTİSASLAR
+        nesting: ''
         type: cms-page
+        url: ''
         code: ''
         reference: telebe-ixtisaslar
+        cmsPage: ''
+        replace: ''
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
         title: UNİVERSİTETLƏR
+        nesting: ''
         type: cms-page
+        url: ''
         code: ''
         reference: universitetler
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: ƏLAQƏ
+        type: cms-page
+        code: ''
+        reference: telebe-elaqe
         viewBag:
             isHidden: '0'
             cssClass: ''

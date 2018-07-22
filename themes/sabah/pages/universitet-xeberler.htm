@@ -9,15 +9,6 @@ identifierValue = "{{ :slug }}"
 modelKeyColumn = "slug"
 displayColumn = "slug"
 notFoundMessage = "Record not found"
-
-[universityNews]
-detailsPage = "xeber"
-detailsKeyColumn = "slug"
-detailsUrlParameter = "slug"
-recordsPerPage = 1
-pageNumber = "{{ :page }}"
-sortColumn = "created_at"
-sortDirection = "desc"
 ==
 <div id="teacher-news-faq" class="main-content">
         <!-- BANNER-->
@@ -98,7 +89,7 @@ sortDirection = "desc"
 
 
                         <div class="news-arena">
-                            {% partial "xeberler/universitetXeber" partialsRecords=records %}
+                            {% partial "xeberler/universitetXeber" partialsRecords=record.news %}
 
 
                         </div>
