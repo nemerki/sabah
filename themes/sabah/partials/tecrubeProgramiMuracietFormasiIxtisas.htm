@@ -1,0 +1,5 @@
+{% if ixtisaslar %}
+    {% for ixtisas in ixtisaslar %}
+        <option value="{{ ixtisas.ixtisas_name }}">{{ ixtisas.ixtisas_name }}</option>
+    {% endfor %}
+{% endif %}

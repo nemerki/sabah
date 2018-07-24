@@ -1,5 +1,5 @@
 {% for image in partialsRecords %}
-    <a href="{{ image.image.path }}">
+    <a data-lightbox="image-1" data-title="{{ image.title }} " href="{{ image.image.path }}">
         <div class="overlay">
             <i class="fa fa-clone" aria-hidden="true"></i>
         </div>

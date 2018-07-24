@@ -13,6 +13,8 @@ class ApplicationForms extends Model
 
     protected $dates = ['deleted_at'];
 
+    protected $jsonable = ['language'];
+
     /**
      * @var array Validation rules
      */
@@ -25,4 +27,8 @@ class ApplicationForms extends Model
     public $table = 'sabah_form_application_forms';
 
     protected $guarded = [];
+
+    public $attachOne = [
+        'file' => 'System\Models\File'
+    ];
 }

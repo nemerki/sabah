@@ -2,6 +2,10 @@ title = "Təcrübə programı müraciət formasi"
 url = "/telebe/tecrube-programi/muraciet-formasi"
 layout = "default"
 is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[ApplicationFormComponent]
 ==
 <div id="teacher-news-faq" class="main-content">
     <!-- HEADER PANEL-->
@@ -35,242 +39,251 @@ is_hidden = 0
 
                     <div class="application-area">
                         <div class="row">
-                            <div class="col-md-6">
-                                <div class="personal_information">
-                                    <div class="form-title">
-                                        <h5>I. Şəxsi məlumatlar *</h5>
+                            <form data-request="onPracticlePrograms"
+                                  data-request-validate
+                                  data-request-flash
+                                  data-request-files>
+                                <div class="col-md-6">
+                                    <div class="personal_information">
+                                        <div class="form-title">
+                                            <h5>I. Şəxsi məlumatlar *</h5>
+                                        </div>
+                                        <div class="form">
+                                            <div class="form-group">
+                                                <label for="">Ad:</label>
+                                                <input type="text" class="form-control" name="name" id=""
+                                                       placeholder="Ad">
+
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="">Soyad:</label>
+                                                <input type="text" name="surname" class="form-control" id=""
+                                                       placeholder="Soyad">
+
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="">Ata adı:</label>
+                                                <input type="text" name="father" class="form-control" id=""
+                                                       placeholder="Ata adı">
+
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="">Doğum tarixi:</label>
+                                                <input type="date" name="birth_date" class="form-control" id=""
+                                                       placeholder="__ / __ / 20__">
+
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="">Mobil nömrə:</label>
+                                                <input type="text" name="mobile" class="mobile form-control" id=""
+                                                >
+
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="">SABAH text ünvanı:</label>
+                                                <input type="email" name="email" class="form-control text-input " id=""
+                                                       placeholder="Email ünvanı">
+
+
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="" class="linkedin-lab">Linkedin profil linki:</label>
+                                                <input type="text" name="linkedin" class="form-control" id=""
+                                                       placeholder="https://www.linkedin.com/...">
+
+                                            </div>
+                                        </div>
                                     </div>
-                                    <form>
-                                        <div class="form-group">
-                                            <label for="">Ad:</label>
-                                            <input type="text" class="form-control" name="name" id="" placeholder="Ad">
-
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="">Soyad:</label>
-                                            <input type="text" name="surname" class="form-control" id=""
-                                                   placeholder="Soyad">
-
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="">Ata adı:</label>
-                                            <input type="text" name="father" class="form-control" id=""
-                                                   placeholder="Ata adı">
-
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="">Doğum tarixi:</label>
-                                            <input type="text" name="birth_date" class="form-control" id=""
-                                                   placeholder="__ / __ / 20__">
-
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="">Mobil nömrə:</label>
-                                            <input type="text" name="mobile" class="form-control" id=""
-                                                   placeholder="+994-__-___-__-__">
-
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="">SABAH text ünvanı:</label>
-                                            <input type="email" name="email" class="form-control text-input " id=""
-                                                   placeholder="Email ünvanı">
-                                            <p class="sabahsite">@sabah.edu.az</p>
-
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="" class="linkedin-lab">Linkedin profil linki:</label>
-                                            <input type="text" name="linkedin" class="form-control" id=""
-                                                   placeholder="https://www.linkedin.com/...">
-
-                                        </div>
-
-
-                                    </form>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="personal_information">
-                                    <div class="form-title">
-                                        <h5>II. Təhsil məlumatları *</h5>
+                                <div class="col-md-6">
+                                    <div class="personal_information">
+                                        <div class="form-title">
+                                            <h5>II. Təhsil məlumatları *</h5>
+                                        </div>
+                                        <div class="form">
+                                            <div class="form-group">
+                                                <label for="university">Ali təhsil müəssisəsi:</label>
+                                                <select name="university" class="form-control"
+                                                        id="university_select">
+                                                    <option hidden disabled selected="selected">Üniversitet Seçin
+                                                    </option>
+                                                    {% for university in universities %}
+                                                        <option
+                                                            value="{{ university.name }}">{{ university.name }}</option>
+                                                    {% endfor %}
+
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="">İxtisas:</label>
+                                                <select name="specialty" class="specialty form-control">
+                                                    {% partial "tecrubeProgramiMuracietFormasiIxtisas" %}
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="">Kurs:</label>
+                                                <select name="courses" class="form-control" id="">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="">Tədris dili:</label>
+                                                <select name="teaching_language" class="form-control"
+                                                        id="">
+                                                    <option value="Azerbaycan">Azerbaycan</option>
+                                                    <option value="Rus">Rus</option>
+                                                    <option value="İngilis">İngilis</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="">Ümumi orta müvəffəqiyyət göstəricisi (I kurs daxil ümumi
+                                                    nəticə):</label>
+                                                <input name="university_score" type="text" class="form-control" id=""
+                                                       placeholder="Bal">
+
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="">TQDK balı:</label>
+                                                <input name="tqdk_score" type="text" class="form-control" id=""
+                                                       placeholder="Qəbul imtahanında yığılan bal">
+
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="">Tədris saatları (məs. 09:00 - 14:00):</label>
+                                                <input name="teaching_hours" type="text"
+                                                       class="teaching_hours form-control" id=""
+                                                >
+
+                                            </div>
+
+
+                                        </div>
                                     </div>
-                                    <form>
-                                        <div class="form-group">
-                                            <label for="exampleFormControlSelect1">Ali təhsil müəssisəsi:</label>
-                                            <select name="university" class="form-control"
-                                                    id="exampleFormControlSelect1">
-                                                <option default selected="selected">Select Your Beverage</option>
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleFormControlSelect1">İxtisas:</label>
-                                            <select name="specialty" class="form-control"
-                                                    id="exampleFormControlSelect1">
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                            </select>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="exampleFormControlSelect1">Kurs:</label>
-                                            <select name="courses" class="form-control" id="exampleFormControlSelect1">
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleFormControlSelect1">Tədris dili:</label>
-                                            <select name="teaching_language" class="form-control"
-                                                    id="exampleFormControlSelect1">
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="">Ümumi orta müvəffəqiyyət göstəricisi (I kurs daxil ümumi
-                                                nəticə):</label>
-                                            <input name="university_score" type="text" class="form-control" id=""
-                                                   placeholder="Bal">
-
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="">TQDK balı:</label>
-                                            <input name="tqdk_score" type="text" class="form-control" id=""
-                                                   placeholder="Qəbul imtahanında yığılan bal">
-
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="">Tədris saatları (məs. 09:00 - 14:00):</label>
-                                            <input name="teaching_hours" type="text" class="form-control" id=""
-                                                   placeholder="__:__ - __:__">
-
-                                        </div>
-
-
-                                    </form>
                                 </div>
-                            </div>
 
-                            <div class="col-md-12">
-                                <div class="personal_information">
-                                    <div class="form-title">
-                                        <h5>III. Əlavə məlumat</h5>
-                                    </div>
-                                    <form>
-                                        <div class="form-group">
-                                            <label for="exampleFormControlSelect1">CV faylı:</label>
+                                <div class="col-md-12">
+                                    <div class="personal_information">
+                                        <div class="form-title">
+                                            <h5>III. Əlavə məlumat</h5>
+                                        </div>
+                                        <div class="form">
+                                            <div class="form-group">
+                                                <label for="">CV faylı:</label>
 
-                                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                <div class="fileupload fileupload-new" data-provides="fileupload">
                                                     <span class="btn btn-primary btn-file">
                                                         <span class="fileupload-new">CV FAYLI YÜKLƏ </span>
                                                         <span class="fileupload-exists">Dəyişdir</span>
                                                         <input name="file" type="file"/>
                                                         <i class="fa fa-cloud-upload" aria-hidden="true"></i>
                                                     </span>
-                                                <a href="#" class="c-a fileupload-exists" style="float: none"> Yüklənmiş
-                                                    fayl :</a>
-                                                <span class="fileupload-preview"></span>
-                                                <a href="#" class="close fileupload-exists" data-dismiss="fileupload"
-                                                   style="float: none">Faylı sil</a>
+                                                    <a href="#" class="c-a fileupload-exists" style="float: none">
+                                                        Yüklənmiş
+                                                        fayl :</a>
+                                                    <span class="fileupload-preview"></span>
+                                                    <a href="#" class="close fileupload-exists"
+                                                       data-dismiss="fileupload"
+                                                       style="float: none">Faylı sil</a>
+                                                </div>
+                                                <p class="mb-cv">Yalnız PDF formatında sənəd qəbul olunur. Faylın
+                                                    maksimal
+                                                    ölçüsü: 10MB.</p>
                                             </div>
-                                            <p class="mb-cv">Yalnız PDF formatında sənəd qəbul olunur. Faylın maksimal
-                                                ölçüsü: 10MB.</p>
-                                        </div>
 
-                                        <div class="form-group">
-                                            <label for="exampleFormControlSelect1">Tədrisdənkənar fəaliyyət:</label>
-                                            <div class="textarea" data-text-count="0/200">
+                                            <div class="form-group">
+                                                <label for="">Tədrisdənkənar fəaliyyət:</label>
+                                                <div class="textarea" data-text-count="0/200">
                                                 <textarea name="activities" rows="5"
                                                           class="js-textarea textarea__input form-control"
                                                           placeholder="Təcrübə proqramı, intellektual yarış, təlim, iş təcrübəsi və s.)"></textarea>
+                                                </div>
                                             </div>
+                                            <div class="form-group dil-app">
+                                                <label for="">Dil bilikləri: *</label>
+                                                <ul>
+                                                    <li>
+                                                        <ul class="cv-information">
+                                                            <li>
+                                                                <a class="close-list" href="#">
+                                                                    <i class="fa fa-times-circle"
+                                                                       aria-hidden="true"></i>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <input name="language[0][]" type="text"
+                                                                       placeholder="Dili daxil edin">
+                                                            </li>
+
+                                                            <li>
+                                                                <div class="radio">
+                                                                    <label>
+                                                                        <input type="radio" name="language[0][]"
+                                                                               value="bad" id=""
+                                                                        >
+                                                                        <span class="custom-radio"></span>
+                                                                        Pis
+                                                                    </label>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="radio">
+                                                                    <label>
+                                                                        <input type="radio" name="language[0][]"
+                                                                               value="middle" id=""
+                                                                               checked>
+                                                                        <span class="custom-radio"></span>
+                                                                        Orta
+                                                                    </label>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="radio">
+                                                                    <label>
+                                                                        <input type="radio" name="language[0][]"
+                                                                               value="good" id=""
+                                                                               checked>
+                                                                        <span class="custom-radio"></span>
+                                                                        Yaxşı
+                                                                    </label>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="radio">
+                                                                    <label>
+                                                                        <input type="radio" name="language[0][]"
+                                                                               value="perfect"
+                                                                               id=""
+                                                                               checked>
+                                                                        <span class="custom-radio"></span>
+                                                                        Əla
+                                                                    </label>
+                                                                </div>
+                                                            </li>
+
+
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+
+
+                                            </div>
+
+                                            <div class="form-group">
+                                                <a class="add-lang" href="#">Dil əlavə et</a>
+                                            </div>
+                                            <button type="submit" class="suc-gonder ajaxSendBtn3 b-hover">GÖNDƏR
+                                                <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                                            </button>
                                         </div>
-                                        <div class="form-group dil-app">
-                                            <label for="exampleFormControlSelect1">Dil bilikləri: *</label>
-                                            <ul>
-                                                <li>
-                                                    <ul class="cv-information">
-                                                        <li>
-                                                            <a class="close-list" href="#">
-                                                                <i class="fa fa-times-circle" aria-hidden="true"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <input name="language_name[]" type="text" placeholder="Dili daxil edin">
-                                                        </li>
 
-                                                        <li>
-                                                            <div class="radio">
-                                                                <label>
-                                                                    <input type="radio" name="language_bad[]" id=""
-                                                                           >
-                                                                    <span class="custom-radio"></span>
-                                                                    Pis
-                                                                </label>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="radio">
-                                                                <label>
-                                                                    <input type="radio" name="language_middle" id=""
-                                                                           checked>
-                                                                    <span class="custom-radio"></span>
-                                                                    Orta
-                                                                </label>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="radio">
-                                                                <label>
-                                                                    <input type="radio" name="language_good" id=""
-                                                                           checked>
-                                                                    <span class="custom-radio"></span>
-                                                                    Yaxşı
-                                                                </label>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="radio">
-                                                                <label>
-                                                                    <input type="radio" name="language_perfect" id=""
-                                                                           checked>
-                                                                    <span class="custom-radio"></span>
-                                                                    Əla
-                                                                </label>
-                                                            </div>
-                                                        </li>
-
-
-                                                    </ul>
-                                                </li>
-                                            </ul>
-
-
-
-                                        </div>
-
-                                        <div class="form-group">
-                                            <a class="add-lang" href="#">Dil əlavə et</a>
-                                        </div>
-
-
-                                        <button class="suc-gonder b-hover">GÖNDƏR
-                                            <i class="fa fa-paper-plane" aria-hidden="true"></i>
-                                        </button>
 
                                         <div class="info-suc">
                                             <i class="fa fa-check-circle-o" aria-hidden="true"></i>
@@ -283,10 +296,12 @@ is_hidden = 0
                                             </div>
                                         </div>
 
-                                    </form>
+
+                                    </div>
                                 </div>
-                            </div>
+                            </form>
                         </div>
+
                     </div>
 
 
@@ -302,7 +317,10 @@ is_hidden = 0
     <script src="js/plugins/test.js"></script>
     <script src="js/fix.js"></script>
     <script>
+        var a = 0;
         $(".add-lang").click(function (e) {
+            a++;
+
             e.preventDefault();
             $(".dil-app").append(
                 '<ul>' +
@@ -313,24 +331,23 @@ is_hidden = 0
                 '</a>' +
                 ' </li>' +
                 '<li>' +
-                ' <input type="text" placeholder="Dili daxil edin"> </li>' +
+                ' <input type="text" name="' + 'language[' + a + '][]" placeholder="Dili daxil edin"> </li>' +
                 '<li>' +
                 ' <div class="radio"> ' +
-                '<label> ' +
-                '<input type="radio" name="sampleRadio" id="" checked="">' +
+                '<label> <input type="radio" name="' + 'language[' + a + '][]" value="bad" id="" checked="">' +
                 ' <span class="custom-radio"></span> Pis ' +
                 '</label> ' +
                 '</div></li><li> <div class="radio"> ' +
                 '<label> ' +
-                '<input type="radio" name="sampleRadio" id="" checked=""> ' +
+                '<input type="radio" name="' + 'language[' + a + '][]" value="middle" id="" checked=""> ' +
                 '<span class="custom-radio"></span> Orta </label> ' +
                 '</div></li><li> <div class="radio"> <label> ' +
-                '<input type="radio" name="sampleRadio" id="" checked="">' +
+                '<input type="radio" name="' + 'language[' + a + '][]" value="good" id="" checked="">' +
                 ' <span class="custom-radio"></span> Yaxşı </label>' +
                 ' </div></li>' +
                 '<li>' +
                 ' <div class="radio"> <label>' +
-                ' <input type="radio" name="sampleRadio" id="" checked="">' +
+                ' <input type="radio" name="' + 'language[' + a + '][]" value="perfect" id="" checked="">' +
                 ' <span class="custom-radio">' +
                 '</span> Əla </label>' +
                 ' </div>' +
@@ -340,6 +357,44 @@ is_hidden = 0
                 '</ul>'
             )
         });
+    </script>
+
+    <script>
+        $('#university_select').on('change', function (e) {
+            console.log(e);
+            var university_id = e.target.value;
+            console.log(university_id);
+
+            swal({
+                title: 'Yüklənir...',
+                html:
+                '<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>' +
+                ' <span class="sr-only">Loading...</span>',
+                showCloseButton: false,
+                showCancelButton: false,
+                showConfirmButton: false,
+                allowOutsideClick: false
+            });
+
+            $.request('onIxtisas', {
+
+                update: {tecrubeProgramiMuracietFormasiIxtisas: '.specialty'},
+                data: {university_id: university_id},
+                complete: function () {
+                    swal.close();
+                }
+
+
+            });
+        })
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.js"></script>
+    <script>
+        $('.mobile').mask('(000) 000-00-00', {placeholder: "(___) ___-__-__"});
+        $('.teaching_hours').mask('00:00 - 00:00', {placeholder: "__:__ - __:__"});
+        $('.telefon').mask('(000) 000-00-00', {placeholder: "(___) ___-__-__"});
+
     </script>
 
 {% endput %}

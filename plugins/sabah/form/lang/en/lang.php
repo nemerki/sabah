@@ -25,6 +25,13 @@
         'language' => 'Language',
         'university' => 'University',
         'menu_name' => 'Application Forms',
+        'specialty' => 'Specialty',
+        'courses' => 'Courses',
+        'teaching_language' => 'Teaching Language',
+        'university_score' => 'University Score',
+        'tqdk_score' => 'TQDK Score',
+        'teaching_hours' => 'Teaching Hours',
+        'file' => 'File',
     ],
     'faq' => [
         'name' => 'Name',
@@ -32,6 +39,7 @@
         'subject' => 'Subject',
         'message' => 'Message',
         'category' => 'Category',
+        'short' => 'Short',
     ],
     'faq_category' => [
         'name' => 'Name',

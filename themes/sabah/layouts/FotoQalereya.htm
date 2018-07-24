@@ -22,7 +22,7 @@ displayColumn = "name"
 noRecordsMessage = "No records found"
 detailsPage = "-"
 detailsUrlParameter = "id"
-recordsPerPage = 10
+recordsPerPage = 16
 pageNumber = "{{ :page }}"
 ==
 <!DOCTYPE html>
@@ -36,7 +36,10 @@ pageNumber = "{{ :page }}"
 <html class="no-js">
 <!--<![endif]-->
 
-<head> {% partial "head" %}</head>
+<head>
+    {% partial "head" %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/css/lightbox.css">
+</head>
 <body>
 <div class="modal-overlay"></div>
 <!-- Header -->
@@ -74,7 +77,8 @@ pageNumber = "{{ :page }}"
                         </ul>
                         <div class="search">
                             <form action="{{ 'xeber-axtar'|page }}" method="post">
-                                <input required type="search" placeholder="Axtardiginizi buraya yazin" name="search" class="searc-inp"
+                                <input required type="search" placeholder="Axtardiginizi buraya yazin" name="search"
+                                       class="searc-inp"
                                        autocomplete="off">
                                 <i class="arama fa fa-search"></i>
                             </form>
@@ -124,10 +128,9 @@ pageNumber = "{{ :page }}"
         <div class="row">
             <div class="col-md-8 col-sm-12 col-lg-8">
                 <div class="gall-grid">
-                    <div  class=" partialGallery" id="aniimated-thumbnials">
+                    <div class=" partialGallery" id="aniimated-thumbnials">
 
-                            {% partial "gallery" partialsRecords=records %}
-
+                        {% partial "gallery" partialsRecords=records %}
 
 
                     </div>
@@ -187,10 +190,9 @@ pageNumber = "{{ :page }}"
 
                     update: {gallery: '.partialGallery', pagination: '.pa'},
                     data: {perPage: page},
-                    complete: function() {
+                    complete: function () {
                         swal.close();
                     }
-
 
 
                 });
@@ -201,8 +203,6 @@ pageNumber = "{{ :page }}"
 
     </script>
 {% endput %}
-
-
 
 
 <!-- Subscribe -->
@@ -226,6 +226,7 @@ pageNumber = "{{ :page }}"
 <script src="{{ 'assets/js/plugins/bootstrap-datetimepicker.min.js'|theme }}"></script>
 <script src="{{ 'assets/js/plugins/jquery.pinBox.min.js'|theme }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/js/lightbox.js"></script>
 <script>
     $(function () {
         $('.arama').on("click", function () {

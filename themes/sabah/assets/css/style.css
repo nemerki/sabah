@@ -3375,7 +3375,7 @@ header .main-menu .search button {
 }
 
 .works-area .spia-table table tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
+    /*background-color: #f9f9f9;*/
 }
 
 .works-area .spia-table table tbody tr td {
@@ -3727,26 +3727,26 @@ header .main-menu .search button {
     color: #0083c0;
 }
 
-.application-area .personal_information form .form-group {
+.application-area .personal_information .form .form-group {
     position: relative;
 }
 
-.application-area .personal_information form .form-group li {
+.application-area .personal_information .form .form-group li {
     display: inline-block;
 }
 
-.application-area .personal_information form .form-group .form-control {
+.application-area .personal_information .form .form-group .form-control {
     border: 2px solid #cccccc;
     border-radius: 0;
     box-shadow: none;
     width: 480px;
 }
 
-.application-area .personal_information form .form-group .form-control:focus {
+.application-area .personal_information .form .form-group .form-control:focus {
     border-color: #61b3e3;
 }
 
-.application-area .personal_information form .form-group .js-textarea {
+.application-area .personal_information .form .form-group .js-textarea {
     width: 100%;
     border: 2px solid #cccccc;
     border-radius: 0;
@@ -3755,15 +3755,15 @@ header .main-menu .search button {
     margin-bottom: 30px;
 }
 
-.application-area .personal_information form .form-group .js-textarea:focus {
+.application-area .personal_information .form .form-group .js-textarea:focus {
     border-color: #61b3e3;
 }
 
-.application-area .personal_information form .form-group .textarea {
+.application-area .personal_information .form .form-group .textarea {
     position: relative;
 }
 
-.application-area .personal_information form .form-group .textarea:after {
+.application-area .personal_information .form .form-group .textarea:after {
     position: absolute;
     right: 0;
     bottom: -20px;
@@ -3773,23 +3773,23 @@ header .main-menu .search button {
     color: #999999;
 }
 
-.application-area .personal_information form .form-group label {
+.application-area .personal_information .form .form-group label {
     font-size: 16px;
     color: #666666;
     margin-bottom: 10px;
 }
 
-.application-area .personal_information form .form-group .linkedin-lab::before {
+.application-area .personal_information .form .form-group .linkedin-lab::before {
     content: "\f08c";
     font-family: "Fontawesome";
     margin-right: 5px;
 }
 
-.application-area .personal_information form .form-group .email-input {
+.application-area .personal_information .form .form-group .email-input {
     width: 280px;
 }
 
-.application-area .personal_information form .form-group .hide-text {
+.application-area .personal_information .form .form-group .hide-text {
     font: 0/0 a;
     color: transparent;
     text-shadow: none;
@@ -3797,7 +3797,7 @@ header .main-menu .search button {
     border: 0;
 }
 
-.application-area .personal_information form .form-group .input-block-level {
+.application-area .personal_information .form .form-group .input-block-level {
     display: block;
     width: 100%;
     min-height: 30px;
@@ -3806,7 +3806,7 @@ header .main-menu .search button {
     box-sizing: border-box;
 }
 
-.application-area .personal_information form .form-group .btn-file {
+.application-area .personal_information .form .form-group .btn-file {
     overflow: hidden;
     position: relative;
     vertical-align: middle;
@@ -3819,7 +3819,7 @@ header .main-menu .search button {
     font-size: 16px;
 }
 
-.application-area .personal_information form .form-group .btn-file > input {
+.application-area .personal_information .form .form-group .btn-file > input {
     position: absolute;
     top: 0;
     right: 0;
@@ -3832,18 +3832,18 @@ header .main-menu .search button {
     cursor: pointer;
 }
 
-.application-area .personal_information form .form-group .fileupload {
+.application-area .personal_information .form .form-group .fileupload {
     margin-bottom: 9px;
 }
 
-.application-area .personal_information form .form-group .fileupload .uneditable-input {
+.application-area .personal_information .form .form-group .fileupload .uneditable-input {
     display: inline-block;
     margin-bottom: 0px;
     vertical-align: middle;
     cursor: text;
 }
 
-.application-area .personal_information form .form-group .fileupload .thumbnail {
+.application-area .personal_information .form .form-group .fileupload .thumbnail {
     overflow: hidden;
     display: inline-block;
     margin-bottom: 5px;
@@ -3851,45 +3851,45 @@ header .main-menu .search button {
     text-align: center;
 }
 
-.application-area .personal_information form .form-group .fileupload .thumbnail > img {
+.application-area .personal_information .form .form-group .fileupload .thumbnail > img {
     display: inline-block;
     vertical-align: middle;
     max-height: 100%;
 }
 
-.application-area .personal_information form .form-group .fileupload .btn {
+.application-area .personal_information .form .form-group .fileupload .btn {
     vertical-align: middle;
 }
 
-.application-area .personal_information form .form-group .fileupload-exists .fileupload-new,
-.application-area .personal_information form .form-group .fileupload-new .fileupload-exists {
+.application-area .personal_information .form .form-group .fileupload-exists .fileupload-new,
+.application-area .personal_information .form .form-group .fileupload-new .fileupload-exists {
     display: none;
 }
 
-.application-area .personal_information form .form-group .c-a {
+.application-area .personal_information .form .form-group .c-a {
     font-size: 16px;
     color: #666666;
     text-decoration: none;
     margin-left: 8px;
 }
 
-.application-area .personal_information form .form-group .close {
+.application-area .personal_information .form .form-group .close {
     font-size: 16px;
     color: #666666;
     margin-left: 10px;
 }
 
-.application-area .personal_information form .form-group .close::before {
+.application-area .personal_information .form .form-group .close::before {
     content: "\f014";
     font-family: "Fontawesome";
     margin-right: 5px;
 }
 
-.application-area .personal_information form .form-group .fileupload-inline .fileupload-controls {
+.application-area .personal_information .form .form-group .fileupload-inline .fileupload-controls {
     display: inline;
 }
 
-.application-area .personal_information form .form-group .thumbnail-borderless .thumbnail {
+.application-area .personal_information .form .form-group .thumbnail-borderless .thumbnail {
     border: none;
     padding: 0;
     -webkit-border-radius: 0;
@@ -3900,60 +3900,60 @@ header .main-menu .search button {
     box-shadow: none;
 }
 
-.application-area .personal_information form .form-group .fileupload-new.thumbnail-borderless .thumbnail {
+.application-area .personal_information .form .form-group .fileupload-new.thumbnail-borderless .thumbnail {
     border: 1px solid #ddd;
 }
 
-.application-area .personal_information form .form-group .control-group.warning .fileupload .uneditable-input {
+.application-area .personal_information .form .form-group .control-group.warning .fileupload .uneditable-input {
     color: #a47e3c;
     border-color: #a47e3c;
 }
 
-.application-area .personal_information form .form-group .fileupload-preview {
+.application-area .personal_information .form .form-group .fileupload-preview {
     margin-left: 4px;
     font-size: 16px;
     color: #009c4e;
 }
 
-.application-area .personal_information form .form-group .mb-cv {
+.application-area .personal_information .form .form-group .mb-cv {
     font-size: 12px;
     color: #999999;
 }
 
-.application-area .personal_information form .form-group .control-group.warning .fileupload .thumbnail {
+.application-area .personal_information .form .form-group .control-group.warning .fileupload .thumbnail {
     border-color: #a47e3c;
 }
 
-.application-area .personal_information form .form-group .control-group.error .fileupload .uneditable-input {
+.application-area .personal_information .form .form-group .control-group.error .fileupload .uneditable-input {
     color: #b94a48;
     border-color: #b94a48;
 }
 
-.application-area .personal_information form .form-group .control-group.error .fileupload .fileupload-preview {
+.application-area .personal_information .form .form-group .control-group.error .fileupload .fileupload-preview {
     color: #b94a48;
 }
 
-.application-area .personal_information form .form-group .control-group.error .fileupload .thumbnail {
+.application-area .personal_information .form .form-group .control-group.error .fileupload .thumbnail {
     border-color: #b94a48;
 }
 
-.application-area .personal_information form .form-group .control-group.success .fileupload .uneditable-input {
+.application-area .personal_information .form .form-group .control-group.success .fileupload .uneditable-input {
     color: #468847;
     border-color: #468847;
 }
 
-.application-area .personal_information form .form-group .control-group.success .fileupload .thumbnail {
+.application-area .personal_information .form .form-group .control-group.success .fileupload .thumbnail {
     border-color: #468847;
 }
 
-.application-area .personal_information form .form-group .add-lang {
+.application-area .personal_information .form .form-group .add-lang {
     color: #999999;
     margin-left: 33px;
     margin-top: 20px;
     text-decoration: none;
 }
 
-.application-area .personal_information form .form-group .add-lang::before {
+.application-area .personal_information .form .form-group .add-lang::before {
     content: "\f067";
     font-family: "Fontawesome";
     margin-right: 5px;

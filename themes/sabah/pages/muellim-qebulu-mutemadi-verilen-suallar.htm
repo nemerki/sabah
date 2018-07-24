@@ -1,15 +1,15 @@
-title = "Tələbə qəbulu mütəmadi verilən suallar"
-url = "/telebe-qebulu/faq"
+title = "Müəllim qəbulu mütəmadi verilən suallar"
+url = "/muellim-qebulu/faq"
 layout = "default"
 is_hidden = 0
 robot_index = "index"
 robot_follow = "follow"
 
 [RecordList]
-modelClass = "Sabah\Student\Models\StudentAdmissionFaq"
+modelClass = "Sabah\Student\Models\TeacherAdmission"
 scope = "-"
 scopeValue = "{{ :scope }}"
-displayColumn = "questəon"
+displayColumn = "question"
 noRecordsMessage = "No records found"
 detailsPage = "-"
 detailsUrlParameter = "id"
@@ -17,10 +17,10 @@ pageNumber = "{{ :page }}"
 sortColumn = "sort_order"
 sortDirection = "asc"
 
-[staticMenu telebeQebulu]
-code = "telebe-qebulu"
+[staticMenu muellimQebulu]
+code = "muellim-qebulu"
 
-[StudentFaqComponent]
+[TeacherFaqComponent]
 ==
 <div id="teacher-news-faq" class="main-content">
         <!-- BANNER-->
@@ -28,11 +28,11 @@ code = "telebe-qebulu"
             <div class="container-fluid">
                 <div class="row">
                     <div style="background-image:linear-gradient(0deg,rgba(0, 131, 192,0.7),rgba(0, 131, 192,0.7)),
-                                 url('{{ 'assets/img/content-img/layer-12.png'|theme }}')" class="background-green">
+                                   url('{{'assets/img/content-img/teacher-news-background.png'|theme}}')" class="background-green">
                         <div class="banner-title text-center">
                             <div class="s-star"></div>
                             <h1>MÜTƏMADİ VERİLƏN SUALLAR</h1>
-                            <p class="breadcumb">TƏLƏBƏ QƏBULU</p>
+                            <p class="breadcumb">MÜƏLLİM QƏBULU</p>
                         </div>
                     </div>
                 </div>
@@ -75,30 +75,28 @@ code = "telebe-qebulu"
                         </div>
                         <div id="teacher-news-form">
                             <div class="questions-form">
-
-                                <div class="partners-text">
-                                    {% content "SabahGuruplari/TelebeQebuluFaq" %}
-                                </div>
+                                <div class="partners-text">{% content "SabahGuruplari/MuellimQebuluFaq" %}</div>
                             </div>
                             <div class="form-area">
                                 {% partial "faqForm" %}
+
                             </div>
 
                         </div>
                     </div>
+
                     <div class=" col-sm-12 col-md-4 col-lg-4">
                         <div id="sidebar" class="sidebar pinBox">
                             <div class="sidebar-title">
-                                <h1 class="title-bold">Tələbə qəbulu</h1>
+                                <h1 class="title-bold">Müəllim qəbulu</h1>
                                 <div class="border"></div>
                             </div>
                             <div class="sidebar-list-item">
                                 <ul>
 
-                                    {% if telebeQebulu.menuItems %}
-                                        {% partial "sabahTelebeleriNav" items=telebeQebulu.menuItems %}
+                                    {% if muellimQebulu.menuItems %}
+                                        {% partial "sabahTelebeleriNav" items=muellimQebulu.menuItems %}
                                     {% endif %}
-
                                 </ul>
                             </div>
 

@@ -4,8 +4,10 @@ items:
         title: 'SEÇİM ŞƏRTLƏRİ'
         nesting: '0'
         type: static-page
+        url: ''
         code: ''
         reference: muellim-qebulu-secim-sertleri
+        cmsPage: ''
         replace: '0'
         viewBag:
             isHidden: '0'
@@ -39,11 +41,9 @@ items:
             isExternal: '0'
     -
         title: 'MÜTƏMADİ VERİLƏN SUALLAR'
-        nesting: '0'
-        type: static-page
+        type: cms-page
         code: ''
-        reference: muellim-qebulu-faq
-        replace: '0'
+        reference: muellim-qebulu-mutemadi-verilen-suallar
         viewBag:
             isHidden: '0'
             cssClass: ''

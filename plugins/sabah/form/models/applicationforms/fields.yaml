@@ -11,10 +11,6 @@ fields:
         label: 'sabah.form::lang.application_forms.father'
         span: auto
         type: text
-    birth_date:
-        label: 'sabah.form::lang.application_forms.birth_date'
-        span: auto
-        type: text
     mobile:
         label: 'sabah.form::lang.application_forms.mobile'
         span: auto
@@ -27,17 +23,50 @@ fields:
         label: 'sabah.form::lang.application_forms.linkedin'
         span: auto
         type: text
+    university:
+        label: 'sabah.form::lang.application_forms.university'
+        span: auto
+        type: text
+    specialty:
+        label: 'sabah.form::lang.application_forms.specialty'
+        span: auto
+        type: text
+    courses:
+        label: 'sabah.form::lang.application_forms.courses'
+        span: auto
+        type: text
+    teaching_language:
+        label: 'sabah.form::lang.application_forms.teaching_language'
+        span: auto
+        type: text
+    university_score:
+        label: 'sabah.form::lang.application_forms.university_score'
+        span: auto
+        type: text
+    tqdk_score:
+        label: 'sabah.form::lang.application_forms.tqdk_score'
+        span: auto
+        type: text
+    teaching_hours:
+        label: 'sabah.form::lang.application_forms.teaching_hours'
+        span: auto
+        type: text
+    birth_date:
+        label: 'sabah.form::lang.application_forms.birth_date'
+        mode: date
+        span: auto
+        type: datepicker
     activities:
         label: 'sabah.form::lang.application_forms.activities'
         size: ''
         span: auto
         type: textarea
-    language:
-        label: 'sabah.form::lang.application_forms.language'
-        size: ''
+    file:
+        label: 'sabah.form::lang.application_forms.file'
+        mode: file
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
         span: auto
-        type: textarea
-    university:
-        label: 'sabah.form::lang.application_forms.university'
-        span: auto
-        type: text
+        type: fileupload

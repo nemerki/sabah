@@ -15,3 +15,9 @@
 1.0.6:
     - 'Updated table sabah_form_faq'
     - builder_table_update_sabah_form_faq.php
+1.0.7:
+    - 'Updated table sabah_form_application_forms'
+    - builder_table_update_sabah_form_application_forms.php
+1.0.8:
+    - 'Updated table sabah_form_application_forms'
+    - builder_table_update_sabah_form_application_forms_2.php

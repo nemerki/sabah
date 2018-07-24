@@ -3,7 +3,21 @@ columns:
         label: 'sabah.form::lang.faq.name'
         type: text
         searchable: true
+        sortable: true
     subject:
         label: 'sabah.form::lang.faq.subject'
         type: text
         searchable: true
+        sortable: true
+    short:
+        label: 'sabah.form::lang.faq.short'
+        type: text
+        searchable: true
+        sortable: true
+    category:
+        label: 'sabah.form::lang.faq.category'
+        type: text
+        searchable: true
+        sortable: true
+        select: name
+        relation: category

@@ -8,15 +8,13 @@ use Illuminate\Support\Facades\Mail;
 use Validator;
 use Illuminate\Support\Facades\Input;
 
-class StudentFaqComponent extends ComponentBase
+class TeacherFaqComponent extends ComponentBase
 {
-    public $faqCategories;
-
     public function componentDetails()
     {
         return [
-            'name' => 'Student Faq ',
-            'description' => 'Telebe faq seyfesi üçün component'
+            'name' => 'Teacher Faq ',
+            'description' => 'Muellim faq seyfesi üçün component'
         ];
     }
 
@@ -52,7 +50,7 @@ class StudentFaqComponent extends ComponentBase
     protected function onSave()
     {
         $data = post();
-        $data['short'] = 'Tələbə qəbulu mütəmadi verilən suallar';
+        $data['short'] = 'Müəllim qəbulu mütəmadi verilən suallar';
         $rules = [
             'name' => 'required',
             'email' => 'required|email',
@@ -98,7 +96,7 @@ class StudentFaqComponent extends ComponentBase
             Mail::send('nemerki.form::mail.message', $vars, function ($message) {
 
                 $message->to('mehemmedntl85@gmail.com', 'Admin ');
-                $message->subject('Tələbə qəbulu mütemadı verilen suallar bölümündən yeni mesajınız var');
+                $message->subject('Müellim qəbulu mütemadı verilen suallar bölümündən yeni mesajınız var');
 
             });
 
@@ -106,3 +104,4 @@ class StudentFaqComponent extends ComponentBase
     }
 
 }
+
