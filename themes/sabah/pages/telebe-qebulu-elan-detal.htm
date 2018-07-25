@@ -76,31 +76,10 @@ notFoundMessage = "Record not found"
                             <div class="sidebar-list-item">
                                 <ul>
 
-                                    <li>
-                                        <a href="#">SEÇİM ŞƏRTLƏRİ</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Qaydalar</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">İxtisaslar</a>
-                                    </li>
 
-
-                                    <li>
-                                        <a href="#">ELANLAR</a>
-                                    </li>
-
-
-                                    <li>
-                                        <a href="#">XƏBƏRLƏR</a>
-                                    </li>
-
-
-                                    <li>
-                                        <a href="#">MÜTƏMADİ VERİLƏN SUALLAR</a>
-                                    </li>
-
+                                    {% if sabahTelebeleri.menuItems %}
+                                        {% partial "sabahTelebeleriNav" items=sabahTelebeleri.menuItems %}
+                                    {% endif %}
                                 </ul>
                             </div>
 

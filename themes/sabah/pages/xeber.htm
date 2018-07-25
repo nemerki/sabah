@@ -47,15 +47,15 @@ tumblr = 1
                                 <h1>{{ record.title }}</h1>
                                 <p class="news-detal-category">{{ record.category.name|upper }}</p>
                                 <span class="news-datetime ">
-                                      {{ record.created_at.format('d M Y') }}
+                                      {{ record.created_at|date('d m Y') }}
                                     </span>
                             </div>
+
 
                             <div class="news-image">
                                 <img src="{{ record.image.thumb(750,413) }}" alt="{{ record.name }}"
                                      class="img-responsive">
                             </div>
-
 
                             <div class="news-contents">
                                 <div class="content-main">

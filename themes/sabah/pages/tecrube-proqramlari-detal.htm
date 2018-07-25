@@ -12,6 +12,9 @@ modelKeyColumn = "slug"
 displayColumn = "slug"
 notFoundMessage = "Record not found"
 
+[staticMenu sabahTelebeleri]
+code = "sabah-telebeleri"
+
 [shares]
 facebook = 1
 twitter = 1
@@ -111,37 +114,10 @@ tumblr = 1
                         <div class="sidebar-list-item-green b-0">
                             <ul>
 
-                                <li>
-                                    <a href="#">XƏBƏRLƏR</a>
-                                </li>
 
-
-                                <li>
-                                    <a href="#">ELANLAR</a>
-                                </li>
-
-
-                                <li>
-                                    <a href="#">TƏCRÜBƏ PROQRAMLARI</a>
-                                </li>
-
-
-                                <li>
-                                    <a href="#">XARİCDƏ TƏHSİL VƏ MÜBADİLƏ PROQRAMLARI
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="#">İXTİSASLAR</a>
-                                </li>
-
-                                <li>
-                                    <a href="#">UNİVERSİTETLƏR</a>
-                                </li>
-
-                                <li>
-                                    <a href="#">ƏLAQƏ</a>
-                                </li>
+                                {% if sabahTelebeleri.menuItems %}
+                                    {% partial "sabahTelebeleriNav" items=sabahTelebeleri.menuItems %}
+                                {% endif %}
 
                             </ul>
                         </div>
