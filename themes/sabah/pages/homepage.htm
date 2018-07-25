@@ -171,7 +171,7 @@ take = 3
                 </div>
                 <div class="col-md-12">
                     <div class="read-more">
-                        <a href="{{ "xeberler"|page }}">{{ 'Butun Xeberler' |_ }}</a>
+                        <a href="{{ "elanlar"|page }}">{{ 'Butun Elanlar' |_ }}</a>
                     </div>
                 </div>
             </div>
@@ -192,7 +192,7 @@ take = 3
                                     <a href="{{ detailsPage|page({ (detailsUrlParameter): record.slug }) }}" class="">
                                         {% endif %}
                                         <div class="img-title news-title">
-                                            {{ record.title }}
+                                            {{ str_limit( record.title, 65, '...') }}
                                         </div>
                                         {% if detailsPage %}
                                             </a>
@@ -226,7 +226,7 @@ take = 3
                         </div>
                         <div class="col-md-12">
                             <div class="read-more">
-                                <a href="{{ "elanlar"|page }}">{{ 'Butun Elanlar' |_ }}</a>
+                                <a href="{{ "xeberler"|page }}">{{ 'Butun Xeberler' |_ }}</a>
                             </div>
                         </div>
                     </div>

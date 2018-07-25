@@ -51,3 +51,7 @@ header .main-menu .search input {
 #partners #partners-sld .owl-nav {
     display: none;
 }
+
+.img-title.news-title {
+    min-height: 50px;
+}

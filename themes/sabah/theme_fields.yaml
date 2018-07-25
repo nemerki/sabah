@@ -141,7 +141,192 @@ tabs:
             default: SABAH Qrupları
             span: auto
 
+        sabah_student_news:
+            label: Sbah Telebeleri Xeberler
+            comment: The logo will be used in the website <b><i>(1349x214px)</i></b>
+            commentHtml: true
+            required: true
+            tab: Top Banner İmage
+            type: fileupload
+            mode: image
+            span: full
+            attachOnUpload: true
+            imageHeight: 214
+            filetypes: png
+            thumbOptions:
+                mode: crop
+                quality: 100
+                extension: auto
 
+        sabah_student_ads:
+            label: Sbah Telebeleri Elanlar
+            comment: The logo will be used in the website <b><i>(1349x214px)</i></b>
+            commentHtml: true
+            required: true
+            tab: Top Banner İmage
+            type: fileupload
+            mode: image
+            span: full
+            attachOnUpload: true
+            imageHeight: 214
+            filetypes: png
+            thumbOptions:
+                mode: crop
+                quality: 100
+                extension: auto
+
+        sabah_student_practical_programs:
+            label: Tecrübe programları
+            comment: The logo will be used in the website <b><i>(1349x214px)</i></b>
+            commentHtml: true
+            required: true
+            tab: Top Banner İmage
+            type: fileupload
+            mode: image
+            span: full
+            attachOnUpload: true
+            imageHeight: 214
+            filetypes: png
+            thumbOptions:
+                mode: crop
+                quality: 100
+                extension: auto
+
+        sabah_student_abroad_studies:
+            label: Xaricde Tehsil ve Mübadile Programları
+            comment: The logo will be used in the website <b><i>(1349x214px)</i></b>
+            commentHtml: true
+            required: true
+            tab: Top Banner İmage
+            type: fileupload
+            mode: image
+            span: full
+            attachOnUpload: true
+            imageHeight: 214
+            filetypes: png
+            thumbOptions:
+                mode: crop
+                quality: 100
+                extension: auto
+
+        sabah_student_specialties:
+            label: İxtisaslar
+            comment: The logo will be used in the website <b><i>(1349x214px)</i></b>
+            commentHtml: true
+            required: true
+            tab: Top Banner İmage
+            type: fileupload
+            mode: image
+            span: full
+            attachOnUpload: true
+            imageHeight: 214
+            filetypes: png
+            thumbOptions:
+                mode: crop
+                quality: 100
+                extension: auto
+
+        sabah_student_university:
+            label: Üniversitetlər
+            comment: The logo will be used in the website <b><i>(1349x214px)</i></b>
+            commentHtml: true
+            required: true
+            tab: Top Banner İmage
+            type: fileupload
+            mode: image
+            span: full
+            attachOnUpload: true
+            imageHeight: 214
+            filetypes: png
+            thumbOptions:
+                mode: crop
+                quality: 100
+                extension: auto
+
+        sabah_student_contact:
+            label:  Sbah Telebeleri Əlaqə
+            comment: The logo will be used in the website <b><i>(1349x214px)</i></b>
+            commentHtml: true
+            required: true
+            tab: Top Banner İmage
+            type: fileupload
+            mode: image
+            span: full
+            attachOnUpload: true
+            imageHeight: 214
+            filetypes: png
+            thumbOptions:
+                mode: crop
+                quality: 100
+                extension: auto
+
+        student_admission:
+            label:  Tələbə Qəbulu
+            comment: The logo will be used in the website <b><i>(1349x214px)</i></b>
+            commentHtml: true
+            required: true
+            tab: Top Banner İmage
+            type: fileupload
+            mode: image
+            span: full
+            attachOnUpload: true
+            imageHeight: 214
+            filetypes: png
+            thumbOptions:
+                mode: crop
+                quality: 100
+                extension: auto
+
+        teacher_admission:
+            label:  Müəllim Qəbulu
+            comment: The logo will be used in the website <b><i>(1349x214px)</i></b>
+            commentHtml: true
+            required: true
+            tab: Top Banner İmage
+            type: fileupload
+            mode: image
+            span: full
+            attachOnUpload: true
+            imageHeight: 214
+            filetypes: png
+            thumbOptions:
+                mode: crop
+                quality: 100
+                extension: auto
+
+        contact:
+            label:  Əlaqə
+            comment: The logo will be used in the website <b><i>(1349x214px)</i></b>
+            commentHtml: true
+            required: true
+            tab: Top Banner İmage
+            type: fileupload
+            mode: image
+            span: full
+            attachOnUpload: true
+            imageHeight: 214
+            filetypes: png
+            thumbOptions:
+                mode: crop
+                quality: 100
+                extension: auto
+
+        numayendelikler:
+            label:  Numayendəliklər
+            comment: The logo will be used in the website <b><i>(1349x214px)</i></b>
+            commentHtml: true
+            required: true
+            tab: Top Banner İmage
+            type: fileupload
+            mode: image
+            span: full
+            attachOnUpload: true
+            imageHeight: 214
+            filetypes: png
+            thumbOptions:
+                mode: crop
+                quality: 100
+                extension: auto
 
 
 
