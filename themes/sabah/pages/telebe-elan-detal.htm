@@ -2,6 +2,8 @@ title = "Tələbə elan detal"
 url = "/telebe/elan/:slug"
 layout = "default"
 is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
 
 [builderDetails]
 modelClass = "Sabah\Ad\Models\Ad"
@@ -9,6 +11,12 @@ identifierValue = "{{ :slug }}"
 modelKeyColumn = "slug"
 displayColumn = "slug"
 notFoundMessage = "Record not found"
+
+[shares]
+facebook = 1
+twitter = 1
+googleplus = 1
+tumblr = 1
 ==
 <div id="teacher-news-faq" class="main-content">
         <!-- BANNER-->
@@ -62,24 +70,7 @@ notFoundMessage = "Record not found"
 
                         <div class="social-link-area">
 
-                            <ul class="social-icon">
-                                <li>Paylaş:</li>
-                                <li class="facebook">
-                                    <a href="#">
-                                        <i class="fa fa-facebook-official" aria-hidden="true"></i>
-                                    </a>
-                                </li>
-                                <li class="twitter">
-                                    <a href="#">
-                                        <i class="fa fa-twitter" aria-hidden="true"></i>
-                                    </a>
-                                </li>
-                                <li class="google-plus">
-                                    <a href="#">
-                                        <i class="fa fa-google-plus-official" aria-hidden="true"></i>
-                                    </a>
-                                </li>
-                            </ul>
+                            {% partial "sosialShare" %}
 
 
                         </div>

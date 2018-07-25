@@ -7,7 +7,8 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return [
-            'Sabah\News\Components\News' => 'news'
+            'Sabah\News\Components\News' => 'news',
+            'Sabah\News\Components\NewsCategoryComponent' => 'newscategorycomponent',
         ];
     }
 

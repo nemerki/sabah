@@ -35,3 +35,19 @@ header .main-menu .search input {
     background-repeat: no-repeat;
     background-position: center;
 }
+
+.news-arena .news-block-inner {
+    width: 100%;
+}
+
+#testimonial-sec .owl-nav {
+    display: none;
+}
+
+#home-slider #owl-demo .owl-nav {
+    display: none;
+}
+
+#partners #partners-sld .owl-nav {
+    display: none;
+}

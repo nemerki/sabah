@@ -32,6 +32,8 @@
         'tqdk_score' => 'TQDK Score',
         'teaching_hours' => 'Teaching Hours',
         'file' => 'File',
+        'company_name' => 'Company Name',
+        'position' => 'Position',
     ],
     'faq' => [
         'name' => 'Name',

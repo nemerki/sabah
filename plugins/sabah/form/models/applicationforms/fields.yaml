@@ -70,3 +70,11 @@ fields:
             extension: auto
         span: auto
         type: fileupload
+    company_name:
+        label: 'sabah.form::lang.application_forms.company_name'
+        span: auto
+        type: text
+    position:
+        label: 'sabah.form::lang.application_forms.position'
+        span: auto
+        type: text

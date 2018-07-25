@@ -1,5 +1,110 @@
 title = "Kateqoriyalar"
-url = "/kateqoriyalar/:slug?"
+url = "/kateqoriyalar/:slug/:page?"
 layout = "default"
 is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[newscategorycomponent]
+detailsPage = "xeber"
+detailsKeyColumn = "title"
+detailsUrlParameter = "slug"
+recordsPerPage = 10
+pageNumber = "{{ :page }}"
 ==
+<div id="teacher-news-faq" class="main-content">
+    <!-- HEADER PANEL-->
+    <div id="header-panel">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel-title">
+                        <h1>{{ categoryName }}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER PANEL-->
+
+    <div id="teacher-news-faq-collapse">
+        <div class="container">
+            <div class="row">
+                <div class=" col-sm-12 col-md-8 col-lg-8">
+
+                    <div class="news-arena">
+                        {% partial "xeberler/digerXeberler" partialsRecords=records %}
+                    </div>
+                    <div class="row pa">
+                        {% partial "pagination" partialsRecords=records %}
+                    </div>
+                </div>
+                <div class=" col-sm-12 col-md-4 col-lg-4">
+                    <div id="sidebar">
+                        <div class="sidebar-title">
+                            <h1 class="title-bold">Kateqoriyalar</h1>
+                            <div class="border"></div>
+                        </div>
+                        <div class="sidebar-list-item b-0">
+                            <ul>
+                                {% for category in categories %}
+                                    <li>
+                                        <a href="{{ category.slug }}"> {{ category.name }}</a>
+                                    </li>
+                                {% endfor %}
+
+
+
+
+                            </ul>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% put scripts %}
+    <script type="text/javascript">
+
+        $(function () {
+
+            $(document).on('click', '.ajaxPagination', function (e) {
+                e.preventDefault();
+                var array = $(this).attr('href').split('/');
+                var page = array[array.length - 1];
+
+                swal({
+                    title: 'Yüklənir...',
+                    html:
+                    '<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>' +
+                    ' <span class="sr-only">Loading...</span>',
+                    showCloseButton: false,
+                    showCancelButton: false,
+                    showConfirmButton: false,
+                    allowOutsideClick: false
+                });
+
+                $.request('onPaginate', {
+
+                    update: {"xeberler/digerXeberler": '.news-arena', pagination: '.pa'},
+                    data: {perPage: page},
+                    complete: function() {
+                        swal.close();
+                    }
+
+
+
+                });
+            });
+
+
+        })
+
+    </script>
+{% endput %}

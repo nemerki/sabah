@@ -4,3 +4,34 @@ columns:
         type: text
         searchable: true
         sortable: true
+        select: 'concat(name,'' '',surname)'
+    university:
+        label: 'sabah.form::lang.application_forms.university'
+        type: text
+        searchable: true
+        sortable: true
+    specialty:
+        label: 'sabah.form::lang.application_forms.specialty'
+        type: text
+        searchable: true
+        sortable: true
+    courses:
+        label: 'sabah.form::lang.application_forms.courses'
+        type: text
+        searchable: true
+        sortable: true
+    teaching_language:
+        label: 'sabah.form::lang.application_forms.teaching_language'
+        type: text
+        searchable: true
+        sortable: true
+    company_name:
+        label: 'sabah.form::lang.application_forms.company_name'
+        type: text
+        searchable: true
+        sortable: true
+    position:
+        label: 'sabah.form::lang.application_forms.position'
+        type: text
+        searchable: true
+        sortable: true

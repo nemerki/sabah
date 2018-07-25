@@ -2,6 +2,8 @@ title = "Təcrübə proqramlari detal"
 url = "/telebe/tecrube/:slug"
 layout = "default"
 is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
 
 [builderDetails]
 modelClass = "Sabah\Student\Models\PracticeProgram"
@@ -9,6 +11,12 @@ identifierValue = "{{ :slug }}"
 modelKeyColumn = "slug"
 displayColumn = "slug"
 notFoundMessage = "Record not found"
+
+[shares]
+facebook = 1
+twitter = 1
+googleplus = 1
+tumblr = 1
 ==
 <div id="teacher-news-faq" class="main-content">
     <!-- BANNER-->
@@ -82,7 +90,7 @@ notFoundMessage = "Record not found"
                                 </div>
 
                                 <div class="program-detal-submit">
-                                    <a href="{{ "tecrube-programi-muraciet-formasi"|page }}">
+                                    <a href="{{ "tecrube-programi-muraciet-formasi"|page({slug:record.slug}) }}">
                                         <button type="submit">{{ 'MÜRACİƏT ET' |_ }}</button>
                                         <i class="fa fa-angle-double-right" aria-hidden="true"></i>
                                     </a>

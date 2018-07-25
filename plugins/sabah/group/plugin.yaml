@@ -11,19 +11,19 @@ navigation:
         icon: icon-bank
         sideMenu:
             side-menu-item:
-                label: 'Verilen Suallar'
+                label: Faq
                 url: sabah/group/faq
-                icon: icon-question
+                icon: icon-question-circle
             side-menu-item2:
-                label: Komandamız
+                label: Team
                 url: sabah/group/team
                 icon: icon-slideshare
             side-menu-item3:
-                label: Terefdaşlar
+                label: Partner
                 url: sabah/group/partner
                 icon: icon-asterisk
             side-menu-item4:
-                label: Qalereya
+                label: Gallery
                 url: sabah/group/gallery
                 icon: icon-image
             side-menu-item5:

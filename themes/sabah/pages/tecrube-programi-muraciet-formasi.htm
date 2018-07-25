@@ -1,11 +1,18 @@
 title = "Təcrübə programı müraciət formasi"
-url = "/telebe/tecrube-programi/muraciet-formasi"
+url = "/telebe/tecrube-programi/muraciet-formasi/:slug"
 layout = "default"
 is_hidden = 0
 robot_index = "index"
 robot_follow = "follow"
 
 [ApplicationFormComponent]
+
+[builderDetails]
+modelClass = "Sabah\Student\Models\PracticeProgram"
+identifierValue = "{{ :slug }}"
+modelKeyColumn = "slug"
+displayColumn = "slug"
+notFoundMessage = "Record not found"
 ==
 <div id="teacher-news-faq" class="main-content">
     <!-- HEADER PANEL-->
@@ -32,7 +39,7 @@ robot_follow = "follow"
                         <h1 class="title-bold">Ödənişli Təcrübə Proqramı</h1>
                     </div>
                     <div class="head-title">
-                        <p class="content-main">Caspian Energy International Media Group şirkətində Reklam Agenti
+                        <p class="content-main">{{ record.company_name }} şirkətində {{ record.position }}
                             vakansiyası üçün müraciət edirəm.
                         </p>
                     </div>
@@ -43,6 +50,8 @@ robot_follow = "follow"
                                   data-request-validate
                                   data-request-flash
                                   data-request-files>
+                                <input type="hidden" name="company_name" value="{{  record.company_name }}">
+                                <input type="hidden" name="position" value="{{  record.position }}">
                                 <div class="col-md-6">
                                     <div class="personal_information">
                                         <div class="form-title">

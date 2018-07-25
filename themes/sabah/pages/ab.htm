@@ -1,0 +1,453 @@
+title = "ab"
+url = "/ab"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[RecordList news]
+modelClass = "Sabah\News\Models\News"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "title"
+noRecordsMessage = "No records found"
+detailsPage = "xeber"
+detailsKeyColumn = "slug"
+detailsUrlParameter = "slug"
+pageNumber = "{{ :page }}"
+
+[RecordList testimonial]
+modelClass = "Sabah\Group\Models\Testimonial"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "name"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+==
+<section id="home-slider">
+    <div class="container-fluid">
+        <div class="row">
+            <div id="owl-demo" class="indexSlider owl-carousel owl-theme owl-carousel-default owl-carousel-class-light">
+                {% for record in slider.records %}
+                    <div class="item">
+                        <div class="slider-img" style="background-image:url('{{ record.image.path }}')">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6 col-md-offset-6  col-sm-6 col-sm-offset-6">
+                                        <div class="sld-text">
+                                            <div class="sld-title">
+                                                {{ record.title }}
+                                            </div>
+                                            <p class="sld-desc">
+                                                {{ str_limit( record.description, 110, '... Ətraflı !') }}
+                                            </p>
+                                            <a target="_blank" href="{{ record.link }}" class="moree">Etrafli</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</section>
+<section id="news-sec">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-5">
+                <div class="title-bold title-before">
+                    {{ 'Elanlar' |_ }}
+                </div>
+                <div class="border"></div>
+                {% for record in ad.records %}
+                    <div class="col-md-12">
+                        <div class="content">
+                            {% spaceless %}
+                                {% if detailsPage %}
+                                    <a href="{{ detailsPage|page({ (detailsUrlParameter): record.slug }) }}">
+                                {% endif %}
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-3">
+                                        <span class="date-number">
+                                           {{ record.created_at.format('d') }}
+                                        </span>
+                                        <span class="month-name">
+                                             {{ record.created_at.format('M') }}
+                                        </span>
+                                    </div>
+                                    <div class="col-md-9 col-sm-9">
+                                        <p>
+                                            {{ record.title }}
+                                        </p>
+                                    </div>
+                                </div>
+                                {% if detailsPage %}
+                                    </a>
+                                {% endif %}
+                            {% endspaceless %}
+                        </div>
+
+                    </div>
+                {% endfor %}
+
+
+                <div class="col-md-12">
+                    <div class="border-dotts"></div>
+                </div>
+                <div class="col-md-12">
+                    <div class="read-more">
+                        <a href="{{ "xeberler"|page }}">{{ 'Butun Xeberler' |_ }}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 col-sm-7">
+                <div class="title-bold title-before">
+                    Xeberler
+                </div>
+                <div class="border"></div>
+                <div class="content">
+                    <div class="row">
+                        {% for record in news.records %}
+                            <div class="col-md-4">
+                                <div class="box">
+                                    <div class="back-img"
+                                         style="background-image:url('{{ record.image.thumb(230,180) }}')"></div>
+                                    {% spaceless %}
+                                    {% if detailsPage %}
+                                    <a href="{{ detailsPage|page({ (detailsUrlParameter): record.slug }) }}" class="">
+                                        {% endif %}
+                                        <div class="img-title news-title">
+                                            {{ record.title }}
+                                        </div>
+                                        {% if detailsPage %}
+                                            </a>
+                                        {% endif %}
+                                    {% endspaceless %}
+                                    <div class="date news-datetime">
+                                        <span>
+                                          {{ record.created_at.format('d M Y') }}
+                                        </span>
+                                    </div>
+                                    <div class="desc">
+                                        {{ str_limit( record.description, 110, '... Ətraflı !') }}
+                                    </div>
+
+                                    {% spaceless %}
+                                        {% if detailsPage %}
+                                            <a href="{{ detailsPage|page({ (detailsUrlParameter): record.slug }) }}" class="moree">
+                                        {% endif %}
+                                        Etrafli
+                                        {% if detailsPage %}
+                                            </a>
+                                        {% endif %}
+                                    {% endspaceless %}
+                                </div>
+                            </div>
+                        {% endfor %}
+
+
+                        <div class="col-md-12">
+                            <div class="border-dotts" style="margin:0"></div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="read-more">
+                                <a href="{{ "elanlar"|page }}">{{ 'Butun Elanlar' |_ }}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="applying" style="background-image: url('{{ 'assets/img/content-img/Layer-16.png'|theme }}')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="shape text-center">
+                    <img src="{{ 'assets/img/file-img/center-divider-white.png'|theme }}" alt="">
+                </div>
+                <div class="aligner">
+                    <div class="aling-item">
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12 col-xs-7 x">
+                                    <div class="title-bold title-before green">{{ 'Telebe' |_ }}</div>
+                                    <div class="border"></div>
+                                    <div class="desc">{{ '2017-2018-ci tədris ili üçün SABAH Qruplarına tələbə qəbulu
+                                        müsabiqəsi' |_ }}
+                                    </div>
+
+                                    <a href="">
+                                        <div class="aplay-button ">
+                                            <button type="submit" class="telebe-but">{{ 'TƏLƏBƏ PORTALI' |_ }}</button>
+                                            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                                        </div>
+                                    </a>
+
+                                </div>
+                                <div class="col-md-6 hidden-sm col-xs-5">
+                                    <img src="{{ 'assets/img/content-img/portal-student.jpg'|theme }}"
+                                         class="img-responsive" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="aling-item">
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12 col-xs-7 x">
+                                    <div class="title-bold title-before blue">{{ 'Müəllim' |_ }}</div>
+                                    <div class="border"></div>
+                                    <div class="desc">{{ '2017-2018-ci tədris ili üçün SABAH Qruplarına tələbə qəbulu
+                                        müsabiqəsi' |_ }}
+                                    </div>
+                                    <a href="">
+                                        <div class="aplay-button muellim">
+                                            <button type="submit" class="muellim">{{ 'MÜRACİƏT ET' |_ }}</button>
+                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-6 hidden-sm col-xs-5">
+                                    <img src="{{ 'assets/img/content-img/portal_teacher.jpg'|theme }}"
+                                         class="img-responsive" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+<section id="testimonial-sec">
+    <div class="container">
+        <div id="testim-sld" class="testimonial owl-carousel owl-theme">
+            {% for record in testimonial.records %}
+                <div class="item">
+                    <div class="back"></div>
+                    <div class="row">
+                        <div class="col-md-3  col-sm-3">
+                            <div class="card-img">
+                                <img src="{{ record.image.path }}" class="img-circle" alt="Cinque Terre">
+                            </div>
+                        </div>
+                        <div class="col-md-9 col-sm-9">
+                            <div class="card-desc">
+                                <p class="up-desc">They must find it difficult, those who have taken authority as truth,
+                                    rather than truth as
+                                    authority. On the other hand, we denounce with righteous indignation and dislike men
+                                    who are so beguiled and moralized.
+                                </p>
+                                <p class="down-desc">
+                                    <span>Rəna Məmmədova</span>
+                                    <br> Kompüter elmləri, 2016. Bakı Dövlət Universitet</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+
+<section id="university">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="univer-shape">
+                    <div class="line-border"></div>
+                    <img src="./img/file-img/stars-blue.svg" alt="">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="uni-title">
+                    <h4>Universitetler</h4>
+                    <p>Pellentesque fermentum rutrum augue, ac egestas lectus sodales sed</p>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div id="univer-sld" class="owl-carousel owl-theme visible-xs">
+                    <div class="item">
+                        <div class="img-box"
+                             style="background-image: url({{ 'assets/img/content-img/345662copy6.png'|theme }})"></div>
+                    </div>
+                    <div class="item">
+                        <div class="img-box"
+                             style="background-image: url({{ 'assets/img/content-img/uni2.png'|theme }})"></div>
+                    </div>
+                    <div class="item">
+                        <div class="img-box"
+                             style="background-image: url({{ 'assets/img/content-img/uni3.png'|theme }})"></div>
+                    </div>
+
+                </div>
+
+                <div class="uni-grid none-xs">
+                    <div class="row">
+                        {% for record in university.records %}
+                            <div class="col-md-2 col-sm-4">
+                                <div class="item text-center">
+                                    <div class="img-box"
+                                         style="background-image: url({{ record.logo.thumb(140,80) }})"></div>
+                                    <p>{{ record.name }}</p>
+                                    {% spaceless %}
+                                        {% if detailsPage %}
+                                            <a href="{{ detailsPage|page({ (detailsUrlParameter): record.slug }) }}">
+                                        {% endif %}
+                                        <span>Etrafli</span>
+                                        {% if detailsPage %}
+                                            </a>
+                                        {% endif %}
+                                    {% endspaceless %}
+                                </div>
+                            </div>
+                        {% endfor %}
+
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-12">
+                <div class="all-uni text-center">
+                    <a href="{{ 'universitetler'|page }}">{{ 'BÜTÜN UNİVERSİTETLƏR' |_ }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="Imsabah">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="univer-shape">
+                    <div class="line-border"></div>
+                    <img src="{{ 'assets/img/file-img/stars-blue.svg'|theme }}" alt="">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="uni-title text-center">
+                    <h4>{{ '#IamSabah' |_ }}</h4>
+                    <p>{{ 'Şəkillərin burada görünməsi üçün paylaşım zamanı açar sözdən istifadə edin.' |_ }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+<section id="ins-sabah">
+    <div class="container-fluid">
+        <div id="ins-sld" class="owl-carousel owl-theme owl-carousel-default owl-carousel-class-light">
+
+            {% for m in tagFeed.media %}
+            {{ loop.index }}
+            <img alt="" src="{{ m.getLowResImage().url }}">
+
+            <div class="item">
+
+                <a href="">
+                    <img src="{{ m.getLowResImage().url }}" alt="intagram_image" class="img-responsive">
+                    <div class="slider-overlay">
+                    </div>
+                    <div class="elements-container">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                        @moonlight123
+                    </div>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+
+
+    </div>
+    </div>
+</section>
+<section id="partners">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="univer-shape">
+                    <div class="line-border"></div>
+                    <img src="{{ 'assets/img/file-img/stars-blue.svg'|theme }}" alt="">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="uni-title text-center">
+                    <h4>{{ 'Tərəfdaşlarımız' |_ }}</h4>
+
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div id="partners-sld" class="owl-carousel owl-theme">
+                    {% for record in partner.records %}
+                        <div class="item">
+                            <a href="">
+                                <div class="partner-img" style="background-image: url({{ record.logo.thumb(130,60) }})">
+                                    {#<img src="{{ record.logo.path }}" class="img-responsive" alt="">#}
+                                </div>
+                            </a>
+                        </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% put scripts %}
+    <script>
+        $(document).ready(function () {
+
+            $('.indexSlider').owlCarousel({
+                loop: true,
+                margin: 10,
+                dots: false,
+                autoplay: true,
+                items: 1,
+            })
+            $('#partners-sld').owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: false,
+                autoplay: true,
+                dots: false,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 3
+                    },
+                    1000: {
+                        items: 4
+                    }
+                }
+            })
+        });
+
+        $('.testimonial').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            items: 1,
+            autoplay: true,
+            dots: false,
+            nav: false,
+
+        })
+    </script>
+{% endput %}

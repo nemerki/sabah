@@ -2,6 +2,8 @@ title = "Xeber"
 url = "/xeber/:slug"
 layout = "default"
 is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
 
 [sameCategory]
 detailsPage = "xeber"
@@ -12,6 +14,12 @@ identifierValue = "{{ :slug }}"
 modelKeyColumn = "slug"
 displayColumn = "title"
 notFoundMessage = "Record not found"
+
+[shares]
+facebook = 1
+twitter = 1
+googleplus = 1
+tumblr = 1
 ==
 <div id="teacher-news-faq">
     <!-- BANNER-->
@@ -44,7 +52,8 @@ notFoundMessage = "Record not found"
                             </div>
 
                             <div class="news-image">
-                                <img src="{{ record.image.thumb(750,413) }}" alt="{{ record.name }}" class="img-responsive">
+                                <img src="{{ record.image.thumb(750,413) }}" alt="{{ record.name }}"
+                                     class="img-responsive">
                             </div>
 
 
@@ -61,7 +70,7 @@ notFoundMessage = "Record not found"
                             <div id="aniimated-thumbnials">
 
                                 {% for image in record.gallery %}
-                                    <a href="{{ image.path }}">
+                                    <a  data-lightbox="image-1" data-title="{{ image.title }} " href="{{ image.path }}">
                                         <div class="overlay">
                                             <i class="fa fa-search"></i>
                                         </div>
@@ -74,24 +83,7 @@ notFoundMessage = "Record not found"
                         </div>
                         <div class="social-link-area">
 
-                            <ul class="social-icon">
-                                <li>Paylaş:</li>
-                                <li class="facebook">
-                                    <a href="#">
-                                        <i class="fa fa-facebook-official" aria-hidden="true"></i>
-                                    </a>
-                                </li>
-                                <li class="twitter">
-                                    <a href="#">
-                                        <i class="fa fa-twitter" aria-hidden="true"></i>
-                                    </a>
-                                </li>
-                                <li class="google-plus">
-                                    <a href="#">
-                                        <i class="fa fa-google-plus-official" aria-hidden="true"></i>
-                                    </a>
-                                </li>
-                            </ul>
+                            {% partial "sosialShare" %}
 
 
                         </div>

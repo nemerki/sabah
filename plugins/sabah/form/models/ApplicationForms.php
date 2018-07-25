@@ -31,4 +31,10 @@ class ApplicationForms extends Model
     public $attachOne = [
         'file' => 'System\Models\File'
     ];
+
+    public function getFullNameAttribute()
+    {
+        return $this->name . " " . $this->surname;
+    }
+
 }
