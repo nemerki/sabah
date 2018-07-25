@@ -46,11 +46,11 @@ tumblr = 0
                             <h1>{{ record.title }}</h1>
 
                             <span class="news-datetime ">
-                                    {{ record.created_at.format('d M Y') }}
+                                    {{ record.created_at.format('d F Y') }}
                                 </span>
                             {% if record.organized %}
                                 <p class="future-news">{{ 'Keçirilmə tarixi:' |_ }}
-                                    <span>{{ record.organized|date('d M Y') }}</span>
+                                    <span>{{ record.organized|date('d F Y') }}</span>
                                 </p>
                             {% endif %}
 
