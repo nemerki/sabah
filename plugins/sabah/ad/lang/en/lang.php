@@ -10,6 +10,7 @@
         'is_home' => 'Hompage',
         'organized' => 'Organized Date',
         'content' => 'Content',
+        'published' => 'Published',
     ],
     'ads_category' => [
         'name' => 'Name',

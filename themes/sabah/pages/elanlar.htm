@@ -41,7 +41,8 @@ sortDirection = "asc"
                                     <div class="item text-center">
                                         <div class="box">
                                             <div class="datetime">
-                                               {{ record.created_at.format('d F Y') }}
+                                                {{ record.created_at.format('d F Y') }}
+
                                             </div>
                                             <div class="desc">
                                                 {{ record.title }}
@@ -62,7 +63,7 @@ sortDirection = "asc"
                     <div class="sidebar-title">
                         <h1 class="title-bold">Təqvim</h1>
                         <div class="border"></div>
-                        <p class="now">Bu gün: 30 İyul 2017</p>
+                        <p class="now">Bu gün: {{ now.format('d F Y') }}</p>
                     </div>
                     <div>
                         <div class="form-group">
@@ -98,6 +99,33 @@ sortDirection = "asc"
 
         $(function () {
 
+
+            $(".pinBox").pinBox({
+                // default: "0px",
+                Top: '120px',
+                //default '.container'
+                Container: '#pinBoxContainer',
+                //default 20
+                ZIndex: 20,
+                //default '767px' if you disable pinBox in mobile or tablet
+                MinWidth: '992px',
+
+                //events if scrolled or window resized
+                Events: function (e) {
+
+                    // console.log(e);
+                    // // e.current => current scroll top [number]
+                    // // e.direction => scroll down or up [up,down]
+                    // e.width = window [991]
+                    // // e.active => if pinBox active [true,false]
+                    // e.disabled = [true, false]
+                }
+
+            });
+
+            $(".pinBox").trigger('pinBox.reload');
+
+
             $(document).on('click', '.ajaxPagination', function (e) {
                 e.preventDefault();
                 var array = $(this).attr('href').split('/');
@@ -128,6 +156,37 @@ sortDirection = "asc"
 
 
         })
+
+        function Yuklendi() {
+
+            $('#datetimepicker12 table').on('click', '.day', function () {
+                var date = $(this).data('day');
+                console.log(date);
+
+                swal({
+                    title: 'Yüklənir...',
+                    html:
+                    '<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>' +
+                    ' <span class="sr-only">Loading...</span>',
+                    showCloseButton: false,
+                    showCancelButton: false,
+                    showConfirmButton: false,
+                    allowOutsideClick: false
+                });
+
+                $.request('onDate', {
+                    update: {"elanlar/sonElanlar": '.sonElanlar'},
+                    data: {date: date},
+                    complete: function () {
+                        swal.close();
+                    }
+
+
+                });
+            });
+        }
+
+        window.onload = Yuklendi;
 
     </script>
 {% endput %}

@@ -17,4 +17,11 @@ class Plugin extends PluginBase
     public function registerSettings()
     {
     }
+
+    public function registerFormWidgets()
+    {
+        return [
+            'Sabah\Form\FormWidgets\ApplicationFormWidget' => 'applicationformwidget',
+        ];
+    }
 }

@@ -1,5 +1,6 @@
 <?php namespace Sabah\Ad\Components;
 
+use Carbon\Carbon;
 use Cms\Classes\ComponentBase;
 use Sabah\Ad\Models\Ad;
 
@@ -24,6 +25,7 @@ class ImportantAds extends ComponentBase
     {
 
         $this->importantAds = $this->page['importantAds'] = $this->listRecords();
+         $this->page['now'] = Carbon::now();
     }
 
     protected function listRecords()

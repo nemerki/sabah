@@ -54,6 +54,6 @@ class StudentAdmissionFaqWidget extends FormWidgetBase
      */
     public function getSaveValue($value)
     {
-        $this->model->create(['sort_id'=>$this->getId()]);
+//        $this->model->create(['sort_id'=>$this->getId()]);
     }
 }

@@ -4,7 +4,7 @@
             <div class="col-md-1 col-sm-1 col-xs-2">
                 <div class="elan-date">
                     <p class="date-number">{{ record.created_at.format('d') }}</p>
-                    <p class="month-name">{{ record.created_at.format('M') }}</p>
+                    <p class="month-name">{{ record.created_at.format('F') }}</p>
                     <p class="month-name">{{ record.created_at.format('Y') }}</p>
                 </div>
             </div>
@@ -15,4 +15,6 @@
             </div>
         </div>
     </li>
+{% else %}
+    kayıt yok
 {% endfor %}

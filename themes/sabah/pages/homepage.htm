@@ -313,14 +313,11 @@ take = 3
                         </div>
                         <div class="col-md-9 col-sm-9">
                             <div class="card-desc">
-                                <p class="up-desc">They must find it difficult, those who have taken authority as truth,
-                                    rather than truth as
-                                    authority. On the other hand, we denounce with righteous indignation and dislike men
-                                    who are so beguiled and moralized.
+                                <p class="up-desc">{{ record.comment }}
                                 </p>
                                 <p class="down-desc">
-                                    <span>Rəna Məmmədova</span>
-                                    <br> Kompüter elmləri, 2016. Bakı Dövlət Universitet</p>
+                                    <span>{{ record.name }}</span>
+                                    <br>{{ record.info }}</p>
                             </div>
                         </div>
                     </div>
@@ -338,13 +335,13 @@ take = 3
             <div class="col-md-12">
                 <div class="univer-shape">
                     <div class="line-border"></div>
-                    <img src="./img/file-img/stars-blue.svg" alt="">
+                    <img src="{{ 'assets/img/file-img/stars-blue.svg'|theme }}" alt="">
                 </div>
             </div>
             <div class="col-md-12">
                 <div class="uni-title">
-                    <h4>Universitetler</h4>
-                    <p>Pellentesque fermentum rutrum augue, ac egestas lectus sodales sed</p>
+                    <h4>{{ 'Universitetler' |_ }}</h4>
+                    <p>Pellentesque fermetntum rutrum augue, ac egestas lectus sodales sed</p>
                 </div>
             </div>
             <div class="col-md-12">
@@ -479,44 +476,6 @@ take = 3
 </section>
 {% put scripts %}
     <script>
-        $(document).ready(function () {
 
-            $('.indexSlider').owlCarousel({
-                loop: true,
-                margin: 10,
-                dots: false,
-                autoplay: true,
-                items: 1,
-            })
-            $('#partners-sld').owlCarousel({
-                loop: true,
-                margin: 10,
-                nav: false,
-                autoplay: true,
-                dots: false,
-                responsive: {
-                    0: {
-                        items: 1
-                    },
-                    600: {
-                        items: 3
-                    },
-                    1000: {
-                        items: 4
-                    }
-                }
-            })
-        });
-
-        $('.testimonial').owlCarousel({
-            loop: true,
-            margin: 10,
-            nav: true,
-            items: 1,
-            autoplay: true,
-            dots: false,
-            nav: false,
-
-        })
     </script>
 {% endput %}

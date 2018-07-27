@@ -61,15 +61,6 @@ fields:
         size: ''
         span: auto
         type: textarea
-    file:
-        label: 'sabah.form::lang.application_forms.file'
-        mode: file
-        useCaption: true
-        thumbOptions:
-            mode: crop
-            extension: auto
-        span: auto
-        type: fileupload
     company_name:
         label: 'sabah.form::lang.application_forms.company_name'
         span: auto
@@ -78,3 +69,7 @@ fields:
         label: 'sabah.form::lang.application_forms.position'
         span: auto
         type: text
+    language:
+        label: 'sabah.form::lang.application_forms.language'
+        span: full
+        type: applicationformwidget

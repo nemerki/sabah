@@ -51,16 +51,14 @@ class TagFeed extends ComponentBase
 
     public function onRun()
     {
-        $api = new Instagram();
-        dump($api);
         $key = $this->makeKey();
 
         if (Cache::has($key)) {
             $this->media = $this->page['media'] = Cache::get($key);
+            dd($this->media);
         } else {
             $settings = Settings::instance();
             $api = new Instagram();
-            dump($api);
             $api->setClientID($settings->client_id);
 
             if ($settings->access_token) {
@@ -72,7 +70,5 @@ class TagFeed extends ComponentBase
             $expires_at = Carbon::now()->addMinutes($this->property('cache'));
             Cache::put($key, $this->media, $expires_at);
         }
-
-
     }
 }

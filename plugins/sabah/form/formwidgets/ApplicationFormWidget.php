@@ -1,16 +1,16 @@
-<?php namespace Sabah\Group\FormWidgets;
+<?php namespace Sabah\Form\FormWidgets;
 
 use Backend\Classes\FormWidgetBase;
 
 /**
- * TestimonialWidget Form Widget
+ * ApplicationFormWidget Form Widget
  */
-class TestimonialWidget extends FormWidgetBase
+class ApplicationFormWidget extends FormWidgetBase
 {
     /**
      * @inheritDoc
      */
-    protected $defaultAlias = 'sabah_group_testimonial_widget';
+    protected $defaultAlias = 'sabah_form_application_form_widget';
 
     /**
      * @inheritDoc
@@ -25,8 +25,7 @@ class TestimonialWidget extends FormWidgetBase
     public function render()
     {
         $this->prepareVars();
-//        dd($this->vars['id']);
-        return $this->makePartial('testimonialwidget');
+        return $this->makePartial('applicationformwidget');
     }
 
     /**
@@ -37,6 +36,7 @@ class TestimonialWidget extends FormWidgetBase
         $this->vars['name'] = $this->formField->getName();
         $this->vars['value'] = $this->getLoadValue();
         $this->vars['model'] = $this->model;
+        $this->vars['file'] = $this->model->file->path;
     }
 
     /**
@@ -44,8 +44,8 @@ class TestimonialWidget extends FormWidgetBase
      */
     public function loadAssets()
     {
-        $this->addCss('css/testimonialwidget.css', 'Sabah.Group');
-        $this->addJs('js/testimonialwidget.js', 'Sabah.Group');
+        $this->addCss('css/applicationformwidget.css', 'Sabah.Form');
+        $this->addJs('js/applicationformwidget.js', 'Sabah.Form');
     }
 
     /**
@@ -53,7 +53,6 @@ class TestimonialWidget extends FormWidgetBase
      */
     public function getSaveValue($value)
     {
-//       $this->model->create(['sort_id'=>$this->getId()]);
-
+        return $value;
     }
 }

@@ -221,7 +221,7 @@ class AdList extends ComponentBase
         $model->whereNotIn('id', $array);
 
         $model = $this->take($model);
-         $model = $this->skip($model);
+        $model = $this->skip($model);
 
 
         $records = $this->paginate($model);
@@ -343,6 +343,18 @@ class AdList extends ComponentBase
 
 
         $this->records = $this->page['partialsRecords'] = $partialsRecords;
+    }
+
+    public function onDate()
+    {
+        $model = new  \Sabah\Ad\Models\Ad();
+
+        $date = post('date');
+        $d = date("Y-m-d", strtotime($date));
+        $s = $model->whereDate('created_at', $d)->get();
+//        $v = $s->id;
+//        dump($s);
+        $this->page['partialsRecords'] = $s;
     }
 
 }

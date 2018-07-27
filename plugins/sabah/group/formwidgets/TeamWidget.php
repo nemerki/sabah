@@ -25,6 +25,7 @@ class TeamWidget extends FormWidgetBase
     public function render()
     {
         $this->prepareVars();
+        dump($this->vars['name']);
         return $this->makePartial('teamwidget');
     }
 
@@ -52,6 +53,7 @@ class TeamWidget extends FormWidgetBase
      */
     public function getSaveValue($value)
     {
-        $this->model->create(['sort_id'=>$this->getId()]);
+//        return $value;
+        $this->model->create(['o' => $this->getId()]);
     }
 }

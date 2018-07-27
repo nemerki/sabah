@@ -55,3 +55,4 @@ fields:
         label: 'News Tags'
         span: full
         type: tags
+
