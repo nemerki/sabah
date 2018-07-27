@@ -29,41 +29,15 @@ sortDirection = "asc"
 <section id="important-add">
     <div id="pinBoxContainer" class="container">
         <div class="row">
-            <div class="col-md-8">
-                <div class="title-bold title-before green">
-                    {{ '  Vacib elanlar' |_ }}
-                </div>
-                <div class="elan-grid">
-                    <div class="row">
-                        {% for record in importantAds %}
-                            <div class="col-md-6">
-                                <a href="/elan/{{ record.slug }}">
-                                    <div class="item text-center">
-                                        <div class="box">
-                                            <div class="datetime">
-                                                {{ record.created_at.format('d F Y') }}
-
-                                            </div>
-                                            <div class="desc">
-                                                {{ record.title }}
-                                            </div>
-                                        </div>
-                                        <div class="overlay"></div>
-                                    </div>
-                                </a>
-                            </div>
-                        {% endfor %}
-
-
-                    </div>
-                </div>
+            <div class="col-md-8 dateSearch">
+                {% partial "elanlar/vacibElanlar" partialsRecords=importantAds %}
             </div>
             <div class="col-md-4 col-sm-12  col-lg-4">
                 <div id="sidebar" class="pinBox">
                     <div class="sidebar-title">
                         <h1 class="title-bold">Təqvim</h1>
                         <div class="border"></div>
-                        <p class="now">Bu gün: {{ now.format('d F Y') }}</p>
+                        <p class="now">Bu gün: {{ "now"|date('d F Y') }}</p>
                     </div>
                     <div>
                         <div class="form-group">
@@ -158,6 +132,8 @@ sortDirection = "asc"
         })
 
         function Yuklendi() {
+
+
 
             $('#datetimepicker12 table').on('click', '.day', function () {
                 var date = $(this).data('day');

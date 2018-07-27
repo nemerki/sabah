@@ -1,8 +1,0 @@
-fields:
-  client_id:
-    span: left
-    label: Client ID
-
-  access_token:
-    span: left
-    label: Access Token

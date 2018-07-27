@@ -1,9 +1,6 @@
 $(document).ready(function () {
 
 
-
-
-
     $('.panel-collapse').on('show.bs.collapse', function () {
         $(this).siblings('.panel-heading').addClass('active');
     });
@@ -12,36 +9,36 @@ $(document).ready(function () {
         $(this).siblings('.panel-heading').removeClass('active');
     });
 
-    $("body").click(function () {
-        $(".main-ul").show();
-        $(".main-menu").css("text-align", "left");
-        $(".searc-inp").css("display", "none");
-        $(".search button").css("color", "#666666");
-    });
+    // $("body").click(function () {
+    //     $(".main-ul").show();
+    //     $(".main-menu").css("text-align", "left");
+    //     $(".searc-inp").css("display", "none");
+    //     $(".search button").css("color", "#666666");
+    // });
+    //
+    // $(".search").click(function (e) {
+    //     e.stopPropagation();
+    // });
 
-    $(".search").click(function (e) {
-        e.stopPropagation();
-    });
 
-
-    $(".search button").click(function (e) {
-        if ($(".main-ul").css("display") == "inline") {
-            e.preventDefault();
-            e.stopPropagation();
-            $(".main-ul").hide();
-            $(".main-menu").css("text-align", "right");
-            $(".searc-inp").css("display", "inline-block");
-            $(this).css("color", "#009c4e");
-        } else {
-            if ($(".searc-inp").val().length <= 0) {
-                e.preventDefault();
-                $(".main-ul").show();
-                $(".main-menu").css("text-align", "left");
-                $(".searc-inp").css("display", "none");
-                $(".search button").css("color", "#666666");
-            }
-        }
-    });
+    // $(".search button").click(function (e) {
+    //     if ($(".main-ul").css("display") == "inline") {
+    //         e.preventDefault();
+    //         e.stopPropagation();
+    //         $(".main-ul").hide();
+    //         $(".main-menu").css("text-align", "right");
+    //         $(".searc-inp").css("display", "inline-block");
+    //         $(this).css("color", "#009c4e");
+    //     } else {
+    //         if ($(".searc-inp").val().length <= 0) {
+    //             e.preventDefault();
+    //             $(".main-ul").show();
+    //             $(".main-menu").css("text-align", "left");
+    //             $(".searc-inp").css("display", "none");
+    //             $(".search button").css("color", "#666666");
+    //         }
+    //     }
+    // });
 
     $(".c-a").click(function (e) {
         e.preventDefault();
@@ -259,19 +256,19 @@ $(document).ready(function () {
         }
     });
 
-    $("#search input").keydown(function (event) {
-        $("#search button .open").hide();
-        $("#search button .close").show();
-    });
-
-
-    $("#search button .close").click(function (e) {
-        e.preventDefault();
-        $("#search input").val("   ")
-        $("#search button .close").hide();
-        $("#search button .open").show();
-
-    });
+    // $("#search input").keydown(function (event) {
+    //     $("#search button .open").hide();
+    //     $("#search button .close").show();
+    // });
+    //
+    //
+    // $("#search button .close").click(function (e) {
+    //     e.preventDefault();
+    //     $("#search input").val("   ")
+    //     $("#search button .close").hide();
+    //     $("#search button .open").show();
+    //
+    // });
 
     function initMap() {
         // Create a map object and specify the DOM element for display.

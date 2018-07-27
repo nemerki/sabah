@@ -1,6 +1,7 @@
 <?php namespace System;
 
 use App;
+use Carbon\Carbon;
 use Lang;
 use View;
 use Event;
@@ -85,11 +86,15 @@ class ServiceProvider extends ModuleServiceProvider
      */
     public function boot()
     {
+
+
+        setlocale(LC_TIME,"az_Az");
+        \Carbon\Carbon::setLocale(config('app.locale'));
         // Fix UTF8MB4 support for MariaDB < 10.2 and MySQL < 5.7
         if (Config::get('database.connections.mysql.charset') === 'utf8mb4') {
             Schema::defaultStringLength(191);
         }
-        
+
         /*
          * Boot plugins
          */

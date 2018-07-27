@@ -59,3 +59,11 @@ header .main-menu .search input {
 #datetimepicker12 td {
     cursor: pointer;
 }
+
+#important-add .item .desc {
+    height: 72px;
+}
+
+.iamsabah__img {
+    height: 270px;
+}

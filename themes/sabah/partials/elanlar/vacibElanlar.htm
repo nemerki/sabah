@@ -1,0 +1,27 @@
+<div class="title-bold title-before green">
+    {{ '  Vacib elanlar' |_ }}
+</div>
+<div class="elan-grid">
+    <div class="row">
+        {% for record in partialsRecords %}
+            <div class="col-md-6">
+                <a href="/elan/{{ record.slug }}">
+                    <div class="item text-center">
+                        <div class="box">
+                            <div class="datetime">
+                                {{ record.created_at.format('d F Y') }}
+
+                            </div>
+                            <div class="desc">
+                                {{ str_limit(record.title , 138, '...') }}
+                            </div>
+                        </div>
+                        <div class="overlay"></div>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+
+
+    </div>
+</div>

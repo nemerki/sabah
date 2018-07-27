@@ -1,0 +1,19 @@
+title = "n"
+url = "/n"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[Tags]
+username = "mmehemmedm"
+password = 3620235
+tag = "baku"
+limit = 10
+cache = 10
+==
+{% for media in items %}
+    <div>
+        {{ loop.index }}
+        <img src="{{ media.getImageHighResolutionUrl }}" alt="">
+    </div>
+{% endfor %}
